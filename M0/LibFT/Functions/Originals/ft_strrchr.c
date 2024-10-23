@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:57:18 by mavander          #+#    #+#             */
-/*   Updated: 2024/10/14 15:57:19 by mavander         ###   ########.fr       */
+/*   Created: 2024/10/14 15:57:58 by mavander          #+#    #+#             */
+/*   Updated: 2024/10/14 15:58:00 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,27 @@ int	ft_strlen(char *str)
 
 	i = 0;
 	while (str[i])
-		i ++;
+		i++;
 	return (i);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+char	*strrchr(const char *s, int c)
 {
-	unsigned int	i;
-	unsigned int	t;
+	int	i;
 
-	i = 0;
-	t = (unsigned int)ft_strlen(dest);
-	if (t > size)
-		t = size;
-	while (t + i < size - 1 && size && src[i])
-	{
-		dest[t + i] = src[i];
-		i ++;
-	}
-	if (size > t)
-		dest[t + i] = '\0';
-	i = (unsigned int)ft_strlen(src);
-	return (t + i);
+	i = ft_strlen(str) - 1;
+	while (i >= 0 && str[i] != c)
+		i--;
+	str = str + i;
+	return (str++);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+void	main(void)
+{
+	printf("FT: %s\n", ft_strrchr("Bonjour je suis auj HavrE", 'j'));
+	printf("OG: %s\n", strrchr("Bonjour je suis auj HavrE", 'j'));
+}
+*/

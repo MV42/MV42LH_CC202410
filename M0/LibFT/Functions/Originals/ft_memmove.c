@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:56:18 by mavander          #+#    #+#             */
-/*   Updated: 2024/10/14 15:56:20 by mavander         ###   ########.fr       */
+/*   Created: 2024/10/14 15:56:44 by mavander          #+#    #+#             */
+/*   Updated: 2024/10/14 15:56:46 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memchr(const void *ptr, int ch, size_t count)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	
+	unsigned int	i;
+
+	i = 0;
+	while (i < n && dest[i] && src[i])
+	{
+		dest[i] = src[i];
+		src[i] = 0;
+		i++;
+	}
 }

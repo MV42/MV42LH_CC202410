@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:55:19 by mavander          #+#    #+#             */
-/*   Updated: 2024/10/14 15:55:21 by mavander         ###   ########.fr       */
+/*   Created: 2024/10/17 17:28:18 by mavander          #+#    #+#             */
+/*   Updated: 2024/10/17 17:28:19 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(char *str, unsigned int n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (i < n && str[i])
-		str[i++] = 0;
+		str[i++] = c;
 }

@@ -9,15 +9,8 @@
 /*   Updated: 2024/10/14 15:57:02 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-char	*ft_strchr(char *str, char c)
-{
-	while (*str && *str != c)
-		str++;
-	return (str++);
-}
-*/
-char	*ft_strchr(const char *str, int c)
+
+char	*ft_strchr(const char *s, int c)
 {
 	while (*str && *str != (char)c)
 		str++;
