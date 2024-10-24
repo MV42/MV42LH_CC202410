@@ -10,15 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
-	i = 0;
-	while (i < n && dest[i] && src[i])
+	if (dest == src || n == 0)
+		return (dest);
+	if (dest < src)
 	{
-		dest[i] = src[i];
-		src[i] = 0;
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
+	else
+	{
+		while (n > 0)
+		{
+			n--;
+			((char *)dest)[n] = ((char *)src)[n];
+		}
+	}
+	return (dest);
 }
+/*
+int	main(void)
+{
+	char	src[] = "Bonjour je suis au Havre";
+	char	dest[] = "eeeeeeeeeeeeeeeeeee";
+	int		n;
+
+	n = 23;
+	printf("src : %s\n", src);
+	printf("dest: %s\n", dest);
+	printf("dest: %s\n", ft_memmove(dest, src, n));
+	printf("src : %s\n", src);
+	// printf("dest: %s\n", memmove(dest, src, n));
+	return (0);
+}
+*/

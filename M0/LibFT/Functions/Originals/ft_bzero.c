@@ -10,11 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include <stdio.h>
+
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (i < n && str[i])
-		str[i++] = 0;
+	while (i < n)
+		((char *)s)[i++] = 0;
 }
+/*
+int	main(void)
+{
+	char str[] = "Bonjour je suis au Havre";
+	int n = 20;
+	printf("%s\n", str);
+	ft_bzero(str, n);
+	printf("%s\n", str);
+	return (0);
+}
+*/
