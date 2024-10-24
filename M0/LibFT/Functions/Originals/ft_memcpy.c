@@ -25,15 +25,17 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
+/*
 int	main(void)
 {
-	char src[] = "Bonjour je suis au Havre";
-	char dest[] = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-	int n = 23;
+	char	src[] = "Bonjour je suis au Havre";
+	char	dest[] = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+	int		n = 23;
+
 	printf("src : %s\n", src);
 	printf("dest: %s\n", dest);
 	printf("dest: %s\n", ft_memcpy(dest, src, n));
 	// printf("dest: %s\n", memcpy(dest, src, n));
 	return (0);
 }
+*/

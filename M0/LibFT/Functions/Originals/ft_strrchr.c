@@ -10,31 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stdio.h>
+#include <string.h>
+
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
-	return (i);
-}
-
-char	*strrchr(const char *s, int c)
-{
-	int	i;
-
-	i = ft_strlen(str) - 1;
-	while (i >= 0 && str[i] != c)
+	i--;
+	while (i >= 0 && s[i] != c)
 		i--;
-	str = str + i;
-	return (str++);
+	s = s + i;
+	return ((char *)s++);
 }
 /*
-#include <stdio.h>
-#include <string.h>
-
-void	main(void)
+int	main(void)
 {
 	printf("FT: %s\n", ft_strrchr("Bonjour je suis auj HavrE", 'j'));
 	printf("OG: %s\n", strrchr("Bonjour je suis auj HavrE", 'j'));

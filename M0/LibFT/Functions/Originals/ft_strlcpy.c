@@ -10,31 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned int	x;
 	unsigned int	i;
 
-	x = ft_strlen(src);
+	i = 0;
+	while (((char *)src)[i] != '\0')
+		i++;
+	x = i;
 	i = 0;
 	if (size != 0)
 	{
-		while (src[i] && i < size - 1)
+		while (((char *)src)[i] && i < size - 1)
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
 	return (x);
 }
+/*
+int	main(void)
+{
+	char			dst[] = "AAAAAAAAAAAAAAAAAAAA";
+	char			*src = "Bonjour je suis au Havre";
+	unsigned int	size = 5;
+
+	printf("%i\n", (int)ft_strlcpy(dst, src, size));
+	printf("%s\n", src);
+	printf("%s\n", dst);
+}
+*/

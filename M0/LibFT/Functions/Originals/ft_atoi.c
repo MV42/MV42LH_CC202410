@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int	ft_atoi(const char *nptr)
 {
 	int	nb;
@@ -33,9 +36,6 @@ int	ft_atoi(const char *nptr)
 	}
 	return (nb * sign);
 }
-
-#include <stdio.h>
-#include <stdlib.h>
 
 int	main(void)
 {

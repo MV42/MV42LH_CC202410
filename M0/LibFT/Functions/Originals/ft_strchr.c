@@ -10,20 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
-{
-	while (*str && *str != (char)c)
-		str++;
-	if (*str == (char)c)
-		return ((char *)str);
-	return (0);
-}
-
 #include <stdio.h>
 #include <string.h>
 
-void	main(void)
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s && *s != (char)c)
+		s++;
+	if (*s == (char)c)
+		return ((char *)s);
+	return (0);
+}
+/*
+int	main(void)
 {
 	printf("FT: %s\n", ft_strchr("Bonjour je suis au Havre", 'j'));
 	printf("OG: %s\n", strchr("Bonjour je suis au Havre", 'j'));
 }
+*/

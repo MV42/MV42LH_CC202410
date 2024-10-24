@@ -47,9 +47,9 @@ int	main(void)
 	n = 23;
 	printf("src : %s\n", src);
 	printf("dest: %s\n", dest);
-	printf("dest: %s\n", ft_memmove(dest, src, n));
+	printf("dest: %s\n", (char *)ft_memmove(dest, src, n));
 	printf("src : %s\n", src);
-	// printf("dest: %s\n", memmove(dest, src, n));
+	// printf("dest: %p\n", memmove(dest, src, n));
 	return (0);
 }
 */

@@ -10,7 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	size_t	i;
 
+	i = 0;
+	while (((char *)s)[i] != (char)c && ((char *)s)[i] != '\0' && i < n)
+		i++;
+	if (((char *)s)[i] != (char)c)
+		return (NULL);
+	return ((void *)&s[i]);
 }
+/*
+int	main(void)
+{
+	printf("%s\n", (char *)ft_memchr("Bonjour je suis au Havre", 'a', 24));
+}
+*/

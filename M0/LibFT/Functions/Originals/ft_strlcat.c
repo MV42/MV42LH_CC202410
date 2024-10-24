@@ -10,15 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i ++;
-	return (i);
-}
+#include <stdio.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -26,16 +18,33 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	unsigned int	t;
 
 	i = 0;
-	t = (unsigned int)ft_strlen(dest);
+	while (dest[i])
+		i++;
+	t = i;
+	i = 0;
 	if (t > size)
 		t = size;
 	while (t + i < size - 1 && size && src[i])
 	{
 		dest[t + i] = src[i];
-		i ++;
+		i++;
 	}
 	if (size > t)
 		dest[t + i] = '\0';
-	i = (unsigned int)ft_strlen(src);
+	i = 0;
+	while (src[i])
+		i++;
 	return (t + i);
 }
+/*
+int	main(void)
+{
+	char			dest[] = "AAAAAAAAAAAAAAAAAAAA";
+	char			*src = "Bonjour je suis au Havre";
+	unsigned int	size = 5;
+
+	printf("%i\n", (int)ft_strlcat(dest, src, size));
+	printf("%s\n", src);
+	printf("%s\n", dest);
+}
+*/
