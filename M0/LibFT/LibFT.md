@@ -7,7 +7,7 @@
 - use the flags `-Wall -Wextra -Werror`
 - Makefile mandatory rules: **$(name)**, **all**, **clean**, **fclean**, **re**. In case of bonus, add the rule **bonus**
 
-## **MANDATORY FUNCTIONS**
+# **MANDATORY FUNCTIONS**
 ## ft_isalpha.c
 *Prototype*: `int ft_isalpha(int c)`
 *Description*: checks  for an alphabetic character.
