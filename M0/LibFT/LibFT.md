@@ -1,4 +1,4 @@
-**General Notes**
+# **General Notes**
 - follow the Norm!
 - No global variables
 - helper functions must be defined as `static`, so their scope is limited to the appropriate file
@@ -122,7 +122,7 @@
 *Description*: duplicate the string `s`. The memory for the new string is obtained with `malloc`.
 *Return value*: a pointer to the duplicated string.
 
-## **ADDITIONAL FUNCTIONS**
+# **ADDITIONAL FUNCTIONS**
 ## ft_substr.c
 *Prototype*: `char	*ft_substr(char const *s, unsigned int start, size_t len)`
 *Description*: allocates with `malloc` and returns a substring from `s`, that begins at index `start` and of maximum size `len`.
@@ -178,15 +178,16 @@
 *Description*: outputs the integer `n` to the given file descriptor.
 *Return value*: none.
 
-## **BONUS FUNCTIONS**
+# **BONUS FUNCTIONS**
 To start, add this structure to your libft.h file:
-
-`typedef struct   s_list
-`{                       
-` void            *content;`
-` struct s_list   *next;`
-`}                t_list;`
-
+```
+typedef struct   s_list
+{                       
+	void			*content;
+	struct s_list	*next;
+}
+t_list;
+```
 ## ft_lstnew_bonus
 *Prototype*: `t_list *ftlstnew(void *content)`
 *Description*: allocates with `malloc` and return a new node. The variable `next` is initialized to NULL.
