@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pmitsuko <pmitsuko@student.42sp.org>       +#+  +:+       +#+         #
+#    By: mavander <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/02/08 08:56:23 by pmitsuko          #+#    #+#              #
-#    Updated: 2021/02/19 15:47:13 by pmitsuko         ###   ########.fr        #
+#    Created: 2024/12/21 21:42:42 by mavander          #+#    #+#              #
+#    Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,9 +67,9 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 	@ar rcs $@ $(OBJ)
-	@echo "$(NAME) created"
+	@echo "$@ created"
 	@ranlib $@
-	@echo "$(NAME) indexed"
+	@echo "$@ indexed"
 
 $(OBJ):		$(FILES)
 	@gcc -c $(FLAG) $(FILES)
