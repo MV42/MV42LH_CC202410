@@ -63,6 +63,7 @@ OBJ			=	$(FILES:.c=.o)
 BONUS_OBJ	=	$(BONUS_FILES:.c=.o)
 RM			=	rm -f
 
+
 $(NAME):	$(OBJ)
 	@ar rcs $@ $(OBJ)
 	@echo "$@ created"
@@ -71,6 +72,8 @@ $(NAME):	$(OBJ)
 
 $(OBJ):		$(FILES)
 	@gcc -c $(FLAG) $(FILES)
+
+
 
 bonus:		$(BONUS_FILES)
 	@gcc -c $(FLAG) $(BONUS_FILES)
