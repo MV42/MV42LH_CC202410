@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mavander <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
 /*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
@@ -14,7 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z'))
+	if ((c > 64 && c < 91) || (c > 96 && c < 123))
 		return (1);
 	return (0);
 }

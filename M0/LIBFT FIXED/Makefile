@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mavander <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:42:42 by mavander          #+#    #+#              #
 #    Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr        #
@@ -70,10 +70,10 @@ $(NAME):	$(OBJ)
 	@echo "$@ indexed"
 
 $(OBJ):		$(FILES)
-	@gcc -c $(FLAG) $(FILES)
+	@cc -c $(FLAG) $(FILES)
 
 bonus:		$(BONUS_FILES)
-	@gcc -c $(FLAG) $(BONUS_FILES)
+	@cc -c $(FLAG) $(BONUS_FILES)
 	@ar rcs $(NAME) $(BONUS_OBJ)
 	@ranlib $(NAME)
 

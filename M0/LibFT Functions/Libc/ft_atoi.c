@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mavander <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
 /*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int		num;
-	int		sign;
-	size_t	i;
+	int	num;
+	int	sign;
+	int	i;
 
 	num = 0;
 	sign = 1;
