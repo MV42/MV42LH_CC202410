@@ -14,5 +14,34 @@
 
 char    *get_next_line(int fd)
 {
-	
+	char    *line;
+	char    *buf;
+	int     i;
+	int     ret;
+
+	line = malloc(1);
+	if (!line)
+		return (NULL);
+	line[0] = 0;
+	buf = malloc(2);
+	if (!buf)
+		return (NULL);
+	buf[1] = 0;
+	while ((ret = read(fd, buf, 1)) > 0)
+	{
+		if (buf[0] == '\n')
+			break ;
+		i = 0;
+		while (line[i])
+			i++;
+		line = realloc(line, i + 2);
+		if (!line)
+			return (NULL);
+		line[i] = buf[0];
+		line[i + 1] = 0;
+	}
+	free(buf);
+	if (ret == 0)
+		return (NULL);
+	return (line);
 }
