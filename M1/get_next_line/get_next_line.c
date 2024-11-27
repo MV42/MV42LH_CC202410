@@ -12,36 +12,27 @@
 
 #include "get_next_line.h"
 
-char    *get_next_line(int fd)
+char *get_next_line(int fd)
 {
-	char    *line;
-	char    *buf;
-	int     i;
-	int     ret;
+    static char *stored;
+    char buffer[BUFFER_SIZE + 1];
+    char *line;
+    int bytes_read;
 
-	line = malloc(1);
-	if (!line)
-		return (NULL);
-	line[0] = 0;
-	buf = malloc(2);
-	if (!buf)
-		return (NULL);
-	buf[1] = 0;
-	while ((ret = read(fd, buf, 1)) > 0)
-	{
-		if (buf[0] == '\n')
-			break ;
-		i = 0;
-		while (line[i])
-			i++;
-		line = realloc(line, i + 2);
-		if (!line)
-			return (NULL);
-		line[i] = buf[0];
-		line[i + 1] = 0;
-	}
-	free(buf);
-	if (ret == 0)
-		return (NULL);
-	return (line);
+    if (fd < 0 || BUFFER_SIZE <= 0)
+        return (NULL);
+
+    while ((bytes_read = read(fd, buffer, BUFFER_SIZE)) > 0)
+    {
+        buffer[bytes_read] = '\0';
+        stored = ft_strjoin(stored, buffer);
+        if (ft_strchr(stored, '\n'))
+            break ;
+    }
+
+    if (bytes_read < 0)
+        return (NULL);
+
+    line = extract_line(&stored);
+    return (line);
 }
