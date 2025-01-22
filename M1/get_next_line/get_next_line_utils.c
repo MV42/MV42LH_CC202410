@@ -1,86 +1,89 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
-/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	*ft_calloc(size_t number)
 {
-	char	*new_str;
-	size_t	s1_len;
-	size_t	total_len;
-
-	s1_len = ft_strlen(s1) + 1;
-	total_len = ft_strlen(s2) + s1_len;
-	new_str = (char *)malloc(total_len * sizeof(char));
-	if (!new_str)
-		return (NULL);
-	ft_strlcpy(new_str, s1, s1_len);
-	ft_strlcat(new_str, s2, total_len);
-	return (new_str);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	size_t	len;
-	char	*s_alloc;
-
-	len = ft_strlen(s1) + 1;
-	s_alloc = (char *)malloc(len * sizeof(char));
-	if (s_alloc == NULL)
-		return (NULL);
-	ft_memcpy(s_alloc, s1, len);
-	return (s_alloc);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	int		i;
-	char	ch;
+	size_t	*new;
+	size_t	aligned_size;
+	size_t	i;
 
 	i = 0;
-	ch = c;
-	while (*(s + i) != '\0')
+	aligned_size = ((number + 3) & ~3);
+	new = malloc(aligned_size);
+	if (new)
 	{
-		if (*(s + i) == ch)
-			return ((char *)s + i);
-		i++;
+		while (i < aligned_size / sizeof(size_t))
+		{
+			if (i < aligned_size / sizeof(size_t))
+				new[i++] = 0;
+			else
+				break ;
+		}
 	}
-	if (ch == '\0')
-		return ((char *)s + i);
-	return (NULL);
+	return (new);
 }
 
-static char *extract_line(char **stored)
+char	*ft_realloc(char *s1, size_t size)
 {
-    char	*line;
-    char	*newline_pos;
-    char	*temp;
+	char	*s2;
+	size_t	i;
 
-    if (!*stored)
-        return (NULL);
-    newline_pos = strchr(*stored, '\n');
-    if (newline_pos)
-    {
-        *newline_pos = '\0';
-        line = ft_strdup(*stored);
-        temp = ft_strdup(newline_pos + 1);
-        free(*stored);
-        *stored = temp;
-    }
-    else
-    {
-        line = ft_strdup(*stored);
-        free(*stored);
-        *stored = NULL;
-    }
-    return (line);
+	i = 0;
+	if (!s1)
+	{
+		s1 = ft_calloc(size);
+		return (s1);
+	}
+	s2 = ft_calloc(size);
+	if (!s2)
+		return (NULL);
+	while (s1[i] && i < size - 1)
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	free(s1);
+	return (s2);
+}
+
+int	has_nl(char *buf)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < BUFFER_SIZE)
+	{
+		if (buf[i] == '\n')
+			return (i + 1);
+		if (!buf[i])
+			return (i);
+		i++;
+	}
+	return (BUFFER_SIZE);
+}
+
+void	ft_strlcat(char *buf, char **line, size_t *li, size_t len)
+{
+	size_t	bi;
+
+	bi = 0;
+	while (*li < len - 1)
+		(*line)[(*li)++] = buf[bi++];
+}
+
+void	clean_buf(char **buf)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while ((*buf)[j])
+	{
+		if ((*buf)[j++] == '\n')
+			while ((*buf)[j])
+				(*buf)[i++] = (*buf)[j++];
+		if (!(*buf)[j])
+			while (i < j)
+				(*buf)[i++] = '\0';
+	}
 }
