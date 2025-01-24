@@ -54,6 +54,17 @@ char	*get_next_line(int fd)
 
 int	main(int argc, char **argv)
 {
+	int		fd;
+
+	(void)argc;
+	fd = open(argv[1], O_RDONLY);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+}
+
+/*
+int	main(int argc, char **argv)
+{
 	int		fd[1000];
 	int		max_open;
 	int		max_iter;
@@ -79,3 +90,4 @@ int	main(int argc, char **argv)
 		}
 	}
 }
+*/

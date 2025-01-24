@@ -2,7 +2,7 @@
 
 void	*ft_calloc(size_t number)
 {
-	size_t	*new;
+	char	*new;
 	size_t	aligned_size;
 	size_t	i;
 
@@ -10,15 +10,8 @@ void	*ft_calloc(size_t number)
 	aligned_size = ((number + 3) & ~3);
 	new = malloc(aligned_size);
 	if (new)
-	{
-		while (i < aligned_size / sizeof(size_t))
-		{
-			if (i < aligned_size / sizeof(size_t))
-				new[i++] = 0;
-			else
-				break ;
-		}
-	}
+		while (i < aligned_size)
+			new[i++] = 0;
 	return (new);
 }
 
@@ -29,10 +22,7 @@ char	*ft_realloc(char *s1, size_t size)
 
 	i = 0;
 	if (!s1)
-	{
-		s1 = ft_calloc(size);
-		return (s1);
-	}
+		return (ft_calloc(size));
 	s2 = ft_calloc(size);
 	if (!s2)
 		return (NULL);
@@ -61,29 +51,27 @@ int	has_nl(char *buf)
 	return (BUFFER_SIZE);
 }
 
-void	ft_strlcat(char *buf, char **line, size_t *li, size_t len)
+int	cpybuf(char *buf, char *line, size_t *li)
 {
-	size_t	bi;
+	int	bj;
+	int	bi;
+	int	res;
 
+	bj = 0;
 	bi = 0;
-	while (*li < len - 1)
-		(*line)[(*li)++] = buf[bi++];
-}
-
-void	clean_buf(char **buf)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while ((*buf)[j])
+	res = 1;
+	while (buf[bj])
 	{
-		if ((*buf)[j++] == '\n')
-			while ((*buf)[j])
-				(*buf)[i++] = (*buf)[j++];
-		if (!(*buf)[j])
-			while (i < j)
-				(*buf)[i++] = '\0';
+		line[(*li)++] = buf[bj++];
+		if (buf[bj - 1] == '\n')
+		{
+			res = 0;
+			while (buf[bj])
+				buf[bi++] = buf[bj++];
+		}
+		if (!buf[bj])
+			while (bi < bj)
+				buf[bi++] = '\0';
 	}
+	return (res);
 }

@@ -1,0 +1,2657 @@
+[48;2;91;206;250m                  [0m
+[48;2;245;169;184m                  [0m
+[48;2;255;255;255;30;1m   Trans rights   [0m
+[48;2;245;169;184m                  [0m
+[48;2;91;206;250m                  [0m
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                Welcome to Francinette, a 42 tester framework!                ║
+╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
+                        ║         get_next_line        ║
+                        ╚══════════════════════════════╝
+⠋ Preparing framework⠙ Preparing framework✔ Preparing framework
+⠋ Executing: norminette⠙ Executing: norminette⠹ Executing: norminette✖ Executing: norminette
+get_next_line.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: MULT_IN_SINGLE_INSTR (line:  18, col:   1):	Multiple instructions in single line control structure
+get_next_line.h: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+get_next_line_utils.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+main.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+
+ℹ Running tests: gnlTester (https://github.com/Tripouille/gnlTester)
+[34m[Mandatory]
+[37m[BUFFER_SIZE = 1]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK ==1031343== Invalid read of size 1
+==1031343==    at 0x408163: get_next_line (get_next_line.c:16)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405075: main (mandatory.cpp:35)
+==1031343==  Address 0x4de65b0 is 0 bytes inside a block of size 4 free'd
+==1031343==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031343==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405069: main (mandatory.cpp:35)
+==1031343==  Block was alloc'd at
+==1031343==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031343==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031343==    by 0x408116: get_next_line (get_next_line.c:11)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405069: main (mandatory.cpp:35)
+==1031343== 
+==1031343== Syscall param read(buf) points to unaddressable byte(s)
+==1031343==    at 0x4CBA7E2: read (read.c:26)
+==1031343==    by 0x408193: get_next_line (get_next_line.c:17)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405075: main (mandatory.cpp:35)
+==1031343==  Address 0x4de65b0 is 0 bytes inside a block of size 4 free'd
+==1031343==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031343==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405069: main (mandatory.cpp:35)
+==1031343==  Block was alloc'd at
+==1031343==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031343==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031343==    by 0x408116: get_next_line (get_next_line.c:11)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405069: main (mandatory.cpp:35)
+==1031343== 
+==1031343== Invalid free() / delete / delete[] / realloc()
+==1031343==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031343==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405075: main (mandatory.cpp:35)
+==1031343==  Address 0x4de65b0 is 0 bytes inside a block of size 4 free'd
+==1031343==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031343==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405069: main (mandatory.cpp:35)
+==1031343==  Block was alloc'd at
+==1031343==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031343==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031343==    by 0x408116: get_next_line (get_next_line.c:11)
+==1031343==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031343==    by 0x405069: main (mandatory.cpp:35)
+==1031343== 
+[32m2.OK [0m
+[37mfiles/nl: ==1031344== Conditional jump or move depends on uninitialised value(s)
+==1031344==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031344==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031344==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031344==    by 0x405354: main (mandatory.cpp:40)
+==1031344== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: ==1031345== Conditional jump or move depends on uninitialised value(s)
+==1031345==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031345==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031345==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031345==    by 0x40563F: main (mandatory.cpp:45)
+==1031345== 
+==1031345== Invalid read of size 1
+==1031345==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031345==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031345==    by 0x40563F: main (mandatory.cpp:45)
+==1031345==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031345== 
+[93m1.SIGSEGV
+==1031345== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031345==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031345==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031345==    by 0x40832B: ft_realloc (get_next_line_utils.c:26)
+==1031345==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031345==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031345==    by 0x40563F: main (mandatory.cpp:45)
+==1031345== 
+[37mfiles/41_with_nl: ==1031346== Conditional jump or move depends on uninitialised value(s)
+==1031346==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031346==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031346==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031346==    by 0x40592A: main (mandatory.cpp:50)
+==1031346== 
+[32m1.OK ==1031346== Conditional jump or move depends on uninitialised value(s)
+==1031346==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031346==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031346==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031346==    by 0x40593C: main (mandatory.cpp:50)
+==1031346== 
+==1031346== Invalid write of size 1
+==1031346==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031346==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031346==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031346==    by 0x40593C: main (mandatory.cpp:50)
+==1031346==  Address 0x4de7b59 is 25 bytes after a block of size 16 in arena "client"
+==1031346== 
+==1031346== Invalid read of size 1
+==1031346==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031346==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031346==    by 0x40593C: main (mandatory.cpp:50)
+==1031346==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031346== 
+[93m2.SIGSEGV
+==1031346== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031346==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031346==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031346==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031346==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031346==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031346==    by 0x40593C: main (mandatory.cpp:50)
+==1031346== 
+[37mfiles/42_no_nl: ==1031347== Conditional jump or move depends on uninitialised value(s)
+==1031347==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031347==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031347==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031347==    by 0x405C27: main (mandatory.cpp:56)
+==1031347== 
+==1031347== Invalid read of size 1
+==1031347==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031347==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031347==    by 0x405C27: main (mandatory.cpp:56)
+==1031347==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031347== 
+[93m1.SIGSEGV
+==1031347== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031347==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031347==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031347==    by 0x40832B: ft_realloc (get_next_line_utils.c:26)
+==1031347==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031347==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031347==    by 0x405C27: main (mandatory.cpp:56)
+==1031347== 
+[37mfiles/42_with_nl: ==1031348== Conditional jump or move depends on uninitialised value(s)
+==1031348==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031348==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031348==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031348==    by 0x405F12: main (mandatory.cpp:61)
+==1031348== 
+[32m1.OK ==1031348== Conditional jump or move depends on uninitialised value(s)
+==1031348==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031348==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031348==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031348==    by 0x405F24: main (mandatory.cpp:61)
+==1031348== 
+==1031348== Invalid write of size 1
+==1031348==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031348==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031348==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031348==    by 0x405F24: main (mandatory.cpp:61)
+==1031348==  Address 0x4de81ea is 26 bytes after a block of size 16 in arena "client"
+==1031348== 
+==1031348== Invalid read of size 1
+==1031348==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031348==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031348==    by 0x405F24: main (mandatory.cpp:61)
+==1031348==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031348== 
+[93m2.SIGSEGV
+==1031348== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031348==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031348==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031348==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031348==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031348==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031348==    by 0x405F24: main (mandatory.cpp:61)
+==1031348== 
+[37mfiles/43_no_nl: ==1031349== Conditional jump or move depends on uninitialised value(s)
+==1031349==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031349==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031349==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031349==    by 0x406219: main (mandatory.cpp:72)
+==1031349== 
+==1031349== Invalid read of size 1
+==1031349==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031349==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031349==    by 0x406219: main (mandatory.cpp:72)
+==1031349==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031349== 
+[93m1.SIGSEGV
+==1031349== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031349==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031349==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031349==    by 0x40832B: ft_realloc (get_next_line_utils.c:26)
+==1031349==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031349==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031349==    by 0x406219: main (mandatory.cpp:72)
+==1031349== 
+[37mfiles/43_with_nl: ==1031350== Conditional jump or move depends on uninitialised value(s)
+==1031350==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031350==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031350==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031350==    by 0x406504: main (mandatory.cpp:77)
+==1031350== 
+[32m1.OK ==1031350== Conditional jump or move depends on uninitialised value(s)
+==1031350==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031350==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031350==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031350==    by 0x406516: main (mandatory.cpp:77)
+==1031350== 
+==1031350== Invalid write of size 1
+==1031350==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031350==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031350==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031350==    by 0x406516: main (mandatory.cpp:77)
+==1031350==  Address 0x4de887b is 27 bytes after a block of size 16 in arena "client"
+==1031350== 
+==1031350== Invalid read of size 1
+==1031350==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031350==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031350==    by 0x406516: main (mandatory.cpp:77)
+==1031350==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031350== 
+[93m2.SIGSEGV
+==1031350== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031350==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031350==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031350==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031350==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031350==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031350==    by 0x406516: main (mandatory.cpp:77)
+==1031350== 
+[37mfiles/multiple_nlx5: ==1031351== Conditional jump or move depends on uninitialised value(s)
+==1031351==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031351==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031351==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031351==    by 0x406801: main (mandatory.cpp:83)
+==1031351== 
+[32m1.OK ==1031351== Conditional jump or move depends on uninitialised value(s)
+==1031351==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031351==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031351==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031351==    by 0x406813: main (mandatory.cpp:83)
+==1031351== 
+[31m2.KO ==1031351== Conditional jump or move depends on uninitialised value(s)
+==1031351==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031351==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031351==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031351==    by 0x406825: main (mandatory.cpp:83)
+==1031351== 
+[31m3.KO ==1031351== Conditional jump or move depends on uninitialised value(s)
+==1031351==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031351==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031351==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031351==    by 0x406837: main (mandatory.cpp:83)
+==1031351== 
+[31m4.KO ==1031351== Conditional jump or move depends on uninitialised value(s)
+==1031351==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031351==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031351==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031351==    by 0x406849: main (mandatory.cpp:83)
+==1031351== 
+==1031351== Invalid write of size 1
+==1031351==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031351==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031351==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031351==    by 0x406849: main (mandatory.cpp:83)
+==1031351==  Address 0x4de7cb4 is 0 bytes after a block of size 4 alloc'd
+==1031351==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031351==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031351==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031351==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031351==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031351==    by 0x406849: main (mandatory.cpp:83)
+==1031351== 
+[31m5.KO [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: ==1031352== Conditional jump or move depends on uninitialised value(s)
+==1031352==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031352==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031352==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031352==    by 0x406B34: main (mandatory.cpp:92)
+==1031352== 
+[32m1.OK ==1031352== Conditional jump or move depends on uninitialised value(s)
+==1031352==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031352==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031352==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031352==    by 0x406B46: main (mandatory.cpp:92)
+==1031352== 
+==1031352== Invalid write of size 1
+==1031352==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031352==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031352==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031352==    by 0x406B46: main (mandatory.cpp:92)
+==1031352==  Address 0x4de8e4a is 26 bytes after a block of size 16 in arena "client"
+==1031352== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 4108083, hi = 0.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==1031352==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031352==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031352==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031352==    by 0x5804CCA3: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031352==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031352==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031352==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031352==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031352)
+==1031352==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031352==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031352==    by 0x40832B: ft_realloc (get_next_line_utils.c:26)
+==1031352==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031352==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031352==    by 0x406B46: main (mandatory.cpp:92)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7F0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/multiple_line_with_nl: ==1031353== Conditional jump or move depends on uninitialised value(s)
+==1031353==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031353==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031353==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031353==    by 0x406E67: main (mandatory.cpp:101)
+==1031353== 
+[32m1.OK ==1031353== Conditional jump or move depends on uninitialised value(s)
+==1031353==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031353==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031353==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031353==    by 0x406E79: main (mandatory.cpp:101)
+==1031353== 
+==1031353== Invalid write of size 1
+==1031353==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031353==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031353==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031353==    by 0x406E79: main (mandatory.cpp:101)
+==1031353==  Address 0x4de9109 is 25 bytes after a block of size 16 in arena "client"
+==1031353== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 4107319, hi = 0.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==1031353==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031353==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031353==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031353==    by 0x5804CCA3: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031353==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031353==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031353==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031353==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031353)
+==1031353==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031353==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031353==    by 0x40832B: ft_realloc (get_next_line_utils.c:26)
+==1031353==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031353==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031353==    by 0x406E79: main (mandatory.cpp:101)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7F0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/alternate_line_nl_no_nl: ==1031354== Conditional jump or move depends on uninitialised value(s)
+==1031354==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031354==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031354==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031354==    by 0x40719A: main (mandatory.cpp:110)
+==1031354== 
+[32m1.OK ==1031354== Conditional jump or move depends on uninitialised value(s)
+==1031354==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031354==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031354==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031354==    by 0x4071AC: main (mandatory.cpp:110)
+==1031354== 
+==1031354== Invalid write of size 1
+==1031354==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031354==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031354==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031354==    by 0x4071AC: main (mandatory.cpp:110)
+==1031354==  Address 0x4de94aa is 26 bytes after a block of size 16 in arena "client"
+==1031354== 
+[31m2.KO ==1031354== Conditional jump or move depends on uninitialised value(s)
+==1031354==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031354==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031354==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031354==    by 0x4071BE: main (mandatory.cpp:110)
+==1031354== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 80, hi = 655440.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==1031354==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x5804C8CF: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x5803AE9A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x580395B7: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x5803DF3D: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x58038868: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x1002E20591: ???
+==1031354==    by 0x1002CADF2F: ???
+==1031354==    by 0x581FCD83: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031354==    by 0x1002CADF17: ???
+==1031354==    by 0x1002CADF2F: ???
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031354)
+==1031354==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031354==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031354==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031354==    by 0x4071BE: main (mandatory.cpp:110)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD8B0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/alternate_line_nl_with_nl: ==1031355== Conditional jump or move depends on uninitialised value(s)
+==1031355==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031355==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031355==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031355==    by 0x407515: main (mandatory.cpp:123)
+==1031355== 
+[32m1.OK ==1031355== Conditional jump or move depends on uninitialised value(s)
+==1031355==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031355==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031355==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031355==    by 0x407527: main (mandatory.cpp:123)
+==1031355== 
+==1031355== Invalid write of size 1
+==1031355==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031355==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031355==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031355==    by 0x407527: main (mandatory.cpp:123)
+==1031355==  Address 0x4de97da is 26 bytes after a block of size 16 in arena "client"
+==1031355== 
+[31m2.KO ==1031355== Conditional jump or move depends on uninitialised value(s)
+==1031355==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031355==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031355==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031355==    by 0x407539: main (mandatory.cpp:123)
+==1031355== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 80, hi = 655440.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==1031355==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x5804C8CF: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x5803AE9A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x580395B7: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x5803DF3D: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x58038868: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x1002E21C91: ???
+==1031355==    by 0x1002CADF2F: ???
+==1031355==    by 0x581FCD83: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031355==    by 0x1002CADF17: ???
+==1031355==    by 0x1002CADF2F: ???
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031355)
+==1031355==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031355==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031355==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031355==    by 0x407539: main (mandatory.cpp:123)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD8B0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/big_line_no_nl: ==1031356== Conditional jump or move depends on uninitialised value(s)
+==1031356==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031356==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031356==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031356==    by 0x407890: main (mandatory.cpp:136)
+==1031356== 
+==1031356== Invalid read of size 1
+==1031356==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031356==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031356==    by 0x407890: main (mandatory.cpp:136)
+==1031356==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031356== 
+[93m1.SIGSEGV
+==1031356== 10,004 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031356==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031356==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031356==    by 0x40832B: ft_realloc (get_next_line_utils.c:26)
+==1031356==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031356==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031356==    by 0x407890: main (mandatory.cpp:136)
+==1031356== 
+[37mfiles/big_line_with_nl: ==1031357== Conditional jump or move depends on uninitialised value(s)
+==1031357==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031357==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031357==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031357==    by 0x407B7B: main (mandatory.cpp:140)
+==1031357== 
+[32m1.OK [32m2.OK [0m
+[37mstdin: ==1031358== Conditional jump or move depends on uninitialised value(s)
+==1031358==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031358==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031358==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031358==    by 0x407E65: main (mandatory.cpp:145)
+==1031358== 
+[32m1.OK ==1031358== Conditional jump or move depends on uninitialised value(s)
+==1031358==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031358==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031358==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031358==    by 0x407E76: main (mandatory.cpp:145)
+==1031358== 
+==1031358== Invalid write of size 1
+==1031358==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031358==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031358==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031358==    by 0x407E76: main (mandatory.cpp:145)
+==1031358==  Address 0x4de9dfa is 26 bytes after a block of size 16 in arena "client"
+==1031358== 
+[31m2.KO ==1031358== Conditional jump or move depends on uninitialised value(s)
+==1031358==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031358==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031358==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031358==    by 0x407E87: main (mandatory.cpp:145)
+==1031358== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 80, hi = 655440.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==1031358==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x5804C8CF: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x5803AE9A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x580395B7: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x5803DF3D: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x58038868: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x1002E264A1: ???
+==1031358==    by 0x1002CADF2F: ???
+==1031358==    by 0x581FCD83: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031358==    by 0x1002CADF17: ???
+==1031358==    by 0x1002CADF2F: ???
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031358)
+==1031358==    at 0x40844A: cpybuf (get_next_line_utils.c:65)
+==1031358==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031358==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031358==    by 0x407E87: main (mandatory.cpp:145)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD8B0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+
+[37m[BUFFER_SIZE = 42]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK ==1031376== Invalid read of size 1
+==1031376==    at 0x408195: get_next_line (get_next_line.c:16)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405075: main (mandatory.cpp:35)
+==1031376==  Address 0x4de65b0 is 0 bytes inside a block of size 44 free'd
+==1031376==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031376==    by 0x408207: get_next_line (get_next_line.c:20)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405069: main (mandatory.cpp:35)
+==1031376==  Block was alloc'd at
+==1031376==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031376==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031376==    by 0x408148: get_next_line (get_next_line.c:11)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405069: main (mandatory.cpp:35)
+==1031376== 
+==1031376== Syscall param read(buf) points to unaddressable byte(s)
+==1031376==    at 0x4CBA7E2: read (read.c:26)
+==1031376==    by 0x4081C5: get_next_line (get_next_line.c:17)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405075: main (mandatory.cpp:35)
+==1031376==  Address 0x4de65b0 is 0 bytes inside a block of size 44 free'd
+==1031376==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031376==    by 0x408207: get_next_line (get_next_line.c:20)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405069: main (mandatory.cpp:35)
+==1031376==  Block was alloc'd at
+==1031376==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031376==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031376==    by 0x408148: get_next_line (get_next_line.c:11)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405069: main (mandatory.cpp:35)
+==1031376== 
+==1031376== Invalid free() / delete / delete[] / realloc()
+==1031376==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031376==    by 0x408207: get_next_line (get_next_line.c:20)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405075: main (mandatory.cpp:35)
+==1031376==  Address 0x4de65b0 is 0 bytes inside a block of size 44 free'd
+==1031376==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031376==    by 0x408207: get_next_line (get_next_line.c:20)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405069: main (mandatory.cpp:35)
+==1031376==  Block was alloc'd at
+==1031376==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031376==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031376==    by 0x408148: get_next_line (get_next_line.c:11)
+==1031376==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031376==    by 0x405069: main (mandatory.cpp:35)
+==1031376== 
+[32m2.OK [0m
+[37mfiles/nl: ==1031377== Conditional jump or move depends on uninitialised value(s)
+==1031377==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031377==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031377==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031377==    by 0x405354: main (mandatory.cpp:40)
+==1031377== 
+==1031377== Use of uninitialised value of size 8
+==1031377==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031377==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031377==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031377==    by 0x405354: main (mandatory.cpp:40)
+==1031377== 
+==1031377== Use of uninitialised value of size 8
+==1031377==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031377==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031377==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031377==    by 0x405354: main (mandatory.cpp:40)
+==1031377== 
+==1031377== Conditional jump or move depends on uninitialised value(s)
+==1031377==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031377==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031377==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031377==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031377==    by 0x405354: main (mandatory.cpp:40)
+==1031377== 
+==1031377== Invalid free() / delete / delete[] / realloc()
+==1031377==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031377==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031377==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031377==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031377==    by 0x405354: main (mandatory.cpp:40)
+==1031377==  Address 0x1ffefffca8 is on thread 1's stack
+==1031377== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: ==1031378== Conditional jump or move depends on uninitialised value(s)
+==1031378==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378== 
+==1031378== Use of uninitialised value of size 8
+==1031378==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378== 
+==1031378== Invalid read of size 1
+==1031378==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031378==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031378== 
+==1031378== Use of uninitialised value of size 8
+==1031378==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378== 
+==1031378== Invalid read of size 1
+==1031378==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031378==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031378== 
+==1031378== Conditional jump or move depends on uninitialised value(s)
+==1031378==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031378==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378== 
+==1031378== Invalid free() / delete / delete[] / realloc()
+==1031378==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031378==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031378==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031378== 
+==1031378== Invalid read of size 1
+==1031378==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031378==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031378== 
+[93m1.SIGSEGV
+==1031378== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031378==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031378==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031378==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031378==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031378==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031378==    by 0x40563F: main (mandatory.cpp:45)
+==1031378== 
+[37mfiles/41_with_nl: ==1031379== Conditional jump or move depends on uninitialised value(s)
+==1031379==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40592A: main (mandatory.cpp:50)
+==1031379== 
+==1031379== Use of uninitialised value of size 8
+==1031379==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40592A: main (mandatory.cpp:50)
+==1031379== 
+==1031379== Invalid read of size 1
+==1031379==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40592A: main (mandatory.cpp:50)
+==1031379==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031379==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031379== 
+==1031379== Use of uninitialised value of size 8
+==1031379==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40592A: main (mandatory.cpp:50)
+==1031379== 
+==1031379== Invalid read of size 1
+==1031379==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40592A: main (mandatory.cpp:50)
+==1031379==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031379==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031379== 
+==1031379== Conditional jump or move depends on uninitialised value(s)
+==1031379==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031379==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40592A: main (mandatory.cpp:50)
+==1031379== 
+==1031379== Invalid free() / delete / delete[] / realloc()
+==1031379==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031379==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40592A: main (mandatory.cpp:50)
+==1031379==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031379==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031379== 
+[32m1.OK ==1031379== Conditional jump or move depends on uninitialised value(s)
+==1031379==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40593C: main (mandatory.cpp:50)
+==1031379== 
+==1031379== Invalid write of size 1
+==1031379==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031379==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40593C: main (mandatory.cpp:50)
+==1031379==  Address 0x4de6cd9 is 25 bytes after a block of size 16 in arena "client"
+==1031379== 
+==1031379== Invalid read of size 1
+==1031379==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031379==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031379==    by 0x40593C: main (mandatory.cpp:50)
+==1031379==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031379== 
+[93m2.SIGSEGV
+==1031379== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031379==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031379==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031379==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031379==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031379==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031379==    by 0x40593C: main (mandatory.cpp:50)
+==1031379== 
+[37mfiles/42_no_nl: ==1031380== Conditional jump or move depends on uninitialised value(s)
+==1031380==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380== 
+==1031380== Use of uninitialised value of size 8
+==1031380==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380== 
+==1031380== Invalid read of size 1
+==1031380==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031380==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031380== 
+==1031380== Use of uninitialised value of size 8
+==1031380==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380== 
+==1031380== Invalid read of size 1
+==1031380==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031380==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031380== 
+==1031380== Conditional jump or move depends on uninitialised value(s)
+==1031380==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031380==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380== 
+==1031380== Invalid free() / delete / delete[] / realloc()
+==1031380==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031380==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031380==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031380== 
+==1031380== Invalid read of size 1
+==1031380==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031380==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031380== 
+[93m1.SIGSEGV
+==1031380== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031380==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031380==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031380==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031380==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031380==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031380==    by 0x405C27: main (mandatory.cpp:56)
+==1031380== 
+[37mfiles/42_with_nl: ==1031381== Conditional jump or move depends on uninitialised value(s)
+==1031381==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031381==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031381==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031381==    by 0x405F12: main (mandatory.cpp:61)
+==1031381== 
+==1031381== Use of uninitialised value of size 8
+==1031381==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031381==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031381==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031381==    by 0x405F12: main (mandatory.cpp:61)
+==1031381== 
+==1031381== Invalid read of size 1
+==1031381==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031381==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031381==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031381==    by 0x405F12: main (mandatory.cpp:61)
+==1031381==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031381==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031381== 
+==1031381== Use of uninitialised value of size 8
+==1031381==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031381==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031381==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031381==    by 0x405F12: main (mandatory.cpp:61)
+==1031381== 
+==1031381== Invalid read of size 1
+==1031381==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031381==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031381==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031381==    by 0x405F12: main (mandatory.cpp:61)
+==1031381==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031381==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031381== 
+==1031381== Conditional jump or move depends on uninitialised value(s)
+==1031381==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031381==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031381==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031381==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031381==    by 0x405F12: main (mandatory.cpp:61)
+==1031381== 
+==1031381== Invalid free() / delete / delete[] / realloc()
+==1031381==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031381==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031381==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031381==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031381==    by 0x405F12: main (mandatory.cpp:61)
+==1031381==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031381==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031381== 
+[32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: ==1031382== Conditional jump or move depends on uninitialised value(s)
+==1031382==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382== 
+==1031382== Use of uninitialised value of size 8
+==1031382==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382== 
+==1031382== Invalid read of size 1
+==1031382==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031382==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031382== 
+==1031382== Use of uninitialised value of size 8
+==1031382==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382== 
+==1031382== Invalid read of size 1
+==1031382==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031382==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031382== 
+==1031382== Conditional jump or move depends on uninitialised value(s)
+==1031382==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031382==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382== 
+==1031382== Invalid free() / delete / delete[] / realloc()
+==1031382==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031382==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031382==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031382== 
+==1031382== Invalid read of size 1
+==1031382==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031382==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031382== 
+[93m1.SIGSEGV
+==1031382== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031382==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031382==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031382==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031382==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031382==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031382==    by 0x40624B: main (mandatory.cpp:72)
+==1031382== 
+[37mfiles/43_with_nl: ==1031383== Conditional jump or move depends on uninitialised value(s)
+==1031383==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406536: main (mandatory.cpp:77)
+==1031383== 
+==1031383== Use of uninitialised value of size 8
+==1031383==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406536: main (mandatory.cpp:77)
+==1031383== 
+==1031383== Invalid read of size 1
+==1031383==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406536: main (mandatory.cpp:77)
+==1031383==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031383==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031383== 
+==1031383== Use of uninitialised value of size 8
+==1031383==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406536: main (mandatory.cpp:77)
+==1031383== 
+==1031383== Invalid read of size 1
+==1031383==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406536: main (mandatory.cpp:77)
+==1031383==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031383==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031383== 
+==1031383== Conditional jump or move depends on uninitialised value(s)
+==1031383==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031383==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406536: main (mandatory.cpp:77)
+==1031383== 
+==1031383== Invalid free() / delete / delete[] / realloc()
+==1031383==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031383==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406536: main (mandatory.cpp:77)
+==1031383==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031383==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031383== 
+[32m1.OK ==1031383== Conditional jump or move depends on uninitialised value(s)
+==1031383==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406548: main (mandatory.cpp:77)
+==1031383== 
+==1031383== Invalid write of size 1
+==1031383==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031383==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406548: main (mandatory.cpp:77)
+==1031383==  Address 0x4de798b is 27 bytes after a block of size 16 in arena "client"
+==1031383== 
+==1031383== Invalid read of size 1
+==1031383==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031383==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031383==    by 0x406548: main (mandatory.cpp:77)
+==1031383==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031383== 
+[93m2.SIGSEGV
+==1031383== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031383==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031383==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031383==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031383==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031383==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031383==    by 0x406548: main (mandatory.cpp:77)
+==1031383== 
+[37mfiles/multiple_nlx5: ==1031384== Conditional jump or move depends on uninitialised value(s)
+==1031384==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406833: main (mandatory.cpp:83)
+==1031384== 
+==1031384== Use of uninitialised value of size 8
+==1031384==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406833: main (mandatory.cpp:83)
+==1031384== 
+==1031384== Invalid read of size 1
+==1031384==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406833: main (mandatory.cpp:83)
+==1031384==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031384==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031384== 
+==1031384== Use of uninitialised value of size 8
+==1031384==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406833: main (mandatory.cpp:83)
+==1031384== 
+==1031384== Invalid read of size 1
+==1031384==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406833: main (mandatory.cpp:83)
+==1031384==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031384==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031384== 
+==1031384== Conditional jump or move depends on uninitialised value(s)
+==1031384==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031384==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406833: main (mandatory.cpp:83)
+==1031384== 
+==1031384== Invalid free() / delete / delete[] / realloc()
+==1031384==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031384==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406833: main (mandatory.cpp:83)
+==1031384==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031384==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031384== 
+[32m1.OK ==1031384== Conditional jump or move depends on uninitialised value(s)
+==1031384==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406845: main (mandatory.cpp:83)
+==1031384== 
+[31m2.KO ==1031384== Conditional jump or move depends on uninitialised value(s)
+==1031384==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406857: main (mandatory.cpp:83)
+==1031384== 
+[31m3.KO ==1031384== Conditional jump or move depends on uninitialised value(s)
+==1031384==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x406869: main (mandatory.cpp:83)
+==1031384== 
+[31m4.KO ==1031384== Conditional jump or move depends on uninitialised value(s)
+==1031384==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x40687B: main (mandatory.cpp:83)
+==1031384== 
+==1031384== Invalid write of size 1
+==1031384==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031384==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x40687B: main (mandatory.cpp:83)
+==1031384==  Address 0x4de7cd4 is 0 bytes after a block of size 4 alloc'd
+==1031384==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031384==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031384==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031384==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031384==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031384==    by 0x40687B: main (mandatory.cpp:83)
+==1031384== 
+[31m5.KO [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: ==1031385== Conditional jump or move depends on uninitialised value(s)
+==1031385==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B66: main (mandatory.cpp:92)
+==1031385== 
+==1031385== Use of uninitialised value of size 8
+==1031385==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B66: main (mandatory.cpp:92)
+==1031385== 
+==1031385== Invalid read of size 1
+==1031385==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B66: main (mandatory.cpp:92)
+==1031385==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031385==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031385== 
+==1031385== Use of uninitialised value of size 8
+==1031385==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B66: main (mandatory.cpp:92)
+==1031385== 
+==1031385== Invalid read of size 1
+==1031385==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B66: main (mandatory.cpp:92)
+==1031385==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031385==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031385== 
+==1031385== Conditional jump or move depends on uninitialised value(s)
+==1031385==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031385==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B66: main (mandatory.cpp:92)
+==1031385== 
+==1031385== Invalid free() / delete / delete[] / realloc()
+==1031385==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031385==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B66: main (mandatory.cpp:92)
+==1031385==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031385==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031385== 
+[32m1.OK ==1031385== Conditional jump or move depends on uninitialised value(s)
+==1031385==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B78: main (mandatory.cpp:92)
+==1031385== 
+==1031385== Invalid write of size 1
+==1031385==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031385==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B78: main (mandatory.cpp:92)
+==1031385==  Address 0x4de7f5c is 0 bytes after a block of size 44 alloc'd
+==1031385==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031385==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031385==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B78: main (mandatory.cpp:92)
+==1031385== 
+--1031385-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031385-- si_code=1;  Faulting address: 0x3D17AFA8;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031385==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031385==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031385==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031385==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031385==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031385)
+==1031385==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031385==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031385==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031385==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031385==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031385==    by 0x406B78: main (mandatory.cpp:92)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7E0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/multiple_line_with_nl: ==1031386== Conditional jump or move depends on uninitialised value(s)
+==1031386==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406E99: main (mandatory.cpp:101)
+==1031386== 
+==1031386== Use of uninitialised value of size 8
+==1031386==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406E99: main (mandatory.cpp:101)
+==1031386== 
+==1031386== Invalid read of size 1
+==1031386==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406E99: main (mandatory.cpp:101)
+==1031386==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031386==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386== 
+==1031386== Use of uninitialised value of size 8
+==1031386==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406E99: main (mandatory.cpp:101)
+==1031386== 
+==1031386== Invalid read of size 1
+==1031386==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406E99: main (mandatory.cpp:101)
+==1031386==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031386==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386== 
+==1031386== Conditional jump or move depends on uninitialised value(s)
+==1031386==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031386==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406E99: main (mandatory.cpp:101)
+==1031386== 
+==1031386== Invalid free() / delete / delete[] / realloc()
+==1031386==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031386==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406E99: main (mandatory.cpp:101)
+==1031386==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031386==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386== 
+[32m1.OK ==1031386== Conditional jump or move depends on uninitialised value(s)
+==1031386==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406EAB: main (mandatory.cpp:101)
+==1031386== 
+==1031386== Invalid write of size 1
+==1031386==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031386==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406EAB: main (mandatory.cpp:101)
+==1031386==  Address 0x4de8289 is 25 bytes after a block of size 16 in arena "client"
+==1031386== 
+[31m2.KO ==1031386== Conditional jump or move depends on uninitialised value(s)
+==1031386==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406EBD: main (mandatory.cpp:101)
+==1031386== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 667705, hi = 0.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==1031386==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386==    by 0x5804CCA3: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031386==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031386)
+==1031386==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031386==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031386==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031386==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031386==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031386==    by 0x406EBD: main (mandatory.cpp:101)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7E0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/alternate_line_nl_no_nl: ==1031387== Conditional jump or move depends on uninitialised value(s)
+==1031387==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071CC: main (mandatory.cpp:110)
+==1031387== 
+==1031387== Use of uninitialised value of size 8
+==1031387==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071CC: main (mandatory.cpp:110)
+==1031387== 
+==1031387== Invalid read of size 1
+==1031387==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071CC: main (mandatory.cpp:110)
+==1031387==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031387==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031387== 
+==1031387== Use of uninitialised value of size 8
+==1031387==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071CC: main (mandatory.cpp:110)
+==1031387== 
+==1031387== Invalid read of size 1
+==1031387==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071CC: main (mandatory.cpp:110)
+==1031387==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031387==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031387== 
+==1031387== Conditional jump or move depends on uninitialised value(s)
+==1031387==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031387==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071CC: main (mandatory.cpp:110)
+==1031387== 
+==1031387== Invalid free() / delete / delete[] / realloc()
+==1031387==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031387==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071CC: main (mandatory.cpp:110)
+==1031387==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031387==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031387== 
+[32m1.OK ==1031387== Conditional jump or move depends on uninitialised value(s)
+==1031387==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071DE: main (mandatory.cpp:110)
+==1031387== 
+==1031387== Invalid write of size 1
+==1031387==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031387==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071DE: main (mandatory.cpp:110)
+==1031387==  Address 0x4de85ba is 26 bytes after a block of size 16 in arena "client"
+==1031387== 
+[31m2.KO ==1031387== Conditional jump or move depends on uninitialised value(s)
+==1031387==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071F0: main (mandatory.cpp:110)
+==1031387== 
+==1031387== Invalid write of size 1
+==1031387==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031387==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071F0: main (mandatory.cpp:110)
+==1031387==  Address 0x4de860c is 0 bytes after a block of size 44 alloc'd
+==1031387==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031387==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031387==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071F0: main (mandatory.cpp:110)
+==1031387== 
+--1031387-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031387-- si_code=1;  Faulting address: 0x3517BE5E;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031387==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031387==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031387==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031387==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031387==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031387)
+==1031387==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031387==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031387==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031387==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031387==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031387==    by 0x4071F0: main (mandatory.cpp:110)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7E0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/alternate_line_nl_with_nl: ==1031388== Conditional jump or move depends on uninitialised value(s)
+==1031388==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407547: main (mandatory.cpp:123)
+==1031388== 
+==1031388== Use of uninitialised value of size 8
+==1031388==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407547: main (mandatory.cpp:123)
+==1031388== 
+==1031388== Invalid read of size 1
+==1031388==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407547: main (mandatory.cpp:123)
+==1031388==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031388==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031388== 
+==1031388== Use of uninitialised value of size 8
+==1031388==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407547: main (mandatory.cpp:123)
+==1031388== 
+==1031388== Invalid read of size 1
+==1031388==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407547: main (mandatory.cpp:123)
+==1031388==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031388==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031388== 
+==1031388== Conditional jump or move depends on uninitialised value(s)
+==1031388==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031388==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407547: main (mandatory.cpp:123)
+==1031388== 
+==1031388== Invalid free() / delete / delete[] / realloc()
+==1031388==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031388==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407547: main (mandatory.cpp:123)
+==1031388==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031388==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031388== 
+[32m1.OK ==1031388== Conditional jump or move depends on uninitialised value(s)
+==1031388==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407559: main (mandatory.cpp:123)
+==1031388== 
+==1031388== Invalid write of size 1
+==1031388==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031388==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x407559: main (mandatory.cpp:123)
+==1031388==  Address 0x4de88ea is 26 bytes after a block of size 16 in arena "client"
+==1031388== 
+[31m2.KO ==1031388== Conditional jump or move depends on uninitialised value(s)
+==1031388==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x40756B: main (mandatory.cpp:123)
+==1031388== 
+==1031388== Invalid write of size 1
+==1031388==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031388==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x40756B: main (mandatory.cpp:123)
+==1031388==  Address 0x4de893c is 0 bytes after a block of size 44 alloc'd
+==1031388==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031388==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031388==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x40756B: main (mandatory.cpp:123)
+==1031388== 
+--1031388-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031388-- si_code=1;  Faulting address: 0x3E0EBA8A;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031388==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031388==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031388==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031388==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031388==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031388)
+==1031388==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031388==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031388==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031388==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031388==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031388==    by 0x40756B: main (mandatory.cpp:123)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7E0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/big_line_no_nl: ==1031389== Conditional jump or move depends on uninitialised value(s)
+==1031389==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389== 
+==1031389== Use of uninitialised value of size 8
+==1031389==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389== 
+==1031389== Invalid read of size 1
+==1031389==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031389==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031389== 
+==1031389== Use of uninitialised value of size 8
+==1031389==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389== 
+==1031389== Invalid read of size 1
+==1031389==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031389==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031389== 
+==1031389== Conditional jump or move depends on uninitialised value(s)
+==1031389==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031389==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389== 
+==1031389== Invalid free() / delete / delete[] / realloc()
+==1031389==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031389==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031389==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031389== 
+==1031389== Invalid read of size 1
+==1031389==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031389==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031389== 
+[93m1.SIGSEGV
+==1031389== 10,004 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031389==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031389==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031389==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031389==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031389==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031389==    by 0x4078C2: main (mandatory.cpp:136)
+==1031389== 
+[37mfiles/big_line_with_nl: ==1031390== Conditional jump or move depends on uninitialised value(s)
+==1031390==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031390==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031390==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031390==    by 0x407BAD: main (mandatory.cpp:140)
+==1031390== 
+==1031390== Use of uninitialised value of size 8
+==1031390==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031390==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031390==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031390==    by 0x407BAD: main (mandatory.cpp:140)
+==1031390== 
+==1031390== Invalid read of size 1
+==1031390==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031390==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031390==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031390==    by 0x407BAD: main (mandatory.cpp:140)
+==1031390==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031390==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031390== 
+==1031390== Use of uninitialised value of size 8
+==1031390==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031390==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031390==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031390==    by 0x407BAD: main (mandatory.cpp:140)
+==1031390== 
+==1031390== Invalid read of size 1
+==1031390==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031390==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031390==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031390==    by 0x407BAD: main (mandatory.cpp:140)
+==1031390==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031390==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031390== 
+==1031390== Conditional jump or move depends on uninitialised value(s)
+==1031390==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031390==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031390==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031390==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031390==    by 0x407BAD: main (mandatory.cpp:140)
+==1031390== 
+==1031390== Invalid free() / delete / delete[] / realloc()
+==1031390==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031390==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031390==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031390==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031390==    by 0x407BAD: main (mandatory.cpp:140)
+==1031390==  Address 0x58005560 is in the Text segment of /usr/libexec/valgrind/memcheck-amd64-linux
+==1031390==    at 0x58005560: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031390== 
+[32m1.OK [32m2.OK [0m
+[37mstdin: ==1031391== Conditional jump or move depends on uninitialised value(s)
+==1031391==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407E97: main (mandatory.cpp:145)
+==1031391== 
+==1031391== Use of uninitialised value of size 8
+==1031391==    at 0x40839B: ft_realloc (get_next_line_utils.c:29)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407E97: main (mandatory.cpp:145)
+==1031391== 
+==1031391== Use of uninitialised value of size 8
+==1031391==    at 0x408386: ft_realloc (get_next_line_utils.c:31)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407E97: main (mandatory.cpp:145)
+==1031391== 
+==1031391== Conditional jump or move depends on uninitialised value(s)
+==1031391==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031391==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407E97: main (mandatory.cpp:145)
+==1031391== 
+==1031391== Invalid free() / delete / delete[] / realloc()
+==1031391==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031391==    by 0x4083BB: ft_realloc (get_next_line_utils.c:34)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407E97: main (mandatory.cpp:145)
+==1031391==  Address 0x1ffefffca8 is on thread 1's stack
+==1031391== 
+[32m1.OK ==1031391== Conditional jump or move depends on uninitialised value(s)
+==1031391==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407EA8: main (mandatory.cpp:145)
+==1031391== 
+==1031391== Invalid write of size 1
+==1031391==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031391==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407EA8: main (mandatory.cpp:145)
+==1031391==  Address 0x4de8f0a is 26 bytes after a block of size 16 in arena "client"
+==1031391== 
+[31m2.KO ==1031391== Conditional jump or move depends on uninitialised value(s)
+==1031391==    at 0x408342: ft_realloc (get_next_line_utils.c:24)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407EB9: main (mandatory.cpp:145)
+==1031391== 
+==1031391== Invalid write of size 1
+==1031391==    at 0x40847C: cpybuf (get_next_line_utils.c:65)
+==1031391==    by 0x40829A: get_next_line (get_next_line.c:26)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407EB9: main (mandatory.cpp:145)
+==1031391==  Address 0x4de8f5c is 0 bytes after a block of size 44 alloc'd
+==1031391==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031391==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031391==    by 0x40834F: ft_realloc (get_next_line_utils.c:25)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407EB9: main (mandatory.cpp:145)
+==1031391== 
+--1031391-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031391-- si_code=1;  Faulting address: 0x3E0EC0AA;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031391==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031391==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031391==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031391==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031391==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031391)
+==1031391==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031391==    by 0x4082ED: ft_calloc (get_next_line_utils.c:11)
+==1031391==    by 0x40835D: ft_realloc (get_next_line_utils.c:26)
+==1031391==    by 0x408268: get_next_line (get_next_line.c:25)
+==1031391==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031391==    by 0x407EB9: main (mandatory.cpp:145)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7E0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+
+[37m[BUFFER_SIZE = 10000000]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK ==1031414== Invalid read of size 1
+==1031414==    at 0x408163: get_next_line (get_next_line.c:16)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405075: main (mandatory.cpp:35)
+==1031414==  Address 0x51d4040 is 0 bytes inside a block of size 10,000,004 free'd
+==1031414==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031414==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405069: main (mandatory.cpp:35)
+==1031414==  Block was alloc'd at
+==1031414==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031414==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031414==    by 0x408116: get_next_line (get_next_line.c:11)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405069: main (mandatory.cpp:35)
+==1031414== 
+==1031414== Syscall param read(buf) points to unaddressable byte(s)
+==1031414==    at 0x4CBA7E2: read (read.c:26)
+==1031414==    by 0x408193: get_next_line (get_next_line.c:17)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405075: main (mandatory.cpp:35)
+==1031414==  Address 0x51d4040 is 0 bytes inside a block of size 10,000,004 free'd
+==1031414==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031414==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405069: main (mandatory.cpp:35)
+==1031414==  Block was alloc'd at
+==1031414==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031414==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031414==    by 0x408116: get_next_line (get_next_line.c:11)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405069: main (mandatory.cpp:35)
+==1031414== 
+==1031414== Invalid free() / delete / delete[] / realloc()
+==1031414==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031414==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405075: main (mandatory.cpp:35)
+==1031414==  Address 0x51d4040 is 0 bytes inside a block of size 10,000,004 free'd
+==1031414==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031414==    by 0x4081D5: get_next_line (get_next_line.c:20)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405069: main (mandatory.cpp:35)
+==1031414==  Block was alloc'd at
+==1031414==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031414==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031414==    by 0x408116: get_next_line (get_next_line.c:11)
+==1031414==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031414==    by 0x405069: main (mandatory.cpp:35)
+==1031414== 
+[32m2.OK [0m
+[37mfiles/nl: ==1031415== Conditional jump or move depends on uninitialised value(s)
+==1031415==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031415==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031415==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031415==    by 0x405354: main (mandatory.cpp:40)
+==1031415== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: ==1031417== Conditional jump or move depends on uninitialised value(s)
+==1031417==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031417==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031417==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031417==    by 0x40563F: main (mandatory.cpp:45)
+==1031417== 
+==1031417== Invalid read of size 1
+==1031417==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031417==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031417==    by 0x40563F: main (mandatory.cpp:45)
+==1031417==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031417== 
+[93m1.SIGSEGV
+==1031417== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031417==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031417==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031417==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031417==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031417==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031417==    by 0x40563F: main (mandatory.cpp:45)
+==1031417== 
+[37mfiles/41_with_nl: ==1031419== Conditional jump or move depends on uninitialised value(s)
+==1031419==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031419==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031419==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031419==    by 0x40592A: main (mandatory.cpp:50)
+==1031419== 
+[32m1.OK ==1031419== Conditional jump or move depends on uninitialised value(s)
+==1031419==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031419==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031419==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031419==    by 0x40593C: main (mandatory.cpp:50)
+==1031419== 
+==1031419== Invalid write of size 1
+==1031419==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031419==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031419==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031419==    by 0x40593C: main (mandatory.cpp:50)
+==1031419==  Address 0x4de6c89 is 25 bytes after a block of size 16 in arena "client"
+==1031419== 
+==1031419== Invalid read of size 1
+==1031419==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031419==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031419==    by 0x40593C: main (mandatory.cpp:50)
+==1031419==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031419== 
+[93m2.SIGSEGV
+==1031419== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031419==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031419==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031419==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031419==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031419==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031419==    by 0x40593C: main (mandatory.cpp:50)
+==1031419== 
+[37mfiles/42_no_nl: ==1031420== Conditional jump or move depends on uninitialised value(s)
+==1031420==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031420==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031420==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031420==    by 0x405C27: main (mandatory.cpp:56)
+==1031420== 
+==1031420== Invalid read of size 1
+==1031420==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031420==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031420==    by 0x405C27: main (mandatory.cpp:56)
+==1031420==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031420== 
+[93m1.SIGSEGV
+==1031420== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031420==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031420==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031420==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031420==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031420==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031420==    by 0x405C27: main (mandatory.cpp:56)
+==1031420== 
+[37mfiles/42_with_nl: ==1031421== Conditional jump or move depends on uninitialised value(s)
+==1031421==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031421==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031421==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031421==    by 0x405F12: main (mandatory.cpp:61)
+==1031421== 
+[32m1.OK ==1031421== Conditional jump or move depends on uninitialised value(s)
+==1031421==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031421==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031421==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031421==    by 0x405F24: main (mandatory.cpp:61)
+==1031421== 
+==1031421== Invalid write of size 1
+==1031421==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031421==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031421==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031421==    by 0x405F24: main (mandatory.cpp:61)
+==1031421==  Address 0x4de72aa is 26 bytes after a block of size 16 in arena "client"
+==1031421== 
+==1031421== Invalid read of size 1
+==1031421==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031421==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031421==    by 0x405F24: main (mandatory.cpp:61)
+==1031421==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031421== 
+[93m2.SIGSEGV
+==1031421== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031421==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031421==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031421==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031421==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031421==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031421==    by 0x405F24: main (mandatory.cpp:61)
+==1031421== 
+[37mfiles/43_no_nl: ==1031422== Conditional jump or move depends on uninitialised value(s)
+==1031422==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031422==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031422==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031422==    by 0x406219: main (mandatory.cpp:72)
+==1031422== 
+==1031422== Invalid read of size 1
+==1031422==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031422==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031422==    by 0x406219: main (mandatory.cpp:72)
+==1031422==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031422== 
+[93m1.SIGSEGV
+==1031422== 44 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031422==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031422==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031422==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031422==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031422==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031422==    by 0x406219: main (mandatory.cpp:72)
+==1031422== 
+[37mfiles/43_with_nl: ==1031423== Conditional jump or move depends on uninitialised value(s)
+==1031423==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031423==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031423==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031423==    by 0x406504: main (mandatory.cpp:77)
+==1031423== 
+[32m1.OK ==1031423== Conditional jump or move depends on uninitialised value(s)
+==1031423==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031423==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031423==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031423==    by 0x406516: main (mandatory.cpp:77)
+==1031423== 
+==1031423== Invalid write of size 1
+==1031423==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031423==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031423==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031423==    by 0x406516: main (mandatory.cpp:77)
+==1031423==  Address 0x4de78cb is 27 bytes after a block of size 16 in arena "client"
+==1031423== 
+==1031423== Invalid read of size 1
+==1031423==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031423==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031423==    by 0x406516: main (mandatory.cpp:77)
+==1031423==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031423== 
+[93m2.SIGSEGV
+==1031423== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031423==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031423==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031423==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031423==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031423==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031423==    by 0x406516: main (mandatory.cpp:77)
+==1031423== 
+[37mfiles/multiple_nlx5: ==1031428== Conditional jump or move depends on uninitialised value(s)
+==1031428==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031428==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031428==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031428==    by 0x406801: main (mandatory.cpp:83)
+==1031428== 
+[32m1.OK ==1031428== Conditional jump or move depends on uninitialised value(s)
+==1031428==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031428==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031428==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031428==    by 0x406813: main (mandatory.cpp:83)
+==1031428== 
+[31m2.KO ==1031428== Conditional jump or move depends on uninitialised value(s)
+==1031428==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031428==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031428==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031428==    by 0x406825: main (mandatory.cpp:83)
+==1031428== 
+[31m3.KO ==1031428== Conditional jump or move depends on uninitialised value(s)
+==1031428==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031428==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031428==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031428==    by 0x406837: main (mandatory.cpp:83)
+==1031428== 
+[31m4.KO ==1031428== Conditional jump or move depends on uninitialised value(s)
+==1031428==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031428==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031428==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031428==    by 0x406849: main (mandatory.cpp:83)
+==1031428== 
+==1031428== Invalid write of size 1
+==1031428==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031428==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031428==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031428==    by 0x406849: main (mandatory.cpp:83)
+==1031428==  Address 0x4de7c84 is 0 bytes after a block of size 4 alloc'd
+==1031428==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031428==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031428==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031428==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031428==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031428==    by 0x406849: main (mandatory.cpp:83)
+==1031428== 
+[31m5.KO [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: ==1031429== Conditional jump or move depends on uninitialised value(s)
+==1031429==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031429==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031429==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031429==    by 0x406B34: main (mandatory.cpp:92)
+==1031429== 
+[32m1.OK ==1031429== Conditional jump or move depends on uninitialised value(s)
+==1031429==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031429==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031429==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031429==    by 0x406B46: main (mandatory.cpp:92)
+==1031429== 
+==1031429== Invalid write of size 1
+==1031429==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031429==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031429==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031429==    by 0x406B46: main (mandatory.cpp:92)
+==1031429==  Address 0x4de7f0c is 0 bytes after a block of size 44 alloc'd
+==1031429==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031429==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031429==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031429==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031429==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031429==    by 0x406B46: main (mandatory.cpp:92)
+==1031429== 
+[31m2.KO ==1031429== Conditional jump or move depends on uninitialised value(s)
+==1031429==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031429==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031429==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031429==    by 0x406B58: main (mandatory.cpp:92)
+==1031429== 
+--1031429-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031429-- si_code=1;  Faulting address: 0xA3D17AF58;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031429==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031429==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031429==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031429==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031429==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031429)
+==1031429==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031429==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031429==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031429==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031429==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031429==    by 0x406B58: main (mandatory.cpp:92)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7F0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/multiple_line_with_nl: ==1031430== Conditional jump or move depends on uninitialised value(s)
+==1031430==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031430==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031430==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031430==    by 0x406E67: main (mandatory.cpp:101)
+==1031430== 
+[32m1.OK ==1031430== Conditional jump or move depends on uninitialised value(s)
+==1031430==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031430==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031430==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031430==    by 0x406E79: main (mandatory.cpp:101)
+==1031430== 
+==1031430== Invalid write of size 1
+==1031430==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031430==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031430==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031430==    by 0x406E79: main (mandatory.cpp:101)
+==1031430==  Address 0x4de823c is 0 bytes after a block of size 44 alloc'd
+==1031430==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031430==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031430==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031430==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031430==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031430==    by 0x406E79: main (mandatory.cpp:101)
+==1031430== 
+[31m2.KO ==1031430== Conditional jump or move depends on uninitialised value(s)
+==1031430==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031430==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031430==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031430==    by 0x406E8B: main (mandatory.cpp:101)
+==1031430== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 667705, hi = 0.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==1031430==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031430==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031430==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031430==    by 0x5804CCA3: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031430==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031430==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031430==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031430==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031430)
+==1031430==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031430==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031430==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031430==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031430==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031430==    by 0x406E8B: main (mandatory.cpp:101)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7F0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/alternate_line_nl_no_nl: ==1031431== Conditional jump or move depends on uninitialised value(s)
+==1031431==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031431==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x40719A: main (mandatory.cpp:110)
+==1031431== 
+[32m1.OK ==1031431== Conditional jump or move depends on uninitialised value(s)
+==1031431==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031431==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x4071AC: main (mandatory.cpp:110)
+==1031431== 
+==1031431== Invalid write of size 1
+==1031431==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031431==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x4071AC: main (mandatory.cpp:110)
+==1031431==  Address 0x4de856a is 26 bytes after a block of size 16 in arena "client"
+==1031431== 
+[31m2.KO ==1031431== Conditional jump or move depends on uninitialised value(s)
+==1031431==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031431==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x4071BE: main (mandatory.cpp:110)
+==1031431== 
+==1031431== Invalid write of size 1
+==1031431==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031431==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x4071BE: main (mandatory.cpp:110)
+==1031431==  Address 0x4de85bc is 0 bytes after a block of size 44 alloc'd
+==1031431==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031431==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031431==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031431==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x4071BE: main (mandatory.cpp:110)
+==1031431== 
+[31m3.KO ==1031431== Conditional jump or move depends on uninitialised value(s)
+==1031431==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031431==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x4071D0: main (mandatory.cpp:110)
+==1031431== 
+--1031431-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031431-- si_code=1;  Faulting address: 0xA313517BE0E;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031431==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031431==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031431==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031431==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031431==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031431)
+==1031431==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031431==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031431==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031431==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031431==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031431==    by 0x4071D0: main (mandatory.cpp:110)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7F0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/alternate_line_nl_with_nl: ==1031432== Conditional jump or move depends on uninitialised value(s)
+==1031432==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031432==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x407515: main (mandatory.cpp:123)
+==1031432== 
+[32m1.OK ==1031432== Conditional jump or move depends on uninitialised value(s)
+==1031432==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031432==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x407527: main (mandatory.cpp:123)
+==1031432== 
+==1031432== Invalid write of size 1
+==1031432==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031432==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x407527: main (mandatory.cpp:123)
+==1031432==  Address 0x4de889a is 26 bytes after a block of size 16 in arena "client"
+==1031432== 
+[31m2.KO ==1031432== Conditional jump or move depends on uninitialised value(s)
+==1031432==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031432==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x407539: main (mandatory.cpp:123)
+==1031432== 
+==1031432== Invalid write of size 1
+==1031432==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031432==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x407539: main (mandatory.cpp:123)
+==1031432==  Address 0x4de88ec is 0 bytes after a block of size 44 alloc'd
+==1031432==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031432==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031432==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031432==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x407539: main (mandatory.cpp:123)
+==1031432== 
+[31m3.KO ==1031432== Conditional jump or move depends on uninitialised value(s)
+==1031432==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031432==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x40754B: main (mandatory.cpp:123)
+==1031432== 
+--1031432-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031432-- si_code=1;  Faulting address: 0xA303E0EBA3A;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031432==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031432==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031432==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031432==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031432==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031432)
+==1031432==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031432==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031432==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031432==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031432==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031432==    by 0x40754B: main (mandatory.cpp:123)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7F0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+[37mfiles/big_line_no_nl: ==1031450== Conditional jump or move depends on uninitialised value(s)
+==1031450==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031450==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031450==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031450==    by 0x407890: main (mandatory.cpp:136)
+==1031450== 
+==1031450== Invalid read of size 1
+==1031450==    at 0x484FBD4: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031450==    by 0x402E1A: gnl(int, char const*) (gnl.cpp:24)
+==1031450==    by 0x407890: main (mandatory.cpp:136)
+==1031450==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1031450== 
+[93m1.SIGSEGV
+==1031450== 10,004 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==1031450==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031450==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031450==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031450==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031450==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031450==    by 0x407890: main (mandatory.cpp:136)
+==1031450== 
+[37mfiles/big_line_with_nl: ==1031456== Conditional jump or move depends on uninitialised value(s)
+==1031456==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031456==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031456==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031456==    by 0x407B7B: main (mandatory.cpp:140)
+==1031456== 
+[32m1.OK [32m2.OK [0m
+[37mstdin: ==1031457== Conditional jump or move depends on uninitialised value(s)
+==1031457==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031457==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E65: main (mandatory.cpp:145)
+==1031457== 
+[32m1.OK ==1031457== Conditional jump or move depends on uninitialised value(s)
+==1031457==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031457==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E76: main (mandatory.cpp:145)
+==1031457== 
+==1031457== Invalid write of size 1
+==1031457==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031457==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E76: main (mandatory.cpp:145)
+==1031457==  Address 0x4de8eba is 26 bytes after a block of size 16 in arena "client"
+==1031457== 
+[31m2.KO ==1031457== Conditional jump or move depends on uninitialised value(s)
+==1031457==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031457==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E87: main (mandatory.cpp:145)
+==1031457== 
+==1031457== Invalid write of size 1
+==1031457==    at 0x40844D: cpybuf (get_next_line_utils.c:65)
+==1031457==    by 0x408268: get_next_line (get_next_line.c:26)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E87: main (mandatory.cpp:145)
+==1031457==  Address 0x4de8f0c is 0 bytes after a block of size 44 alloc'd
+==1031457==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031457==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031457==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031457==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E87: main (mandatory.cpp:145)
+==1031457== 
+[31m3.KO ==1031457== Conditional jump or move depends on uninitialised value(s)
+==1031457==    at 0x408310: ft_realloc (get_next_line_utils.c:24)
+==1031457==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E98: main (mandatory.cpp:145)
+==1031457== 
+--1031457-- VALGRIND INTERNAL ERROR: Valgrind received a signal 11 (SIGSEGV) - exiting
+--1031457-- si_code=1;  Faulting address: 0xA303E0EC05A;  sp: 0x1002cade20
+
+valgrind: the 'impossible' happened:
+   Killed by fatal signal
+
+host stacktrace:
+==1031457==    at 0x5804CA1A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031457==    by 0x5800500C: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031457==    by 0x580051F1: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031457==    by 0x5809B7DC: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==1031457==    by 0x580E3F40: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 1031457)
+==1031457==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1031457==    by 0x4082BB: ft_calloc (get_next_line_utils.c:11)
+==1031457==    by 0x40831D: ft_realloc (get_next_line_utils.c:25)
+==1031457==    by 0x408236: get_next_line (get_next_line.c:25)
+==1031457==    by 0x402DE6: gnl(int, char const*) (gnl.cpp:20)
+==1031457==    by 0x407E98: main (mandatory.cpp:145)
+client stack range: [0x1FFEFFD000 0x1FFF000FFF] client SP: 0x1FFEFFD7F0
+valgrind stack range: [0x1002BAE000 0x1002CADFFF] top usage: 18984 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
+
+
+To see the tests open: /home/mavander/.local/share/francinette/tests/get_next_line/gnlTester/tests/mandatory.cpp
+
+ℹ Running tests: fsoares (my own tests)
+[1;35mBUFFER_SIZE[0m: 1
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0mdouble free or corruption (out)
+[0;33m2.KO Abort
+[0mSegmentation fault (core dumped)
+make: [Makefile:23: mandatory] Error 139 (ignored)
+[1;35mBUFFER_SIZE[0m: 10
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0mdouble free or corruption (out)
+[0;33m2.KO Abort
+[0mSegmentation fault (core dumped)
+make: [Makefile:24: mandatory] Error 139 (ignored)
+[1;35mBUFFER_SIZE[0m: 1000000
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;33m2.KO Segfault
+[0mSegmentation fault (core dumped)
+make: [Makefile:25: mandatory] Error 139 (ignored)
+⠋ Processing output⠙ Processing outputErrors found:
+
+To see the tests open: /home/mavander/.local/share/francinette/tests/get_next_line/fsoares/tester.c
+
+
+Summary: no bonus
+
+Norminette Errors: get_next_line.c, get_next_line.h, get_next_line_utils.c, main.c
+
+Failed tests: fsoares, gnlTester
+

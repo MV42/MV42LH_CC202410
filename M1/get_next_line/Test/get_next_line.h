@@ -19,16 +19,15 @@ char	*get_next_line(int fd);
 void	*ft_calloc(size_t number);
 char	*ft_realloc(char *s1, size_t size);
 int		has_nl(char *buf);
-void	ft_strlcat(char *buf, char **line, size_t *li, size_t len);
-void	clean_buf(char **buf);
+int		cpybuf(char *buf, char *line, size_t *li);
 
 typedef struct s_all
 {
 	char	*bufs[OPEN_MAX];	// Buffers
 	int		readb;				// Bytes read from read()
-	size_t	bi;					// Buffer Index
 	size_t	li;					// Line Index
 	size_t	nl;
 	size_t	len;
+	size_t	res;
 }				t_gnl_vars;
 #endif
