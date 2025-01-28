@@ -1,17 +1,15 @@
 #include "get_next_line.h"
 
-void	*ft_calloc(size_t number)
+char	*ft_calloc(size_t size)
 {
 	char	*new;
-	size_t	aligned_size;
 	size_t	i;
 
 	i = 0;
-	aligned_size = ((number + 3) & ~3);
-	new = malloc(aligned_size);
+	new = malloc(size);
 	if (new)
-		while (i < aligned_size)
-			new[i++] = 0;
+		while (i < size)
+			new[i++] = '\0';
 	return (new);
 }
 
@@ -35,43 +33,64 @@ char	*ft_realloc(char *s1, size_t size)
 	return (s2);
 }
 
-int	has_nl(char *buf)
+int	linelen(char *str, int *nl)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < BUFFER_SIZE)
+	nl[0] = 0;
+	nl[1] = 0;
+	while (str[nl[0]])
 	{
-		if (buf[i] == '\n')
-			return (i + 1);
-		if (!buf[i])
-			return (i);
-		i++;
+		if (str[nl[0]] == '\n')
+			nl[1] = 1;
+		nl[0]++;
 	}
-	return (BUFFER_SIZE);
+	return (nl[0]);
 }
 
-int	cpybuf(char *buf, char *line, size_t *li)
+void	cpybuf(char *line, char *buf, size_t *li)
 {
 	int	bj;
 	int	bi;
-	int	res;
 
 	bj = 0;
 	bi = 0;
-	res = 1;
 	while (buf[bj])
 	{
 		line[(*li)++] = buf[bj++];
-		if (buf[bj - 1] == '\n')
+		if (buf[bj] == '\n')
 		{
-			res = 0;
-			while (buf[bj])
-				buf[bi++] = buf[bj++];
+			line[(*li)++] = buf[bj++];
+			break ;
 		}
-		if (!buf[bj])
-			while (bi < bj)
-				buf[bi++] = '\0';
 	}
-	return (res);
+	while (buf[bj])
+		buf[bi++] = buf[bj++];
+	while (bi < bj)
+		buf[bi++] = '\0';
+}
+
+char	*make_line(char *buf, int fd)
+{
+	size_t	li;
+	size_t	llen;
+	char	*line;
+	int		readb;
+	int		nl[2];
+
+	li = 0;
+	llen = 1;
+	line = NULL;
+	while (1)
+	{
+		if (!*buf)
+		{
+			readb = read(fd, buf, BUFFER_SIZE);
+			if (readb <= 0)
+				return (line);
+		}
+		llen += linelen(buf, nl);
+		line = ft_realloc(line, llen);
+		cpybuf(line, buf, &li);
+		if (nl[1])
+			return (line);
+	}
 }

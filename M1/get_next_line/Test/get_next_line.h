@@ -3,9 +3,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# include <stdio.h>
-# include <fcntl.h>
-
 # ifndef OPEN_MAX
 #  define OPEN_MAX 4096
 # endif
@@ -16,18 +13,10 @@
 
 char	*get_next_line(int fd);
 
-void	*ft_calloc(size_t number);
+char	*ft_calloc(size_t size);
 char	*ft_realloc(char *s1, size_t size);
-int		has_nl(char *buf);
-int		cpybuf(char *buf, char *line, size_t *li);
+int		linelen(char *str, int *nl);
+void	cpybuf(char *line, char *buf, size_t *li);
+char	*make_line(char *buf, int fd);
 
-typedef struct s_all
-{
-	char	*bufs[OPEN_MAX];	// Buffers
-	int		readb;				// Bytes read from read()
-	size_t	li;					// Line Index
-	size_t	nl;
-	size_t	len;
-	size_t	res;
-}				t_gnl_vars;
 #endif
