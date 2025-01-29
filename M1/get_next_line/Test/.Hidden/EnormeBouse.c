@@ -54,17 +54,6 @@ char	*get_next_line(int fd)
 
 int	main(int argc, char **argv)
 {
-	int		fd;
-
-	(void)argc;
-	fd = open(argv[1], O_RDONLY);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-}
-
-/*
-int	main(int argc, char **argv)
-{
 	int		fd[1000];
 	int		max_open;
 	int		max_iter;
@@ -78,16 +67,15 @@ int	main(int argc, char **argv)
 		while (max_open-- > 0 && i < argc)
 		{
 			fd[i] = open(argv[i], O_RDONLY);
-			printf("\n📂️ %i\n", fd[i]);
+			printf("[%i]\n", fd[i]);
 			max_iter = atoi(argv[2]);
 			while (max_iter-- > 0)
 			{
 				line = get_next_line(fd[i]);
-				printf("%s↩️", line);
+				printf("{%s}", line);
 				free(line);
 			}
 			i++;
 		}
 	}
 }
-*/

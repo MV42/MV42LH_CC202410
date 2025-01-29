@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
+/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 char	*ft_calloc(size_t size)
@@ -68,29 +80,9 @@ void	cpybuf(char *line, char *buf, size_t *li)
 		buf[bi++] = '\0';
 }
 
-char	*make_line(char *buf, int fd)
+void	*ft_free(char *str)
 {
-	size_t	li;
-	size_t	llen;
-	char	*line;
-	int		readb;
-	int		nl[2];
-
-	li = 0;
-	llen = 1;
-	line = NULL;
-	while (1)
-	{
-		if (!*buf)
-		{
-			readb = read(fd, buf, BUFFER_SIZE);
-			if (readb <= 0)
-				return (line);
-		}
-		llen += linelen(buf, nl);
-		line = ft_realloc(line, llen);
-		cpybuf(line, buf, &li);
-		if (nl[1])
-			return (line);
-	}
+	free(str);
+	str = NULL;
+	return (str);
 }
