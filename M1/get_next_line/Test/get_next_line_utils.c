@@ -52,7 +52,7 @@ int	linelen(char *str, int *nl)
 	while (str[nl[0]])
 	{
 		if (str[nl[0]] == '\n')
-			nl[1] = 1;
+			return (nl[1] = 1, ++nl[0]);
 		nl[0]++;
 	}
 	return (nl[0]);
@@ -67,12 +67,12 @@ void	cpybuf(char *line, char *buf, size_t *li)
 	bi = 0;
 	while (buf[bj])
 	{
-		line[(*li)++] = buf[bj++];
 		if (buf[bj] == '\n')
 		{
 			line[(*li)++] = buf[bj++];
 			break ;
 		}
+		line[(*li)++] = buf[bj++];
 	}
 	while (buf[bj])
 		buf[bi++] = buf[bj++];
@@ -80,9 +80,8 @@ void	cpybuf(char *line, char *buf, size_t *li)
 		buf[bi++] = '\0';
 }
 
-void	*ft_free(char *str)
+void	ft_free(char *str)
 {
 	free(str);
 	str = NULL;
-	return (str);
 }
