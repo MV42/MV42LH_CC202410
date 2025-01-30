@@ -15,23 +15,29 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# include <stdio.h>
-# include <fcntl.h>
-
 # ifndef OPEN_MAX
 #  define OPEN_MAX 4096
 # endif
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 10
 # endif
 
+typedef struct s_all
+{
+	size_t	li;
+	size_t	llen;
+	char	*line;
+	int		readb;
+	int		nl[2];
+}	t_gnl_vars;
+
 char	*get_next_line(int fd);
-char	*make_line(char *buf, int fd);
+char	*make_line(char *buf, int fd, char **buff);
 
 int		linelen(char *str, int *nl);
 void	cpybuf(char *line, char *buf, size_t *li);
-void	ft_free(char *str);
+int		readerb(int fd, char *buf, char *line, char **buff);
 char	*ft_calloc(size_t size);
 char	*ft_realloc(char *s1, size_t size);
 

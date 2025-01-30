@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_.c                                              :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,18 +20,25 @@
 # endif
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 10
 # endif
-
-char	*get_next_line(int fd);
 
 typedef struct s_all
 {
-	char	*prv[OPEN_MAX];
-	char	*buf;
-	ssize_t	bread;
-	int		i;
-	int		j;
-	int		len;
-}				t_gnl_vars;
+	size_t	li;
+	size_t	llen;
+	char	*line;
+	int		readb;
+	int		nl[2];
+}	t_gnl_vars;
+
+char	*get_next_line(int fd);
+char	*make_line(char *buf, int fd, char **buff);
+
+int		linelen(char *str, int *nl);
+void	cpybuf(char *line, char *buf, size_t *li);
+int		readerb(int fd, char *buf, char *line, char **buff);
+char	*ft_calloc(size_t size);
+char	*ft_realloc(char *s1, size_t size);
+
 #endif
