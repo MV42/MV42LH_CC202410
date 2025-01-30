@@ -37,7 +37,6 @@ char	*make_line(char *buf, int fd, char **buff);
 
 int		linelen(char *str, int *nl);
 void	cpybuf(char *line, char *buf, size_t *li);
-int		readerb(int fd, char *buf, char *line, char **buff);
 char	*ft_calloc(size_t size);
 char	*ft_realloc(char *s1, size_t size);
 
