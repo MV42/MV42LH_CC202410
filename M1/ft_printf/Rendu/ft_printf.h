@@ -20,12 +20,17 @@
 # include <stdint.h>
 # include <limits.h>
 
-int		ft_printchar(int c);
-int		ft_printstr(char *str);
-int		ft_printpct(void);
-size_t	ft_strlen(char *str);
-void	ft_putstr(char *str);
+//ft_printf.c
 int		ft_formats(va_list args, const char format);
 int		ft_printf(const char *format, ...);
+// ft_putnbr_base.c
+int		ft_strlen(char *str);
+int		ft_pn_b(long long n, char *base);
+int		ft_print_ptr(unsigned long long ptr);
+// ft_printf_cspct.c
+int		ft_printchar(int c);
+void	ft_putstr(char *str);
+int		ft_printstr(char *str);
+int		ft_printpct(void);
 
 #endif

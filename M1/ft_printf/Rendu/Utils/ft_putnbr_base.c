@@ -12,36 +12,52 @@
 
 #include "../ft_printf.h"
 
-size_t	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (str[i])
-	{
+	while (str[i] != '\0')
 		i++;
-	}
 	return (i);
 }
 
-int	ft_putnbr_base(unsigned int nbr, char *base)
+int	ft_pn_b(long long n, char *base)
 {
-	int					len;
-	size_t				len_base;
-	unsigned long long	nbrr;
+	uintmax_t	nbr;
+	uintmax_t	base_length;
+	int			len;
 
 	len = 0;
-	nbrr = nbr;
-	len_base = ft_strlen(base);
-	if (nbrr < len_base)
+	base_length = ft_strlen(base);
+	if (n < 0)
 	{
-		write(1, &base[nbrr % len_base], 1);
-		len++;
+		len += write(1, "-", 1);
+		nbr = -n;
 	}
 	else
-	{
-		len += ft_putnbr_base(nbrr / len_base, base);
-		len += ft_putnbr_base(nbrr % len_base, base);
-	}
+		nbr = n;
+	if (nbr >= base_length)
+		len += ft_pn_b(nbr / base_length, base);
+	len += write(1, &base[nbr % base_length], 1);
+	return (len);
+}
+
+int	ft_print_ptr(unsigned long long ptr)
+{
+	int			len;
+	uintmax_t	nbr;
+	uintmax_t	base_length;
+	char		*base;
+
+	if (ptr == 0)
+		return (write(1, "(nil)", 5));
+	len = write(1, "0x", 2);
+	base = "0123456789abcdef";
+	base_length = 16;
+	nbr = ptr;
+	if (nbr >= base_length)
+		len += ft_pn_b(nbr / base_length, base);
+	len += write(1, &base[nbr % base_length], 1);
 	return (len);
 }

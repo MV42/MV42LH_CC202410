@@ -50,7 +50,8 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 			len += ft_formats(args, format[i++ + 1]);
 		else
-			len += write(1, &format[i++], 1);
+			len += write(1, &format[i], 1);
+		i++;
 	}
 	va_end(args);
 	return (len);
