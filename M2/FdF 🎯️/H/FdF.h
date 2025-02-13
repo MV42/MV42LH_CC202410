@@ -12,4 +12,10 @@
 
 #include "../MLX/mlx.h"
 
+typedef struct s_line
+{
+	int i;
+	int	len;
+} t_line;
+
 int	main(void);
