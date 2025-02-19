@@ -12,7 +12,7 @@
 
 NAME		=	fdf
 CC			=	gcc
-MLX			=	MLX
+MLX			=	mlx_linux
 CFLAGS		=	-Wall -Wextra -Iinclude/ -I$(MLX)/ -g
 LDFLAGS		=	-L$(MLX) -lmlx_Linux -lm -lXext -lX11 -lz
 

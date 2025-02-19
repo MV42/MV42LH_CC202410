@@ -12,15 +12,6 @@
 
 #include "../H/FdF.h"
 
-typedef struct s_data
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
-
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
@@ -29,30 +20,92 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-void	make_line(t_data **img, int start[2], int end[2], int color)
+int	rainbow(int *color)
 {
-	int	x;
-	int	y;
+    static int direction = 1;
 
-	x = start[0];
-	y = start[1];
-	while (x != end[0] && y != end[1])
-	{
-		
-	}
-	my_mlx_pixel_put(img, x, y, color);
+    if (*color == 0x000000)
+        direction = 1;
+    if (*color == 0xFFFFFF)
+        direction = -1;
+    *color += direction * 10;
+    if (*color > 0xFFFFFF)
+        *color = 0xFFFFFF;
+    else if (*color < 0x000000)
+        *color = 0x000000;
+    return (*color);
 }
+
+void	make_line(t_data *img, t_point start, t_point end, int color)
+{
+    int dx;
+    int dy;
+    int	p;
+
+    dx = end.x - start.x;
+    dy = end.y - start.y;
+    p = 2 * dy - dx;
+    while(start.x < end.x)
+    {
+        if(p >= 0)
+        {
+            my_mlx_pixel_put(img, start.x, start.y, rainbow(&color));
+            start.y++;
+            p += 2 * dy - 2 * dx;
+        }
+        else
+        {
+            my_mlx_pixel_put(img, start.x, start.y, rainbow(&color));
+            p += 2 * dy;
+        }
+        start.x++;
+    }
+}
+
+int	key_hook(int keycode, t_data *data)
+{
+    if (keycode == 53 || keycode == 65307)
+    {
+        mlx_destroy_window(data->mlx, data->win);
+        exit(0);
+    }
+    return (0);
+}
+
+int	close_window(t_data *data)
+{
+    mlx_destroy_window(data->mlx, data->win);
+    exit(0);
+    return (0);
+}
+
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
-	t_data	img;
+    void		*mlx;
+    void		*mlx_win;
+    t_data		img;
+	t_inputs	in;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1000, 500, "Fil De Fer");
-	img.img = mlx_new_image(mlx, 200, 100);
+	in.win_x = 1000;
+	in.win_y = 500;
+    mlx = mlx_init();
+    if (!mlx)
+        return (1);
+    mlx_win = mlx_new_window(mlx, in.win_x, in.win_y, "FdF");
+    if (!mlx_win)
+        return (1);
+
+    img.mlx = mlx;
+    img.win = mlx_win;
+	img.img = mlx_new_image(mlx, in.win_x, in.win_y);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 			&img.line_length, &img.endian);
+
+	make_line(&img, (t_point){0, 0}, (t_point){1000, 50}, 0x000000);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
+
+    mlx_key_hook(mlx_win, key_hook, &img);
+    mlx_hook(mlx_win, 17, 0, close_window, &img);
+    mlx_loop(mlx);
+    return (0);
 }
