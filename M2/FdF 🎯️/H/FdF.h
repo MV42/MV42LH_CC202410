@@ -51,4 +51,8 @@ typedef	struct s_inputs
 }	t_inputs;
 
 unsigned int	ft_hsl(int h, int s, int l);
+
+int	close_window(t_data *data);
+int	key_hook(int keycode, t_data *data);
+
 int	main(void);

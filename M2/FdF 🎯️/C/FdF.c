@@ -20,22 +20,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-int	rainbow(int *color)
-{
-    static int direction = 1;
-
-    if (*color == 0x000000)
-        direction = 1;
-    if (*color == 0xFFFFFF)
-        direction = -1;
-    *color += direction * 10;
-    if (*color > 0xFFFFFF)
-        *color = 0xFFFFFF;
-    else if (*color < 0x000000)
-        *color = 0x000000;
-    return (*color);
-}
-
 void	make_line(t_data *img, t_point start, t_point end, int color)
 {
     int dx;
@@ -60,23 +44,6 @@ void	make_line(t_data *img, t_point start, t_point end, int color)
         }
         start.x++;
     }
-}
-
-int	key_hook(int keycode, t_data *data)
-{
-    if (keycode == 53 || keycode == 65307)
-    {
-        mlx_destroy_window(data->mlx, data->win);
-        exit(0);
-    }
-    return (0);
-}
-
-int	close_window(t_data *data)
-{
-    mlx_destroy_window(data->mlx, data->win);
-    exit(0);
-    return (0);
 }
 
 int	main(void)

@@ -9,17 +9,53 @@
 /*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   hsl_to_rgb.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: assistant <assistant@42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 10:00:00 by assistant         #+#    #+#             */
-/*   Updated: 2025/02/19 10:00:00 by assistant        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
+#include "../H/FdF.h"
+
+typedef struct s_rgb
+{
+	int	r;
+	int	g;
+	int	b;
+} t_rgb;
+
+int	rainbow(int *color)
+{
+	t_rgb	c;
+
+	while (c.g <= c.r || c.g <= c.b)
+		c.g++;
+	while (c.r >= c.g || c.r >= c.b)
+		c.r--;
+	while (c.b <= c.r || c.b <= c.g)
+		c.b++;
+	while (c.g >= c.r || c.g >= c.b)
+		c.g--;
+	while (c.r <= c.g || c.r <= c.b)
+		c.r++;
+	while (c.b >= c.r || c.b >= c.g)
+		c.b--;
+}
+
+unsigned int	ft_rgb_to_int(int r, int g, int b)
+{
+	unsigned int	color;
+
+	if (r > 255)
+		r = 255;
+	if (g > 255)
+		g = 255;
+	if (b > 255)
+		b = 255;
+	if (r < 0)
+		r = 0;
+	if (g < 0)
+		g = 0;
+	if (b < 0)
+		b = 0;
+	color = ((unsigned int)r << 16) | ((unsigned int)g << 8) | (unsigned int)b;
+	return (color);
+}
 
 static double	ft_get_rgb_component(double temp1, double temp2, double temp3)
 {

@@ -18,8 +18,8 @@ LDFLAGS		=	-L$(MLX) -lmlx_Linux -lm -lXext -lX11 -lz
 
 C_P			=	C/
 C			=	$(C_P)FdF.c \
-				$(C_P)1.c \
-				$(C_P)2.c
+				$(C_P)Colors.c \
+				$(C_P)CloseWindow.c
 
 O_P			=	O/
 O			=	$(addprefix $(O_P), $(notdir $(C:.c=.o)))
