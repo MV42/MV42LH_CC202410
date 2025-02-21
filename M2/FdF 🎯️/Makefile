@@ -18,7 +18,9 @@ LDFLAGS		=	-L$(MLX) -lmlx_Linux -lm -lXext -lX11 -lz
 
 C_P			=	C/
 C			=	$(C_P)FdF.c \
+				$(C_P)Main.c \
 				$(C_P)Colors.c \
+				$(C_P)MakeLine.c \
 				$(C_P)CloseWindow.c
 
 O_P			=	O/
@@ -44,5 +46,9 @@ fclean: clean
 	@echo "FdF Removed !"
 
 re: fclean all
+
+norm:
+	@clear
+	@norminette $(shell find . -type f \( -name "*.c" -o -name "*.h" \) ! -path "./$(MLX)/*")
 
 .PHONY: all clean fclean re
