@@ -12,14 +12,15 @@
 
 #include "../H/FdF.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	void		*mlx;
 	void		*mlx_win;
 	t_data		img;
 	t_winsize	win;
 
-	win.x = 1000;
+	(void)ac;
+	win.x = 500;
 	win.y = 500;
 	mlx = mlx_init();
 	if (!mlx)
@@ -32,8 +33,8 @@ int	main(void)
 	img.img = mlx_new_image(mlx, win.x, win.y);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 			&img.line_length, &img.endian);
-	draw_line(&img, (t_point){0, 0, 0, 0xFFFFFF},
-		(t_point){10, 100, 0, 0xFFFFFF});
+	draw_line(&img, (t_point){atoi(av[1]), atoi(av[2]), 0, 0xFFFFFF, 0},
+		(t_point){atoi(av[3]), atoi(av[4]), 0, 0xFFFFFF, 0});
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_key_hook(mlx_win, key_hook, &img);
 	mlx_hook(mlx_win, 17, 0, close_window, &img);

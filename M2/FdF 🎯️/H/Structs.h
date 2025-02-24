@@ -31,10 +31,11 @@ typedef struct s_rgba
 
 typedef struct s_point
 {
-	int	x;
-	int	y;
-	int	z;
-	int	color;
+	int		x;
+	int		y;
+	int		z;
+	int		color;
+	float	s;
 }	t_point;
 
 typedef struct s_ptsdif
