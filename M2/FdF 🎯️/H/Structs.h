@@ -9,6 +9,10 @@
 /*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef STRUCTS_H
+# define STRUCTS_H
+
+# include <stddef.h>
 
 typedef struct s_data
 {
@@ -49,3 +53,5 @@ typedef struct s_winsize
 	size_t	x;
 	size_t	y;
 }	t_winsize;
+
+#endif

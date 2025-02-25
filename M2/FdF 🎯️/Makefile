@@ -20,7 +20,7 @@ C_P			=	C/
 C			=	$(C_P)FdF.c \
 				$(C_P)Main.c \
 				$(C_P)Colors.c \
-				$(C_P)MakeLine.c \
+				$(C_P)DrawLine.c \
 				$(C_P)CloseWindow.c
 
 O_P			=	O/
