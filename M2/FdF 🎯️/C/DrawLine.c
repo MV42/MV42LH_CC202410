@@ -37,7 +37,7 @@ int gradient(t_point start, t_point end, t_point d)
 	start.color += (end.color - start.color) / len;
 	return (start.color);
 }
-
+// Fix graident
 void	bresenham(t_data *img, t_point start, t_point end, t_point d)
 {
 	int	err;
