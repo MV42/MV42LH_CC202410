@@ -6,12 +6,12 @@ void	my_mlx_pixel_put(t_data *data, t_point p)
 
 	dst = data->addr + (p.y * data->line_length + p.x
 			* (data->bits_per_pixel / 8));
-	*(unsigned int *)dst = p.color;
+	*(unsigned int *)dst = rgbtoi(p.color);
 }
 
 void	swap(void **ptr1, void **ptr2)
 {
-	void *tmp;
+	void	*tmp;
 
 	tmp = *ptr1;
 	*ptr1 = *ptr2;
@@ -25,56 +25,62 @@ int	c_abs(int x)
 	return (x);
 }
 
-int gradient(t_point start, t_point end, t_point d)
+t_rgba	gradient(t_line l)
 {
-    int	len;
+	float	progress;
 
-	len = d.y;
-	if (d.s > -1 && d.s < 1)
-		len = d.x;
-	start.color += (((end.color >> 16) - (start.color >> 16)) / len) << 16;
-	start.color += (((end.color >> 8) - (start.color >> 8)) / len) << 8;
-	start.color += (end.color - start.color) / len;
-	return (start.color);
+	progress = 0;
+	if (l.d.x > l.d.y)
+		progress = (float)(l.index.x - l.start.x) / l.d.x;
+	else
+		progress = (float)(l.index.y - l.start.y) / l.d.y;
+
+	l.index.color.r = l.start.color.r + progress * (l.end.color.r - l.start.color.r);
+	l.index.color.b = l.start.color.b + progress * (l.end.color.b - l.start.color.b);
+	l.index.color.g = l.start.color.g + progress * (l.end.color.g - l.start.color.g);
+    return (l.index.color);
 }
-// Fix graident
-void	bresenham(t_data *img, t_point start, t_point end, t_point d)
-{
-	int	err;
-	int	sy;
 
-	sy = (d.y > 0) - (d.y < 0);
-	d.y = c_abs(d.y);
-	err = d.x - d.y;
-	while (start.x != end.x || start.y != end.y)
+void	bresenham(t_data *img, t_line l)
+{
+	int				err;
+	int				sy;
+
+	sy = (l.d.y > 0) - (l.d.y < 0);
+	l.d.y = c_abs(l.d.y);
+	err = l.d.x - l.d.y;
+	while ((l.index.x != l.end.x || l.index.y != l.end.y)
+		&& (my_mlx_pixel_put(img, l.index), 1))
 	{
-		my_mlx_pixel_put(img, start);
-		if (2 * err > -d.y)
+		if (2 * err > -l.d.y)
 		{
-			err -= d.y;
-			start.x ++;
+			err -= l.d.y;
+			l.index.x++;
 		}
-		if (2 * err < d.x)
+		if (2 * err < l.d.x)
 		{
-			err += d.x;
-			start.y += sy;
+			err += l.d.x;
+			l.index.y += sy;
 		}
-		start.color = gradient(start, end, d);
+		l.index.color = gradient(l);
 	}
-	my_mlx_pixel_put(img, start);
 }
 
 void	draw_line(t_data *img, t_point start, t_point end)
 {
-	t_point	d;
+	t_line	l;
 
-	if ((end.x - start.x) < 0)
-		swap((void **)&start, (void **)&end);
-	d.x = end.x - start.x;
-	d.y = end.y - start.y;
-	d.z = end.z - start.z;
-	d.s = 0;
-	if (d.x && d.y)
-		d.s = (float)d.y / d.x;
-	bresenham(img, start, end, d);
+	l.start = start;
+	l.end = end;
+	if ((l.end.x - l.start.x) < 0)
+		swap((void **)&l.start, (void **)&l.end);
+	l.index = l.start;
+	l.d.x = l.end.x - l.start.x;
+	l.d.y = l.end.y - l.start.y;
+	l.d.z = l.end.z - l.start.z;
+	l.d.s = 0;
+	if (l.d.x && l.d.y)
+		l.d.s = (float)l.d.y / l.d.x;
+	printf("Ouais");
+	bresenham(img, l);
 }

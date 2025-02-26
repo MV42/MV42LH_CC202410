@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_.c                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
-/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../H/FdF.h"
 
-t_rgb	itorgb(unsigned int color)
+t_rgba	itorgb(unsigned int color)
 {
-	t_rgb	rgb;
+	t_rgba	rgb;
 
 	rgb.r = (color >> 16) & 0xFF;
 	rgb.g = (color >> 8) & 0xFF;
@@ -22,7 +10,7 @@ t_rgb	itorgb(unsigned int color)
 	return (rgb);
 }
 
-int	rgbtoi(t_rgb rgb)
+int	rgbtoi(t_rgba rgb)
 {
 	int	color;
 
@@ -30,7 +18,7 @@ int	rgbtoi(t_rgb rgb)
 	return (color);
 }
 
-int	rainbow(t_rgb c)
+int	rainbow(t_rgba c)
 {
 	while (c.g < c.r || c.g < c.b)
 		return (c.g++, rgbtoi(c));

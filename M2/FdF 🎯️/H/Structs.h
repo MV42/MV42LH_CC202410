@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_.c                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
-/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #ifndef STRUCTS_H
 # define STRUCTS_H
-
-# include <stddef.h>
+# include "FdF.h"
 
 typedef struct s_data
 {
@@ -27,31 +15,27 @@ typedef struct s_data
 
 typedef struct s_rgba
 {
-	int	r;
-	int	g;
-	int	b;
-	int	a;
-}	t_rgb;
+	size_t	r;
+	size_t	g;
+	size_t	b;
+	size_t	a;
+}	t_rgba;
 
 typedef struct s_point
 {
-	int		x;
-	int		y;
-	int		z;
-	int		color;
-	float	s;
+	int			x;
+	int			y;
+	int			z;
+	float		s;
+	t_rgba		color;
 }	t_point;
 
-typedef struct s_ptsdif
+typedef struct s_line
 {
-	int	dx;
-	int	dy;
-}	t_ptsdif;
-
-typedef struct s_winsize
-{
-	size_t	x;
-	size_t	y;
-}	t_winsize;
+	t_point	start;
+	t_point index;
+	t_point	end;
+	t_point d;
+}	t_line;
 
 #endif

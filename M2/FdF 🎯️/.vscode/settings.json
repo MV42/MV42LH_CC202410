@@ -1,0 +1,23 @@
+{
+	"files.associations": {
+		"chrono": "c",
+		"array": "c",
+		"deque": "c",
+		"string": "c",
+		"unordered_map": "c",
+		"vector": "c",
+		"string_view": "c",
+		"initializer_list": "c",
+		"ranges": "c",
+		"span": "c",
+		"__bit_reference": "c",
+		"__hash_table": "c",
+		"__split_buffer": "c",
+		"ios": "c",
+		"iterator": "c",
+		"fdf.h": "c",
+		"structs.h": "c",
+		"mlx.h": "c",
+		"prototypes.h": "c"
+	}
+}
