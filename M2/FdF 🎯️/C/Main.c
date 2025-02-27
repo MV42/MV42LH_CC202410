@@ -44,12 +44,12 @@ int	main(int ac, char **av)
 
 	printf("Ouais");
 	init(&img);
-	if (ac != 5)
+	if (ac != 7)
 		return (0);
 	init_point((t_point){atoi(av[1]), atoi(av[2]),
-		0, 0, itorgb(0x00FF00)}, &start);
-	init_point((t_point){atoi(av[3]), atoi(av[4]),
-		0, 0, itorgb(0xFF00FF)}, &end);
+		atoi(av[3]), 0, itorgb(0x00FF00)}, &start);
+	init_point((t_point){atoi(av[4]), atoi(av[5]),
+		atoi(av[6]), 0, itorgb(0xFF00FF)}, &end);
 	draw_line(&img, start, end);
 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
 	mlx_key_hook(img.win, key_hook, &img);
