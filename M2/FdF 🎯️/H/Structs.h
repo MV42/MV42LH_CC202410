@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Structs.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
+/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STRUCTS_H
 # define STRUCTS_H
 # include "FdF.h"
@@ -15,10 +27,10 @@ typedef struct s_data
 
 typedef struct s_rgba
 {
-	size_t	r;
-	size_t	g;
-	size_t	b;
-	size_t	a;
+	float	r;
+	float	g;
+	float	b;
+	float	a;
 }	t_rgba;
 
 typedef struct s_point
@@ -33,9 +45,9 @@ typedef struct s_point
 typedef struct s_line
 {
 	t_point	start;
-	t_point index;
+	t_point	index;
 	t_point	end;
-	t_point d;
+	t_point	d;
 }	t_line;
 
 #endif

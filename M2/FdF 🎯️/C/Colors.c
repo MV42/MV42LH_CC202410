@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Colors.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
+/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../H/FdF.h"
 
 t_rgba	itorgb(unsigned int color)
@@ -14,23 +26,20 @@ int	rgbtoi(t_rgba rgb)
 {
 	int	color;
 
-	color = (rgb.r << 16) | (rgb.g << 8) | rgb.b;
+	color = ((int)rgb.r << 16) | ((int)rgb.g << 8) | (int)rgb.b;
 	return (color);
 }
 
-int	rainbow(t_rgba c)
+t_rgba	gradient(t_line l)
 {
-	while (c.g < c.r || c.g < c.b)
-		return (c.g++, rgbtoi(c));
-	while (c.r > c.g || c.r > c.b)
-		return (c.r--, rgbtoi(c));
-	while (c.b < c.r || c.b < c.g)
-		return (c.b++, rgbtoi(c));
-	while (c.g > c.r || c.g > c.b)
-		return (c.g--, rgbtoi(c));
-	while (c.r < c.g || c.r < c.b)
-		return (c.r++, rgbtoi(c));
-	while (c.b > c.r || c.b > c.g)
-		return (c.b--, rgbtoi(c));
-	return (rgbtoi(c));
+	int		len;
+
+	if (l.d.x > l.d.y)
+		len = l.d.x;
+	else
+		len = c_abs(l.d.y);
+	l.index.color.r += (l.end.color.r - l.start.color.r) / len;
+	l.index.color.g += (l.end.color.g - l.start.color.g) / len;
+	l.index.color.b += (l.end.color.b - l.start.color.b) / len;
+	return (l.index.color);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DrawLine.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
+/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../H/FdF.h"
 
 void	my_mlx_pixel_put(t_data *data, t_point p)
@@ -23,22 +35,6 @@ int	c_abs(int x)
 	if (x < 0)
 		x *= -1;
 	return (x);
-}
-
-t_rgba	gradient(t_line l)
-{
-	float	progress;
-
-	progress = 0;
-	if (l.d.x > l.d.y)
-		progress = (float)(l.index.x - l.start.x) / l.d.x;
-	else
-		progress = (float)(l.index.y - l.start.y) / l.d.y;
-
-	l.index.color.r = l.start.color.r + progress * (l.end.color.r - l.start.color.r);
-	l.index.color.b = l.start.color.b + progress * (l.end.color.b - l.start.color.b);
-	l.index.color.g = l.start.color.g + progress * (l.end.color.g - l.start.color.g);
-    return (l.index.color);
 }
 
 void	bresenham(t_data *img, t_line l)
@@ -73,7 +69,12 @@ void	draw_line(t_data *img, t_point start, t_point end)
 	l.start = start;
 	l.end = end;
 	if ((l.end.x - l.start.x) < 0)
+	{
 		swap((void **)&l.start, (void **)&l.end);
+		l.index.color = l.start.color;
+		l.start.color = l.end.color;
+		l.end.color = l.index.color;
+	}
 	l.index = l.start;
 	l.d.x = l.end.x - l.start.x;
 	l.d.y = l.end.y - l.start.y;
