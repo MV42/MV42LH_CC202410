@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Prototypes.h                                       :+:      :+:    :+:   */
+/*   Utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PROTOTYPES_H
-# define PROTOTYPES_H
-# include "FdF.h"
+#include "../H/FdF.h"
 
-// CloseWindow.c
-int			close_window(t_data *data);
-int			key_hook(int keycode, t_data *data);
+int	put_pixel(t_data *data, t_point p)
+{
+	char	*dst;
 
-// Colors.c
-t_rgba		itorgb(unsigned int color);
-int			rgbtoi(t_rgba rgb);
-t_rgba		gradient(t_line l);
+	if (p.x >= 0 && p.x <= W_WIDTH && p.y >= 0 && p.y <= W_HEIGHT)
+	{
+		dst = data->addr + (p.y * data->line_length + p.x * (data->bits_per_pixel / 8));
+		*(unsigned int *)dst = rgbtoi(p.color);
+		return (1);
+	}
+	return (0);
+}
 
-// DrawLine.c
-void		draw_line(t_data *img, t_point start, t_point end);
-int			c_abs(int x);
+void	swap(void **ptr1, void **ptr2)
+{
+	void	*tmp;
 
-// FdF.c
+	tmp = *ptr1;
+	*ptr1 = *ptr2;
+	*ptr2 = tmp;
+}
 
-// Main.c
-
-// Rasterize.c
-
-// ReadMap.c
-
-// Utils.c
-int			put_pixel(t_data *data, t_point p);
-void		swap(void **ptr1, void **ptr2);
-int			c_abs(int x);
-
-#endif
+int	c_abs(int x)
+{
+	if (x < 0)
+		x *= -1;
+	return (x);
+}

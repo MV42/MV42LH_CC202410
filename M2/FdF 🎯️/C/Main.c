@@ -42,10 +42,9 @@ int	main(int ac, char **av)
 	t_point		start;
 	t_point		end;
 
-	printf("Ouais");
-	init(&img);
 	if (ac != 7)
 		return (0);
+	init(&img);
 	init_point((t_point){atoi(av[1]), atoi(av[2]),
 		atoi(av[3]), 0, itorgb(0x00FF00)}, &start);
 	init_point((t_point){atoi(av[4]), atoi(av[5]),

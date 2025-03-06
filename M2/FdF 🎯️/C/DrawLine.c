@@ -12,49 +12,6 @@
 
 #include "../H/FdF.h"
 
-void	my_mlx_pixel_put(t_data *data, t_point p)
-{
-	char	*dst;
-
-	dst = data->addr + (p.y * data->line_length + p.x
-			* (data->bits_per_pixel / 8));
-	*(unsigned int *)dst = rgbtoi(p.color);
-}
-
-void	swap(void **ptr1, void **ptr2)
-{
-	void	*tmp;
-
-	tmp = *ptr1;
-	*ptr1 = *ptr2;
-	*ptr2 = tmp;
-}
-
-int	c_abs(int x)
-{
-	if (x < 0)
-		x *= -1;
-	return (x);
-}
-
-t_point rasterize(t_point index)
-{
-    t_point result;
-    
-    // Constantes pour la transformation isométrique
-    const float sqrt2 = 1.414214f;
-    const float sqrt6 = 2.449489f;
-    
-    // Projection isométrique avec les directions correctes
-    result.x = (int)(-(index.x - index.z) / sqrt2);  // X positif → droite
-    result.y = (int)(-(index.x + 2.0f * index.y + index.z) / sqrt6);  // Z positif ↑, Y positif ←
-    result.z = 0;
-    result.s = 0.0f;
-    result.color = index.color;
-    
-    return result;
-}
-
 void	bresenham(t_data *img, t_line l)
 {
 	int				err;
@@ -64,8 +21,9 @@ void	bresenham(t_data *img, t_line l)
 	l.d.y = c_abs(l.d.y);
 	err = l.d.x - l.d.y;
 	while ((l.index.x != l.end.x || l.index.y != l.end.y)
-		&& (my_mlx_pixel_put(img, rasterize(l.index)), 1))
+		&& put_pixel(img, l.index))
 	{
+		printf("X:%i\nY:%i\n", l.index.x, l.index.y);
 		if (2 * err > -l.d.y)
 		{
 			err -= l.d.y;
@@ -100,6 +58,5 @@ void	draw_line(t_data *img, t_point start, t_point end)
 	l.d.s = 0;
 	if (l.d.x && l.d.y)
 		l.d.s = (float)l.d.y / l.d.x;
-	printf("Ouais");
 	bresenham(img, l);
 }

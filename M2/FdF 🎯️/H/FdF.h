@@ -12,7 +12,7 @@
 
 #ifndef FDF_H
 # define FDF_H
-# define W_WIDTH 1000
+# define W_WIDTH 866
 # define W_HEIGHT 500
 # include <stddef.h>
 # include <stdio.h>
