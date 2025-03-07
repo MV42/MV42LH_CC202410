@@ -36,22 +36,82 @@ void	init_point(t_point src, t_point *dest)
 	(*dest).color = src.color;
 }
 
-int	main(int ac, char **av)
+t_point **allocate_map(int width, int height)
+{
+    t_point **map;
+    int x;
+
+    x = 0;
+    map = malloc(sizeof(t_point *) * width);
+    if (!map)
+        return (NULL);
+    while (x < width)
+    {
+        map[x] = malloc(sizeof(t_point) * height);
+        if (!map[x])
+        {
+            while (x-- > 0)
+                free(map[x]);
+            free(map);
+            return(NULL);
+        }
+        x++;
+    }
+    return (map);
+}
+
+void	tabvalues(t_tab *tab)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < (*tab).height)
+	{
+		x = 0;
+		while (x < (*tab).width)
+		{
+			(*tab).tab[x][y].x = x * 100;
+			x++;
+		}
+		(*tab).tab[x-1][y].x = y * 100;
+		y++;
+	}
+}
+
+int	main(void)
 {
 	t_data		img;
-	t_point		start;
-	t_point		end;
+	t_tab		tab;
 
-	if (ac != 7)
-		return (0);
 	init(&img);
-	init_point((t_point){atoi(av[1]), atoi(av[2]),
-		atoi(av[3]), 0, itorgb(0x00FF00)}, &start);
-	init_point((t_point){atoi(av[4]), atoi(av[5]),
-		atoi(av[6]), 0, itorgb(0xFF00FF)}, &end);
-	draw_line(&img, start, end);
+	tab.width = 5;
+	tab.height = 3;
+	tab.tab = allocate_map(tab.width, tab.height);
+	tabvalues(&tab);
+	link_points(&img, tab);
 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
 	mlx_key_hook(img.win, key_hook, &img);
 	mlx_hook(img.win, 17, 0, close_window, &img);
 	mlx_loop(img.mlx);
 }
+
+// int	main(int ac, char **av)
+// {
+// 	t_data		img;
+// 	t_point		start;
+// 	t_point		end;
+
+// 	if (ac != 7)
+// 		return (0);
+// 	init(&img);
+// 	init_point((t_point){atoi(av[1]), atoi(av[2]),
+// 		atoi(av[3]), 0, itorgb(0x00FF00)}, &start);
+// 	init_point((t_point){atoi(av[4]), atoi(av[5]),
+// 		atoi(av[6]), 0, itorgb(0xFF00FF)}, &end);
+// 	draw_line(&img, start, end);
+// 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
+// 	mlx_key_hook(img.win, key_hook, &img);
+// 	mlx_hook(img.win, 17, 0, close_window, &img);
+// 	mlx_loop(img.mlx);
+// }

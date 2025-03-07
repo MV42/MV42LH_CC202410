@@ -40,3 +40,29 @@ int	c_abs(int x)
 		x *= -1;
 	return (x);
 }
+
+t_point	to2d(t_point src, int a)
+{
+	t_point	dst;
+	dst.x = src.x * cos(a) + src.y * cos(a+2) + src.z * cos(a-2);
+	dst.y = src.x * sin(a) + src.y * sin(a+2) + src.z * sin(a-2);
+	return (dst);
+}
+
+void	link_points(t_data *img, t_tab tab)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	while (x < tab.width && y < tab.height)
+	{
+		if (x+1 < tab.width)
+			draw_line(img, tab.tab[x][y], tab.tab[x+1][y]);
+		if (y+1 < tab.height)
+			draw_line(img, tab.tab[x][y], tab.tab[x][y+1]);
+		x++;
+		y++;
+	}
+}

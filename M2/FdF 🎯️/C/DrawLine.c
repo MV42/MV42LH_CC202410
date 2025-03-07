@@ -23,7 +23,6 @@ void	bresenham(t_data *img, t_line l)
 	while ((l.index.x != l.end.x || l.index.y != l.end.y)
 		&& put_pixel(img, l.index))
 	{
-		printf("X:%i\nY:%i\n", l.index.x, l.index.y);
 		if (2 * err > -l.d.y)
 		{
 			err -= l.d.y;

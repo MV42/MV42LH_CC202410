@@ -50,4 +50,11 @@ typedef struct s_line
 	t_point	d;
 }	t_line;
 
+typedef struct s_tab
+{
+	t_point **tab;
+	int		width;
+	int		height;
+}	t_tab;
+
 #endif
