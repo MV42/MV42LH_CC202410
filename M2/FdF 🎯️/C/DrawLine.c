@@ -40,15 +40,16 @@ void	bresenham(t_data *img, t_line l)
 void	draw_line(t_data *img, t_point start, t_point end)
 {
 	t_line	l;
+	t_rgba	temp_color;
 
 	l.start = start;
 	l.end = end;
 	if ((l.end.x - l.start.x) < 0)
 	{
+		temp_color = l.start.color;
 		swap((void **)&l.start, (void **)&l.end);
-		l.index.color = l.start.color;
 		l.start.color = l.end.color;
-		l.end.color = l.index.color;
+		l.end.color = temp_color;
 	}
 	l.index = l.start;
 	l.d.x = l.end.x - l.start.x;

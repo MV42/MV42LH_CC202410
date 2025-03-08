@@ -36,28 +36,28 @@ void	init_point(t_point src, t_point *dest)
 	(*dest).color = src.color;
 }
 
-t_point **allocate_map(int width, int height)
+t_point	**allocate_map(int width, int height)
 {
-    t_point **map;
-    int x;
+	t_point	**map;
+	int		x;
 
-    x = 0;
-    map = malloc(sizeof(t_point *) * width);
-    if (!map)
-        return (NULL);
-    while (x < width)
-    {
-        map[x] = malloc(sizeof(t_point) * height);
-        if (!map[x])
-        {
-            while (x-- > 0)
-                free(map[x]);
-            free(map);
-            return(NULL);
-        }
-        x++;
-    }
-    return (map);
+	x = 0;
+	map = (t_point **)ft_calloc(sizeof(t_point *) * width);
+	if (!map)
+		return (NULL);
+	while (x < width)
+	{
+		map[x] = (t_point *)ft_calloc(sizeof(t_point) * height);
+		if (!map[x])
+		{
+			while (x-- > 0)
+				free(map[x]);
+			free(map);
+			return (NULL);
+		}
+		x++;
+	}
+	return (map);
 }
 
 void	tabvalues(t_tab *tab)
@@ -72,46 +72,114 @@ void	tabvalues(t_tab *tab)
 		while (x < (*tab).width)
 		{
 			(*tab).tab[x][y].x = x * 100;
+			(*tab).tab[x][y].y = y * 100;
+			(*tab).tab[x][y].z = 0;
+			(*tab).tab[x][y].color = itorgb(0xFFFFFF);
 			x++;
 		}
-		(*tab).tab[x-1][y].x = y * 100;
 		y++;
 	}
+}
+
+void	p3dto2d(t_point *src, t_point *dest)
+{
+	int	scale;
+	int	offset_x;
+	int	offset_y;
+
+	if (!src || !dest)
+	{
+		fprintf(stderr, "Error: src or dest is NULL\n");
+		return;
+	}
+
+	scale = 40;
+	offset_x = W_WIDTH / 2;
+	offset_y = W_HEIGHT / 3;
+
+	printf("src: x=%d, y=%d, z=%d\n", src->x, src->y, src->z);
+
+	(*dest).x = ((*src).x - (*src).y) * cos(ISO_ANGLE_Y) * scale + offset_x;
+	(*dest).y = ((*src).x + (*src).y) * sin(ISO_ANGLE_Y) - (*src).z * sin(ISO_ANGLE_X);
+	(*dest).y = (*dest).y * scale + offset_y;
+	(*dest).z = (*src).z;
+	(*dest).s = (*src).s;
+	(*dest).color = (*src).color;
+
+	printf("dest: x=%d, y=%d, z=%d\n", dest->x, dest->y, dest->z);
+}
+
+void	iter2tab(t_tab *src, t_tab *dest, void (*f)(t_point*, t_point*))
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < (*src).height)
+	{
+		x = 0;
+		while (x < (*src).width)
+		{
+			f(&(*src).tab[x][y], &(*dest).tab[x][y]);
+			x++;
+		}
+		y++;
+	}
+}
+
+void	initfaketab(t_tab *t)
+{
+	(*t).width = 4;
+	(*t).height = 4;
+	(*t).tab = allocate_map((*t).width, (*t).height);
+	tabvalues(t);
+}
+
+void	checktab(t_tab tab)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < tab.height)
+	{
+		x = 0;
+		while (x < tab.width)
+		{
+			printf("Point at (%d, %d): x=%d, y=%d, z=%d, color=%X\n",
+				   x, y, tab.tab[x][y].x, tab.tab[x][y].y, tab.tab[x][y].z, rgbtoi(tab.tab[x][y].color));
+			x++;
+		}
+		y++;
+	}
+}
+
+void	free_tab(t_tab *t)
+{
+	int		x;
+
+	while (x < (*t).width)
+	{
+		free(*(*t).tab);
+		x++;
+	}
+	free((*t).tab);
 }
 
 int	main(void)
 {
 	t_data		img;
-	t_tab		tab;
+	t_tab		t3d;
+	t_tab		t2d;
 
 	init(&img);
-	tab.width = 5;
-	tab.height = 3;
-	tab.tab = allocate_map(tab.width, tab.height);
-	tabvalues(&tab);
-	link_points(&img, tab);
+	initfaketab(&t2d);
+	checktab(t2d);
+	link_points(&img, t2d);
+	//iter2tab(&t3d, &t2d, p3dto2d);
 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
 	mlx_key_hook(img.win, key_hook, &img);
 	mlx_hook(img.win, 17, 0, close_window, &img);
+	mlx_hook(img.win, 17, 0, free_tab, &t2d);
 	mlx_loop(img.mlx);
 }
-
-// int	main(int ac, char **av)
-// {
-// 	t_data		img;
-// 	t_point		start;
-// 	t_point		end;
-
-// 	if (ac != 7)
-// 		return (0);
-// 	init(&img);
-// 	init_point((t_point){atoi(av[1]), atoi(av[2]),
-// 		atoi(av[3]), 0, itorgb(0x00FF00)}, &start);
-// 	init_point((t_point){atoi(av[4]), atoi(av[5]),
-// 		atoi(av[6]), 0, itorgb(0xFF00FF)}, &end);
-// 	draw_line(&img, start, end);
-// 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
-// 	mlx_key_hook(img.win, key_hook, &img);
-// 	mlx_hook(img.win, 17, 0, close_window, &img);
-// 	mlx_loop(img.mlx);
-// }
