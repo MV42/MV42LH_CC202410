@@ -36,9 +36,8 @@ void		init(t_data *img);
 int			main(void);
 
 // Rasterize.c
-void		ft_matrix_identity(t_matrix4x4 *m);
-void		ft_setup_isometric_view(t_matrix4x4 *m);
-void		ft_transform_point(t_point *src, t_point *dest);
+t_matrix	ft_init_transform_matrix(t_tab *grid);
+void		ft_transform_point(t_tab *grid, t_point *src, t_point *dst);
 
 // ReadMap.c
 t_point		**allocate_tab(int width, int height);
@@ -46,6 +45,7 @@ t_point		**allocate_tab(int width, int height);
 // Test.c
 void		tabvalues(t_tab *tab);
 void		initfaketab(t_tab *t);
+void		checktab(t_tab tab);
 
 // Utils.c
 int			put_pixel(t_data *data, t_point p);

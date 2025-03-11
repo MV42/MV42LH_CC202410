@@ -41,33 +41,6 @@ int	c_abs(int x)
 	return (x);
 }
 
-void	link_points(t_data *img, t_tab tab)
-{
-	int	x;
-	int	y;
-
-	y = 0;
-	while (y < tab.height)
-	{
-		x = 0;
-		while (x < tab.width)
-		{
-			if (x + 1 < tab.width)
-			{
-				printf("Drawing line from (%f, %f) to (%f, %f)\n", tab.tab[x][y].x, tab.tab[x][y].y, tab.tab[x + 1][y].x, tab.tab[x + 1][y].y);
-				draw_line(img, tab.tab[x][y], tab.tab[x + 1][y]);
-			}
-			if (y + 1 < tab.height)
-			{
-				printf("Drawing line from (%f, %f) to (%f, %f)\n", tab.tab[x][y].x, tab.tab[x][y].y, tab.tab[x][y + 1].x, tab.tab[x][y + 1].y);
-				draw_line(img, tab.tab[x][y], tab.tab[x][y + 1]);
-			}
-			x++;
-		}
-		y++;
-	}
-}
-
 void	*ft_calloc(size_t size)
 {
 	void			*ptr;

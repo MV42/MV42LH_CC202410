@@ -56,17 +56,9 @@ typedef struct s_tab
 	int		height;
 }	t_tab;
 
-typedef struct s_vector3d
+typedef struct s_matrix
 {
-	float	x;
-	float	y;
-	float	z;
-	float	w;
-}	t_vector3d;
-
-typedef struct s_matrix4x4
-{
-	float	data[16];
-}	t_matrix4x4;
+	float	m[4][4];
+}	t_matrix;
 
 #endif
