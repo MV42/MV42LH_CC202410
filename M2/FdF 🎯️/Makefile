@@ -22,6 +22,9 @@ C			=	$(C_P)CloseWindow.c \
 				$(C_P)DrawLine.c \
 				$(C_P)FdF.c \
 				$(C_P)Main.c \
+				$(C_P)Rasterize.c \
+				$(C_P)ReadMap.c \
+				$(C_P)Test.c \
 				$(C_P)Utils.c \
 
 O_P			=	O/

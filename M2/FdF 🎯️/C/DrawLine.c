@@ -55,8 +55,44 @@ void	draw_line(t_data *img, t_point start, t_point end)
 	l.d.x = l.end.x - l.start.x;
 	l.d.y = l.end.y - l.start.y;
 	l.d.z = l.end.z - l.start.z;
-	l.d.s = 0;
-	if (l.d.x && l.d.y)
-		l.d.s = (float)l.d.y / l.d.x;
 	bresenham(img, l);
+}
+
+void	draw_grid(t_data *img, t_tab *grid)
+{
+    int		x;
+    int		y;
+    t_point	p1;
+    t_point	p2;
+
+    y = 0;
+    while (y < grid->height)
+    {
+        x = 0;
+        while (x < grid->width)
+        {
+            if (x < grid->width - 1)
+            {
+                ft_transform_point(&grid->tab[x][y], &p1);
+                ft_transform_point(&grid->tab[x + 1][y], &p2);
+				printf("P1-3D: x=%f, y=%f, z=%f\n", grid->tab[x][y].x, grid->tab[x][y].y, grid->tab[x][y].z);
+				printf("P1-2D: x=%f, y=%f\n", p1.x, p1.y);
+				printf("P2-3D: x=%f, y=%f, z=%f\n", grid->tab[x][y + 1].x, grid->tab[x][y + 1].y, grid->tab[x][y + 1].z);
+				printf("P2-2D: x=%f, y=%f\n", p2.x, p2.y);
+                draw_line(img, p1, p2);
+            }
+            if (y < grid->height - 1)
+            {
+                ft_transform_point(&grid->tab[x][y], &p1);
+                ft_transform_point(&grid->tab[x][y + 1], &p2);
+				printf("P1-3D: x=%f, y=%f, z=%f\n", grid->tab[x][y].x, grid->tab[x][y].y, grid->tab[x][y].z);
+				printf("P1-2D: x=%f, y=%f\n", p1.x, p1.y);
+				printf("P2-3D: x=%f, y=%f, z=%f\n", grid->tab[x][y + 1].x, grid->tab[x][y + 1].y, grid->tab[x][y + 1].z);
+				printf("P2-2D: x=%f, y=%f\n", p2.x, p2.y);
+                draw_line(img, p1, p2);
+            }
+            x++;
+        }
+        y++;
+    }
 }

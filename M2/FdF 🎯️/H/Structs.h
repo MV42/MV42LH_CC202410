@@ -35,10 +35,9 @@ typedef struct s_rgba
 
 typedef struct s_point
 {
-	int			x;
-	int			y;
-	int			z;
-	float		s;
+	float		x;
+	float		y;
+	float		z;
 	t_rgba		color;
 }	t_point;
 
@@ -56,5 +55,18 @@ typedef struct s_tab
 	int		width;
 	int		height;
 }	t_tab;
+
+typedef struct s_vector3d
+{
+	float	x;
+	float	y;
+	float	z;
+	float	w;
+}	t_vector3d;
+
+typedef struct s_matrix4x4
+{
+	float	data[16];
+}	t_matrix4x4;
 
 #endif

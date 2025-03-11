@@ -12,31 +12,31 @@
 
 #include "../H/FdF.h"
 
-void	init(t_data *img)
+void	tabvalues(t_tab *tab)
 {
-	(*img).mlx = mlx_init();
-	if (!(*img).mlx)
-		return ;
-	(*img).win = mlx_new_window((*img).mlx, W_WIDTH, W_HEIGHT, "FdF1");
-	if (!(*img).win)
-		return ;
-	(*img).mlx = (*img).mlx;
-	(*img).win = (*img).win;
-	(*img).img = mlx_new_image((*img).mlx, W_WIDTH, W_HEIGHT);
-	(*img).addr = mlx_get_data_addr((*img).img, &(*img).bits_per_pixel,
-			&(*img).line_length, &(*img).endian);
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < (*tab).height)
+	{
+		x = 0;
+		while (x < (*tab).width)
+		{
+			(*tab).tab[x][y].x = x * 100;
+			(*tab).tab[x][y].y = y * 100;
+			(*tab).tab[x][y].z = 0;
+			(*tab).tab[x][y].color = itorgb(0xFFFFFF);
+			x++;
+		}
+		y++;
+	}
 }
 
-int	main(void)
+void	initfaketab(t_tab *t)
 {
-	t_data		img;
-	t_tab		t3d;
-
-	init(&img);
-	initfaketab(&t3d);
-	draw_grid(&img, &t3d);
-	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
-	mlx_key_hook(img.win, key_hook, &img);
-	mlx_hook(img.win, 17, 0, close_window, &img);
-	mlx_loop(img.mlx);
+	(*t).width = 4;
+	(*t).height = 4;
+	(*t).tab = allocate_tab((*t).width, (*t).height);
+	tabvalues(t);
 }
