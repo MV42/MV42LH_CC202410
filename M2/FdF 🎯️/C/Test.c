@@ -14,7 +14,7 @@
 
 void	tabvalues(t_tab *tab)
 {
-	int	x;
+	int x;
 	int	y;
 	float	center_x;
 	float	center_y;
