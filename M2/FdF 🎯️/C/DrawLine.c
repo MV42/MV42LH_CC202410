@@ -72,15 +72,18 @@ void	draw_grid(t_data *img, t_tab *grid)
 		x = 0;
 		while (x < grid->width)
 		{
-			ft_transform_point(grid, &grid->tab[x][y], &p1);
+			p1 = grid->tab[x][y];
+			// ft_transform_point(grid, &grid->tab[x][y], &p1);
 			if (x < grid->width - 1)
 			{
-				ft_transform_point(grid, &grid->tab[x + 1][y], &p2);
+				p2 = grid->tab[x + 1][y];
+				// ft_transform_point(grid, &grid->tab[x + 1][y], &p2);
 				draw_line(img, p1, p2);
 			}
 			if (y < grid->height - 1)
 			{
-				ft_transform_point(grid, &grid->tab[x][y + 1], &p2);
+				p2 = grid->tab[x][y + 1];
+				// ft_transform_point(grid, &grid->tab[x][y + 1], &p2);
 				draw_line(img, p1, p2);
 			}
 			x++;
