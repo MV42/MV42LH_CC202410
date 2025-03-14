@@ -64,21 +64,49 @@ t_matrix	ft_init_transform_matrix(t_tab *grid)
 	return (matrix);
 }
 
-void	ft_transform_point(t_tab *grid, t_point *src, t_point *dst)
-{
-	static t_matrix	matrix;
-	static int		initialized = 0;
+// void	ft_transform_point(t_tab *grid, t_point *src, t_point *dst)
+// {
+// 	static t_matrix	matrix;
+// 	static int		initialized = 0;
 	
-	if (!initialized)
-	{
-		matrix = ft_init_transform_matrix(grid);
-		initialized = 1;
-	}
-	dst->x = matrix.m[0][0] * src->x + matrix.m[0][1] * src->y 
-		+ matrix.m[0][2] * src->z + matrix.m[0][3];
-	dst->y = matrix.m[1][0] * src->x + matrix.m[1][1] * src->y 
-		+ matrix.m[1][2] * src->z + matrix.m[1][3];
-	dst->z = matrix.m[2][0] * src->x + matrix.m[2][1] * src->y 
-		+ matrix.m[2][2] * src->z + matrix.m[2][3];
-	dst->color = src->color;
+// 	if (!initialized)
+// 	{
+// 		matrix = ft_init_transform_matrix(grid);
+// 		initialized = 1;
+// 	}
+// 	dst->x = matrix.m[0][0] * src->x + matrix.m[0][1] * src->y 
+// 		+ matrix.m[0][2] * src->z + matrix.m[0][3];
+// 	dst->y = matrix.m[1][0] * src->x + matrix.m[1][1] * src->y 
+// 		+ matrix.m[1][2] * src->z + matrix.m[1][3];
+// 	dst->z = matrix.m[2][0] * src->x + matrix.m[2][1] * src->y 
+// 		+ matrix.m[2][2] * src->z + matrix.m[2][3];
+// 	dst->color = src->color;
+// }
+
+t_point	ft_transform_point(t_point point)
+{
+	t_point	result;
+	float	cos_z;
+	float	sin_z;
+	float	cos_x;
+	float	sin_x;
+	float	temp_x;
+	float	temp_y;
+
+	cos_z = cos(DEG45);
+	sin_z = sin(DEG45);
+	cos_x = cos(MAGIC_ANGLE);
+	sin_x = sin(MAGIC_ANGLE);
+
+	/* Rotation sur l'axe Z (sens horaire = négatif en math) */
+	temp_x = point.x * cos_z + point.y * sin_z;
+	temp_y = -point.x * sin_z + point.y * cos_z;
+
+	/* Inclinaison sur l'axe X */
+	result.x = temp_x;
+	result.y = temp_y * cos_x - point.z * sin_x;
+	result.z = temp_y * sin_x + point.z * cos_x;
+	result.color = point.color;
+
+	return (result);
 }

@@ -21,7 +21,7 @@ void	bresenham(t_data *img, t_line l)
 	l.d.y = c_abs(l.d.y);
 	err = l.d.x - l.d.y;
 	while ((l.index.x != l.end.x || l.index.y != l.end.y)
-		&& put_pixel(img, l.index))
+		&& put_pixel(img, cartesian_to_screen(l.index)))
 	{
 		if (2 * err > -l.d.y)
 		{
@@ -72,8 +72,8 @@ void	draw_grid(t_data *img, t_tab *grid)
 		x = 0;
 		while (x < grid->width)
 		{
-			p1 = grid->tab[x][y];
-			// ft_transform_point(grid, &grid->tab[x][y], &p1);
+			// p1 = grid->tab[x][y];
+			ft_transform_point(grid, &grid->tab[x][y], &p1);
 			if (x < grid->width - 1)
 			{
 				p2 = grid->tab[x + 1][y];

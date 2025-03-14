@@ -14,27 +14,32 @@
 
 void	tabvalues(t_tab *tab)
 {
-	int x;
-	int	y;
-	float	center_x;
-	float	center_y;
+    int x;
+    int	y;
+    float	center_x;
+    float	center_y;
 
-	center_x = (tab->width - 1) / 2.0;
-	center_y = (tab->height - 1) / 2.0;
-	y = 0;
-	while (y < tab->height)
-	{
-		x = 0;
-		while (x < tab->width)
-		{
-			tab->tab[x][y].x = (x - center_x) * 100;
-			tab->tab[x][y].y = (center_y - y) * 100;
-			tab->tab[x][y].z = 0;
+    center_x = (tab->width - 1) / 2.0;
+    center_y = (tab->height - 1) / 2.0;
+    y = 0;
+    while (y < tab->height)
+    {
+        x = 0;
+        while (x < tab->width)
+        {
+            tab->tab[x][y].x = (x - center_x) * 100;
+            tab->tab[x][y].y = (center_y - y) * 100;
+            tab->tab[x][y].z = 0;
 			tab->tab[x][y].color = itorgb(0xFFFFFF);
-			x++;
-		}
-		y++;
-	}
+            if ((float)x == center_x && (float)y == center_y)
+                tab->tab[x][y].color = itorgb(0xFF0000);
+			if (((float)x == center_x - 0.5 || (float)x == center_x + 0.5)
+				&& ((float)y == center_y - 0.5 || (float)y == center_y + 0.5))
+                tab->tab[x][y].color = itorgb(0x00FF00);
+            x++;
+        }
+        y++;
+    }
 }
 
 void	initfaketab(t_tab *t)

@@ -12,10 +12,10 @@
 
 #ifndef FDF_H
 # define FDF_H
-# define W_WIDTH 1800
-# define W_HEIGHT 900
-# define ISO_ANGLE_X 0.955316
-# define ISO_ANGLE_Y 0.785398
+# define W_WIDTH 1801
+# define W_HEIGHT 901
+# define DEG45 0.785398
+# define MAGIC_ANGLE 0.955316
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>

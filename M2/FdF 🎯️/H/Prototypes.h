@@ -53,5 +53,6 @@ void		swap(void **ptr1, void **ptr2);
 int			c_abs(int x);
 void		link_points(t_data *img, t_tab tab);
 void		*ft_calloc(size_t size);
+t_point		cartesian_to_screen(t_point point);
 
 #endif

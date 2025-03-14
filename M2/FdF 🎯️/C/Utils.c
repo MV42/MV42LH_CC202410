@@ -59,3 +59,15 @@ void	*ft_calloc(size_t size)
 	}
 	return (ptr);
 }
+
+t_point	cartesian_to_screen(t_point point)
+{
+	t_point	screen_point;
+
+	screen_point.x = (W_WIDTH / 2) + point.x;
+	screen_point.y = (W_HEIGHT / 2) - point.y;
+	screen_point.z = point.z;
+	screen_point.color = point.color;
+	
+	return (screen_point);
+}
