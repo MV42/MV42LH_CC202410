@@ -27,15 +27,10 @@ void	tabvalues(t_tab *tab)
         x = 0;
         while (x < tab->width)
         {
-            tab->tab[x][y].x = (x - center_x) * 100;
-            tab->tab[x][y].y = (center_y - y) * 100;
+            tab->tab[x][y].x = (x - center_x) * 10;
+            tab->tab[x][y].y = (center_y - y) * 10;
             tab->tab[x][y].z = 0;
 			tab->tab[x][y].color = itorgb(0xFFFFFF);
-            if ((float)x == center_x && (float)y == center_y)
-                tab->tab[x][y].color = itorgb(0xFF0000);
-			if (((float)x == center_x - 0.5 || (float)x == center_x + 0.5)
-				&& ((float)y == center_y - 0.5 || (float)y == center_y + 0.5))
-                tab->tab[x][y].color = itorgb(0x00FF00);
             x++;
         }
         y++;
@@ -44,8 +39,8 @@ void	tabvalues(t_tab *tab)
 
 void	initfaketab(t_tab *t)
 {
-	(*t).width = 11;
-	(*t).height = 11;
+	(*t).width = 3;
+	(*t).height = 3;
 	(*t).tab = allocate_tab((*t).width, (*t).height);
 	tabvalues(t);
 }
@@ -61,7 +56,7 @@ void	checktab(t_tab tab)
 		x = 0;
 		while (x < tab.width)
 		{
-			printf("Point at (%d, %d): x=%f, y=%f, z=%f, color=%X\n",
+			printf("Point at (%d, %d):\tx=%f,\ty=%f,\tz=%f,\tcolor=%X\n",
 				   x, y, tab.tab[x][y].x, tab.tab[x][y].y, tab.tab[x][y].z, rgbtoi(tab.tab[x][y].color));
 			x++;
 		}

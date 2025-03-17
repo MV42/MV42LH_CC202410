@@ -8,7 +8,9 @@
 		"string_view": "c",
 		"ranges": "c",
 		"span": "c",
-		"vector": "c"
+		"vector": "c",
+		"functional": "c",
+		"__locale": "c"
 	},
 	"C_Cpp.errorSquiggles": "enabled"
 }

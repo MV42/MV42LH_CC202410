@@ -16,21 +16,21 @@
 
 typedef struct s_data
 {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	void	*mlx;
-	void	*win;
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+	void		*mlx;
+	void		*win;
 }	t_data;
 
 typedef struct s_rgba
 {
-	float	r;
-	float	g;
-	float	b;
-	float	a;
+	float		r;
+	float		g;
+	float		b;
+	float		a;
 }	t_rgba;
 
 typedef struct s_point
@@ -41,24 +41,30 @@ typedef struct s_point
 	t_rgba		color;
 }	t_point;
 
-typedef struct s_line
-{
-	t_point	start;
-	t_point	index;
-	t_point	end;
-	t_point	d;
-}	t_line;
-
 typedef struct s_tab
 {
-	t_point **tab;
-	int		width;
-	int		height;
+	t_point		**tab;
+	int			width;
+	int			height;
 }	t_tab;
+
+typedef struct s_line
+{
+	t_point		start;
+	t_point		index;
+	t_point		end;
+	t_point		d;
+}	t_line;
+
+typedef struct s_index
+{
+	int			x;
+	int			y;
+}	t_index;
 
 typedef struct s_matrix
 {
-	float	m[4][4];
+	float		m[4][4];
 }	t_matrix;
 
 #endif

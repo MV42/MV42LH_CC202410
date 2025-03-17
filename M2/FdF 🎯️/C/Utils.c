@@ -60,14 +60,20 @@ void	*ft_calloc(size_t size)
 	return (ptr);
 }
 
-t_point	cartesian_to_screen(t_point point)
+void	iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point))
 {
-	t_point	screen_point;
+	int	x;
+	int	y;
 
-	screen_point.x = (W_WIDTH / 2) + point.x;
-	screen_point.y = (W_HEIGHT / 2) - point.y;
-	screen_point.z = point.z;
-	screen_point.color = point.color;
-	
-	return (screen_point);
+	y = 0;
+	while (y < (*src).height)
+	{
+		x = 0;
+		while (x < (*src).width)
+		{
+			(*dest).tab[x][y] = f((*src).tab[x][y]);
+			x++;
+		}
+		y++;
+	}
 }

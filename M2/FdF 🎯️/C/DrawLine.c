@@ -59,33 +59,21 @@ void	draw_line(t_data *img, t_point start, t_point end)
 	bresenham(img, l);
 }
 
-void	draw_grid(t_data *img, t_tab *grid)
+void	draw_grid(t_data *img, t_tab grid)
 {
 	int		x;
 	int		y;
-	t_point	p1;
-	t_point	p2;
 
 	y = 0;
-	while (y < grid->height)
+	while (y < grid.height)
 	{
 		x = 0;
-		while (x < grid->width)
+		while (x < grid.width)
 		{
-			// p1 = grid->tab[x][y];
-			ft_transform_point(grid, &grid->tab[x][y], &p1);
-			if (x < grid->width - 1)
-			{
-				p2 = grid->tab[x + 1][y];
-				// ft_transform_point(grid, &grid->tab[x + 1][y], &p2);
-				draw_line(img, p1, p2);
-			}
-			if (y < grid->height - 1)
-			{
-				p2 = grid->tab[x][y + 1];
-				// ft_transform_point(grid, &grid->tab[x][y + 1], &p2);
-				draw_line(img, p1, p2);
-			}
+			if (x < grid.width - 1)
+				draw_line(img, grid.tab[x][y], grid.tab[x + 1][y]);
+			if (y < grid.height - 1)
+				draw_line(img, grid.tab[x][y], grid.tab[x][y + 1]);
 			x++;
 		}
 		y++;

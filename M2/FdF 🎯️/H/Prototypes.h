@@ -27,7 +27,7 @@ t_rgba		gradient(t_line l);
 // DrawLine.c
 void		bresenham(t_data *img, t_line l);
 void		draw_line(t_data *img, t_point start, t_point end);
-void		draw_grid(t_data *img, t_tab *grid);
+void		draw_grid(t_data *img, t_tab grid);
 
 // FdF.c
 
@@ -37,7 +37,8 @@ int			main(void);
 
 // Rasterize.c
 t_matrix	ft_init_transform_matrix(t_tab *grid);
-void		ft_transform_point(t_tab *grid, t_point *src, t_point *dst);
+void		transform_to_isometric_inplace(t_data *img, t_tab data);
+
 
 // ReadMap.c
 t_point		**allocate_tab(int width, int height);
@@ -54,5 +55,6 @@ int			c_abs(int x);
 void		link_points(t_data *img, t_tab tab);
 void		*ft_calloc(size_t size);
 t_point		cartesian_to_screen(t_point point);
+void		iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point));
 
 #endif
