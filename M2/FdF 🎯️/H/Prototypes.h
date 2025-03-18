@@ -36,8 +36,9 @@ void		init(t_data *img);
 int			main(void);
 
 // Rasterize.c
-t_matrix	ft_init_transform_matrix(t_tab *grid);
-void		transform_to_isometric_inplace(t_data *img, t_tab data);
+t_tab		rasterize(t_tab	*tab);
+t_tab		isorotate(t_tab *tab);
+void		drawtabiso(t_data *img, t_tab tab);
 
 
 // ReadMap.c
@@ -52,9 +53,8 @@ void		checktab(t_tab tab);
 int			put_pixel(t_data *data, t_point p);
 void		swap(void **ptr1, void **ptr2);
 int			c_abs(int x);
-void		link_points(t_data *img, t_tab tab);
 void		*ft_calloc(size_t size);
-t_point		cartesian_to_screen(t_point point);
 void		iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point));
+t_point		cartesian_to_screen(t_point point);
 
 #endif

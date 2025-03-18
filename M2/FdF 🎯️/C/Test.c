@@ -27,9 +27,11 @@ void	tabvalues(t_tab *tab)
         x = 0;
         while (x < tab->width)
         {
-            tab->tab[x][y].x = (x - center_x) * 10;
-            tab->tab[x][y].y = (center_y - y) * 10;
-            tab->tab[x][y].z = 0;
+            tab->tab[x][y].x = (x - center_x) * 100;
+            tab->tab[x][y].y = (center_y - y) * 100;
+			tab->tab[x][y].z = 0;
+			if (x % 2)
+            	tab->tab[x][y].z = 75;
 			tab->tab[x][y].color = itorgb(0xFFFFFF);
             x++;
         }
@@ -39,8 +41,8 @@ void	tabvalues(t_tab *tab)
 
 void	initfaketab(t_tab *t)
 {
-	(*t).width = 3;
-	(*t).height = 3;
+	(*t).width = 5;
+	(*t).height = 5;
 	(*t).tab = allocate_tab((*t).width, (*t).height);
 	tabvalues(t);
 }

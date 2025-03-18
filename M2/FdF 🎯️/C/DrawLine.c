@@ -12,29 +12,41 @@
 
 #include "../H/FdF.h"
 
+
 void	bresenham(t_data *img, t_line l)
 {
-	int				err;
-	int				sy;
+    int				err;
+    int				e2;
+    int				sx;
+    int				sy;
 
-	sy = (l.d.y > 0) - (l.d.y < 0);
-	l.d.y = c_abs(l.d.y);
-	err = l.d.x - l.d.y;
-	while ((l.index.x != l.end.x || l.index.y != l.end.y)
-		&& put_pixel(img, cartesian_to_screen(l.index)))
-	{
-		if (2 * err > -l.d.y)
-		{
-			err -= l.d.y;
-			l.index.x++;
-		}
-		if (2 * err < l.d.x)
-		{
-			err += l.d.x;
-			l.index.y += sy;
-		}
-		l.index.color = gradient(l);
-	}
+    printf("Drawing line from (%i, %i) to (%i, %i)\n", l.start.sx, l.start.sy, l.end.sx, l.end.sy);
+    sx = (l.end.sx > l.start.sx) ? 1 : -1;
+    sy = (l.end.sy > l.start.sy) ? 1 : -1;
+    l.d.sx = c_abs(l.end.sx - l.start.sx);
+    l.d.sy = c_abs(l.end.sy - l.start.sy);
+    err = (l.d.sx > l.d.sy ? l.d.sx : -l.d.sy) / 2;
+
+    while (1)
+    {
+        printf("Placing pixel at (%i, %i) Color:%X\n", l.index.sx, l.index.sy, rgbtoi(l.index.color));
+        if (!put_pixel(img, l.index))
+            break;
+        if (l.index.sx == l.end.sx && l.index.sy == l.end.sy)
+            break;
+        e2 = err;
+        if (e2 > -l.d.sx)
+        {
+            err -= l.d.sy;
+            l.index.sx += sx;
+        }
+        if (e2 < l.d.sy)
+        {
+            err += l.d.sx;
+            l.index.sy += sy;
+        }
+        l.index.color = gradient(l);
+    }
 }
 
 void	draw_line(t_data *img, t_point start, t_point end)
@@ -42,10 +54,9 @@ void	draw_line(t_data *img, t_point start, t_point end)
 	t_line	l;
 	t_rgba	temp_color;
 
-	printf("Drawing line from (%f, %f) to (%f, %f)\n", start.x, start.y, end.x, end.y);
 	l.start = start;
 	l.end = end;
-	if ((l.end.x - l.start.x) < 0)
+	if ((l.end.sx - l.start.sx) < 0)
 	{
 		temp_color = l.start.color;
 		swap((void **)&l.start, (void **)&l.end);
@@ -53,9 +64,8 @@ void	draw_line(t_data *img, t_point start, t_point end)
 		l.end.color = temp_color;
 	}
 	l.index = l.start;
-	l.d.x = l.end.x - l.start.x;
-	l.d.y = l.end.y - l.start.y;
-	l.d.z = l.end.z - l.start.z;
+	l.d.sx = l.end.sx - l.start.sx;
+	l.d.sy = l.end.sy - l.start.sy;
 	bresenham(img, l);
 }
 

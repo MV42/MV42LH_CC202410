@@ -11,14 +11,20 @@
 /* ************************************************************************** */
 
 #include "../H/FdF.h"
+#define KEY_Q 12
+#define KEY_W 13
+#define KEY_E 14
+#define KEY_A 0
+#define KEY_S 1
+#define KEY_D 2
 
 int	put_pixel(t_data *data, t_point p)
 {
     char	*dst;
 
-    if (p.x >= 0 && p.x < W_WIDTH && p.y >= 0 && p.y < W_HEIGHT)
+    if (p.sx >= 0 && p.sx < W_WIDTH && p.sy >= 0 && p.sy < W_HEIGHT)
     {
-        dst = data->addr + (int)(p.y * data->line_length + p.x * (data->bits_per_pixel / 8));
+        dst = data->addr + (int)(p.sy * data->line_length + p.sx * (data->bits_per_pixel / 8));
         *(unsigned int *)dst = rgbtoi(p.color);
         return (1);
     }
@@ -76,4 +82,11 @@ void	iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point))
 		}
 		y++;
 	}
+}
+
+t_point	cartesian_to_screen(t_point point)
+{
+	point.sx += ((W_WIDTH - 1) / 2);
+	point.sy += ((W_HEIGHT - 1) / 2);
+	return (point);
 }

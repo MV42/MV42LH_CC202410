@@ -34,10 +34,10 @@ t_rgba	gradient(t_line l)
 {
 	int		len;
 
-	if (l.d.x > l.d.y)
-		len = l.d.x;
+	if (l.d.sx > l.d.sy)
+		len = l.d.sx;
 	else
-		len = c_abs(l.d.y);
+		len = c_abs(l.d.sy);
 	l.index.color.r += (l.end.color.r - l.start.color.r) / len;
 	l.index.color.g += (l.end.color.g - l.start.color.g) / len;
 	l.index.color.b += (l.end.color.b - l.start.color.b) / len;
