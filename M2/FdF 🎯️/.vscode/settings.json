@@ -21,6 +21,12 @@
 		"__node_handle": "cpp",
 		"ios": "cpp",
 		"span": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"chrono": "c",
+		"random": "c",
+		"limits": "c",
+		"semaphore": "c",
+		"algorithm": "c",
+		"ratio": "c"
 	}
 }

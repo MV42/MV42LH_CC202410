@@ -58,15 +58,17 @@ typedef struct s_line
 	t_point		d;
 }	t_line;
 
-typedef struct s_index
-{
-	int			x;
-	int			y;
-}	t_index;
-
 typedef struct s_matrix
 {
 	float		m[4][4];
 }	t_matrix;
+
+typedef struct s_tablim
+{
+	int	xmin;
+	int	xmax;
+	int	ymin;
+	int	ymax;
+}	t_tablim;
 
 #endif

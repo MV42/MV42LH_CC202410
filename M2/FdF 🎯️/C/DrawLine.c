@@ -12,41 +12,33 @@
 
 #include "../H/FdF.h"
 
-
 void	bresenham(t_data *img, t_line l)
 {
-    int				err;
-    int				e2;
-    int				sx;
-    int				sy;
+	int	err;
+	int	e2;
+	int	sy;
 
-    printf("Drawing line from (%i, %i) to (%i, %i)\n", l.start.sx, l.start.sy, l.end.sx, l.end.sy);
-    sx = (l.end.sx > l.start.sx) ? 1 : -1;
-    sy = (l.end.sy > l.start.sy) ? 1 : -1;
-    l.d.sx = c_abs(l.end.sx - l.start.sx);
-    l.d.sy = c_abs(l.end.sy - l.start.sy);
-    err = (l.d.sx > l.d.sy ? l.d.sx : -l.d.sy) / 2;
-
-    while (1)
-    {
-        printf("Placing pixel at (%i, %i) Color:%X\n", l.index.sx, l.index.sy, rgbtoi(l.index.color));
-        if (!put_pixel(img, l.index))
-            break;
-        if (l.index.sx == l.end.sx && l.index.sy == l.end.sy)
-            break;
-        e2 = err;
-        if (e2 > -l.d.sx)
-        {
-            err -= l.d.sy;
-            l.index.sx += sx;
-        }
-        if (e2 < l.d.sy)
-        {
-            err += l.d.sx;
-            l.index.sy += sy;
-        }
-        l.index.color = gradient(l);
-    }
+	sy = (l.d.sy > 0) - (l.d.sy < 0);
+	l.d.sy = c_abs(l.end.sy - l.start.sy);
+	err = l.d.sx - l.d.sy;
+	while (1)
+	{
+		if (!put_pixel(img, l.index)
+			|| (l.index.sx == l.end.sx && l.index.sy == l.end.sy))
+			break ;
+		e2 = err;
+		if (e2 > -l.d.sx)
+		{
+			err -= l.d.sy;
+			l.index.sx++;
+		}
+		if (e2 < l.d.sy)
+		{
+			err += l.d.sx;
+			l.index.sy += sy;
+		}
+		l.index.color = gradient(l);
+	}
 }
 
 void	draw_line(t_data *img, t_point start, t_point end)

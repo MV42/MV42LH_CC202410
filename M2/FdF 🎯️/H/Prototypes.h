@@ -40,7 +40,6 @@ t_tab		rasterize(t_tab	*tab);
 t_tab		isorotate(t_tab *tab);
 void		drawtabiso(t_data *img, t_tab tab);
 
-
 // ReadMap.c
 t_point		**allocate_tab(int width, int height);
 

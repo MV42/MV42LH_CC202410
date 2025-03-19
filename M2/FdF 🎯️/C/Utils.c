@@ -20,15 +20,16 @@
 
 int	put_pixel(t_data *data, t_point p)
 {
-    char	*dst;
+	char	*dst;
 
-    if (p.sx >= 0 && p.sx < W_WIDTH && p.sy >= 0 && p.sy < W_HEIGHT)
-    {
-        dst = data->addr + (int)(p.sy * data->line_length + p.sx * (data->bits_per_pixel / 8));
-        *(unsigned int *)dst = rgbtoi(p.color);
-        return (1);
-    }
-    return (0);
+	if (p.sx >= 0 && p.sx < W_WIDTH && p.sy >= 0 && p.sy < W_HEIGHT)
+	{
+		dst = data->addr + (int)(p.sy * data->line_length + p.sx
+				* (data->bits_per_pixel / 8));
+		*(unsigned int *)dst = rgbtoi(p.color);
+		return (1);
+	}
+	return (0);
 }
 
 void	swap(void **ptr1, void **ptr2)
