@@ -34,7 +34,7 @@ int	main(void)
 
 	init(&img);
 	initfaketab(&t3d);
-	checktab(t3d);
+	// checktab(t3d);
 	drawtabiso(&img, t3d);
 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
 	mlx_key_hook(img.win, key_hook, &img);

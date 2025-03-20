@@ -91,3 +91,15 @@ t_point	cartesian_to_screen(t_point point)
 	point.sy += ((W_HEIGHT - 1) / 2);
 	return (point);
 }
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*str;
+	size_t			i;
+
+	str = b;
+	i = 0;
+	while (i < len)
+		*(str + i++) = (unsigned char)c;
+	return (b);
+}

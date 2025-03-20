@@ -107,3 +107,28 @@ void	link_points(t_data *img, t_tab tab)
 		y++;
 	}
 }
+
+t_tab	centermap(t_tab *tab, t_tablim t)
+{
+	int		gap;
+	int 	yoffset;
+	int		xoffset;
+	int		x;
+	int		y;
+
+	yoffset = ((W_HEIGHT - 1) / 2) - ((t.ymax - t.ymin) / 2);
+	xoffset = ((W_WIDTH - 1) / 2) - ((t.xmax - t.xmin) / 2);
+	y = 0;
+	while (y < tab->height)
+	{
+		x = 0;
+		while (x < tab->width)
+		{
+			tab->tab[x][y].sy += yoffset;
+			tab->tab[x][y].sx += xoffset;
+			x++;
+		}
+		y++;
+	}
+	return (*tab);
+}
