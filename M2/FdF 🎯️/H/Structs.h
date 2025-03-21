@@ -46,8 +46,10 @@ typedef struct s_point
 typedef struct s_tab
 {
 	t_point		**tab;
+	char		**lines;
 	int			width;
 	int			height;
+	double		scale;
 }	t_tab;
 
 typedef struct s_line
@@ -57,11 +59,6 @@ typedef struct s_line
 	t_point		end;
 	t_point		d;
 }	t_line;
-
-typedef struct s_matrix
-{
-	float		m[4][4];
-}	t_matrix;
 
 typedef struct s_tablim
 {

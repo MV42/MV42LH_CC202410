@@ -71,19 +71,18 @@ void	autozoom(t_tab *tab, t_tablim t)
 {
 	int		x;
 	int		y;
-	double	scale;
 
-	scale = 0;
+	tab->scale = 0;
 	y = 0;
 	while (y < tab->height)
 	{
 		x = 0;
 		while (x < tab->width)
 		{
-			while (t.xmax * scale < (W_WIDTH / 2) - 20 && t.ymax * scale < (W_HEIGHT / 2) - 20)
-				scale += 0.1;
-			tab->tab[x][y].sx *= scale;
-			tab->tab[x][y].sy *= scale;
+			while (t.xmax * tab->scale < (W_WIDTH / 2) - 20 && t.ymax * tab->scale < (W_HEIGHT / 2) - 20)
+				tab->scale += 0.000001;
+			tab->tab[x][y].sx *= tab->scale;
+			tab->tab[x][y].sy *= tab->scale;
 			x++;
 		}
 		y++;
@@ -114,13 +113,32 @@ t_tab	centermap(t_tab *tab, t_tablim t)
 	return (*tab);
 }
 
+void	enlargetab(t_tab *tab)
+{
+	int		x;
+	int		y;
+
+	y = 0;
+	while (y < tab->height)
+	{
+		x = 0;
+		while (x < tab->width)
+		{
+			tab->tab[x][y].x *= 100;
+			tab->tab[x][y].y *= 100;
+			tab->tab[x][y].z *= 100;
+			x++;
+		}
+		y++;
+	}
+}
+
 void	drawtabiso(t_data *img, t_tab tab)
 {
+	enlargetab(&tab);
 	rasterize(&tab);
-	// centermap(&tab, getlim(&tab));
-	checktab(tab);
-	// autozoom(&tab, getlim(&tab));
-	checktab(tab);
+	centermap(&tab, getlim(&tab));
+	autozoom(&tab, getlim(&tab));
 	iter2tab(&tab, &tab, cartesian_to_screen);
 	draw_grid(img, tab);
 }

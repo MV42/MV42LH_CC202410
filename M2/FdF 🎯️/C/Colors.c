@@ -16,6 +16,7 @@ t_rgba	itorgb(unsigned int color)
 {
 	t_rgba	rgb;
 
+	rgb.a = (color >> 24) & 0xFF;
 	rgb.r = (color >> 16) & 0xFF;
 	rgb.g = (color >> 8) & 0xFF;
 	rgb.b = color & 0xFF;

@@ -27,8 +27,8 @@ void	tabvalues(t_tab *tab)
 		x = 0;
 		while (x < tab->width)
 		{
-			tab->tab[x][y].x = (x - center_x) * 300;
-			tab->tab[x][y].y = (center_y - y) * 300;
+			tab->tab[x][y].x = (x - center_x);
+			tab->tab[x][y].y = (center_y - y);
 			tab->tab[x][y].z = 0;
 			if (x % 2)
 				tab->tab[x][y].z = 0;
@@ -41,8 +41,8 @@ void	tabvalues(t_tab *tab)
 
 void	initfaketab(t_tab *t)
 {
-	(*t).width = 3;
-	(*t).height = 3;
+	(*t).width = 500;
+	(*t).height = 500;
 	(*t).tab = allocate_tab((*t).width, (*t).height);
 	tabvalues(t);
 }
