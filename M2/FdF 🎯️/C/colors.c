@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FdF.h                                              :+:      :+:    :+:   */
+/*   build_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,16 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
-# define W_WIDTH 1801
-# define W_HEIGHT 901
-# include <stddef.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
+#include "../H/fdf.h"
 
-# include "../mlx_linux/mlx.h"
-# include "Structs.h"
-# include "Prototypes.h"
-#endif
+t_rgba	itorgb(unsigned int color)
+{
+	t_rgba	rgb;
+
+	rgb.a = (color >> 24) & 0xFF;
+	rgb.r = (color >> 16) & 0xFF;
+	rgb.g = (color >> 8) & 0xFF;
+	rgb.b = color & 0xFF;
+	return (rgb);
+}
+
+int	rgbtoi(t_rgba rgb)
+{
+	int	color;
+
+	color = ((int)rgb.r << 16) | ((int)rgb.g << 8) | (int)rgb.b;
+	return (color);
+}
+
+t_rgba	gradient(t_line l)
+{
+	int		len;
+
+	if (l.d.sx > l.d.sy)
+		len = l.d.sx;
+	else
+		len = c_abs(l.d.sy);
+	l.index.color.r += (l.end.color.r - l.start.color.r) / len;
+	l.index.color.g += (l.end.color.g - l.start.color.g) / len;
+	l.index.color.b += (l.end.color.b - l.start.color.b) / len;
+	return (l.index.color);
+}

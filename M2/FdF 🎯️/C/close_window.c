@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Structs.h                                          :+:      :+:    :+:   */
+/*   build_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,62 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
-# include "FdF.h"
+#include "../H/fdf.h"
 
-typedef struct s_data
+void	free_resources(t_data *data)
 {
-	void		*img;
-	char		*addr;
-	int			bits_per_pixel;
-	int			line_length;
-	int			endian;
-	void		*mlx;
-	void		*win;
-}	t_data;
+	if (data->img)
+		mlx_destroy_image(data->mlx, data->img);
+	if (data->win)
+		mlx_destroy_window(data->mlx, data->win);
+	if (data->mlx)
+		free(data->mlx);
+}
 
-typedef struct s_rgba
+int	key_hook(int keycode, t_data *data)
 {
-	float		r;
-	float		g;
-	float		b;
-	float		a;
-}	t_rgba;
+	if (keycode == 53 || keycode == 65307)
+	{
+		free_resources(data);
+		exit(0);
+	}
+	return (0);
+}
 
-typedef struct s_point
+int	close_window(t_data *data)
 {
-	float		x;
-	float		y;
-	float		z;
-	t_rgba		color;
-	int			sx;
-	int			sy;
-}	t_point;
-
-typedef struct s_tab
-{
-	t_point		**tab;
-	char		**lines;
-	int			width;
-	int			height;
-	double		scale;
-}	t_tab;
-
-typedef struct s_line
-{
-	t_point		start;
-	t_point		index;
-	t_point		end;
-	t_point		d;
-}	t_line;
-
-typedef struct s_tablim
-{
-	int	xmin;
-	int	xmax;
-	int	ymin;
-	int	ymax;
-}	t_tablim;
-
-#endif
+	free_resources(data);
+	exit(0);
+	return (0);
+}

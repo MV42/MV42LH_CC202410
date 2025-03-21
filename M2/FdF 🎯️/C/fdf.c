@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Colors.c                                           :+:      :+:    :+:   */
+/*   build_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../H/FdF.h"
+#include "../H/fdf.h"
 
-t_rgba	itorgb(unsigned int color)
+int	main(void)
 {
-	t_rgba	rgb;
+	t_data		img;
+	t_tab		t3d;
 
-	rgb.a = (color >> 24) & 0xFF;
-	rgb.r = (color >> 16) & 0xFF;
-	rgb.g = (color >> 8) & 0xFF;
-	rgb.b = color & 0xFF;
-	return (rgb);
+	init(&img);
+	initfaketab(&t3d);
+	drawtabiso(&img, t3d);
+	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
+	mlx_key_hook(img.win, key_hook, &img);
+	mlx_hook(img.win, 17, 0, close_window, &img);
+	mlx_loop(img.mlx);
 }
-
-int	rgbtoi(t_rgba rgb)
+// Main Nathan
+int	main(int argc, char **argv)
 {
-	int	color;
+	t_tab	map;
 
-	color = ((int)rgb.r << 16) | ((int)rgb.g << 8) | (int)rgb.b;
-	return (color);
-}
-
-t_rgba	gradient(t_line l)
-{
-	int		len;
-
-	if (l.d.sx > l.d.sy)
-		len = l.d.sx;
-	else
-		len = c_abs(l.d.sy);
-	l.index.color.r += (l.end.color.r - l.start.color.r) / len;
-	l.index.color.g += (l.end.color.g - l.start.color.g) / len;
-	l.index.color.b += (l.end.color.b - l.start.color.b) / len;
-	return (l.index.color);
+	if (argc != 2)
+	{
+		printf("Usage: %s <fichier_map.fdf>\n", argv[0]);
+		return (1);
+	}
+	map = build_map(argv[1]);
+	free_map(&map);
+	return (0);
 }

@@ -17,15 +17,16 @@ CFLAGS		=	-Wall -Wextra -Iinclude/ -I$(MLX)/ -g
 LDFLAGS		=	-L$(MLX) -lmlx_Linux -lm -lXext -lX11 -lz
 
 C_P			=	C/
-C			=	$(C_P)CloseWindow.c \
-				$(C_P)Colors.c \
-				$(C_P)DrawLine.c \
-				$(C_P)FdF.c \
-				$(C_P)Main.c \
-				$(C_P)Rasterize.c \
-				$(C_P)ReadMap.c \
-				$(C_P)Test.c \
-				$(C_P)Utils.c \
+C			=	$(C_P)build_map_utils.c \
+				$(C_P)build_map.c \
+				$(C_P)close_window.c \
+				$(C_P)colors.c \
+				$(C_P)draw_line.c \
+				$(C_P)fdf.c \
+				$(C_P)fill_map.c \
+				$(C_P)rasterize.c \
+				$(C_P)test.c \
+				$(C_P)utils.c \
 
 O_P			=	O/
 O			=	$(addprefix $(O_P), $(notdir $(C:.c=.o)))

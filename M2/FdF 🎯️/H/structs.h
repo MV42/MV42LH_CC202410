@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.c                                             :+:      :+:    :+:   */
+/*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,62 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../H/FdF.h"
+#ifndef STRUCTS_H
+# define STRUCTS_H
+# include "fdf.h"
 
-void	init(t_data *img)
+typedef struct s_data
 {
-	(*img).mlx = mlx_init();
-	if (!(*img).mlx)
-		return ;
-	(*img).win = mlx_new_window((*img).mlx, W_WIDTH, W_HEIGHT, "FdF1");
-	if (!(*img).win)
-		return ;
-	(*img).mlx = (*img).mlx;
-	(*img).win = (*img).win;
-	(*img).img = mlx_new_image((*img).mlx, W_WIDTH, W_HEIGHT);
-	(*img).addr = mlx_get_data_addr((*img).img, &(*img).bits_per_pixel,
-			&(*img).line_length, &(*img).endian);
-}
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+	void		*mlx;
+	void		*win;
+}	t_data;
 
-int	main(void)
+typedef struct s_rgba
 {
-	t_data		img;
-	t_tab		t3d;
+	float		r;
+	float		g;
+	float		b;
+	float		a;
+}	t_rgba;
 
-	init(&img);
-	initfaketab(&t3d);
-	// checktab(t3d);
-	drawtabiso(&img, t3d);
-	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
-	mlx_key_hook(img.win, key_hook, &img);
-	mlx_hook(img.win, 17, 0, close_window, &img);
-	mlx_loop(img.mlx);
-}
+typedef struct s_point
+{
+	float		x;
+	float		y;
+	float		z;
+	t_rgba		color;
+	int			sx;
+	int			sy;
+}	t_point;
+
+typedef struct s_tab
+{
+	t_point		**tab;
+	char		**lines;
+	int			width;
+	int			height;
+	double		scale;
+}	t_tab;
+
+typedef struct s_line
+{
+	t_point		start;
+	t_point		index;
+	t_point		end;
+	t_point		d;
+}	t_line;
+
+typedef struct s_tablim
+{
+	int	xmin;
+	int	xmax;
+	int	ymin;
+	int	ymax;
+}	t_tablim;
+
+#endif

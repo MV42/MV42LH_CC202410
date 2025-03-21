@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Utils.c                                            :+:      :+:    :+:   */
+/*   build_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../H/FdF.h"
+#include "../H/fdf.h"
 #define KEY_Q 12
 #define KEY_W 13
 #define KEY_E 14
@@ -95,11 +95,24 @@ t_point	cartesian_to_screen(t_point point)
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*str;
-	size_t			i;
 
 	str = b;
-	i = 0;
-	while (i < len)
-		*(str + i++) = (unsigned char)c;
+	while (len)
+		str[len--] = (unsigned char)c;
 	return (b);
+}
+
+void	init(t_data *img)
+{
+	(*img).mlx = mlx_init();
+	if (!(*img).mlx)
+		return ;
+	(*img).win = mlx_new_window((*img).mlx, W_WIDTH, W_HEIGHT, "FdF1");
+	if (!(*img).win)
+		return ;
+	(*img).mlx = (*img).mlx;
+	(*img).win = (*img).win;
+	(*img).img = mlx_new_image((*img).mlx, W_WIDTH, W_HEIGHT);
+	(*img).addr = mlx_get_data_addr((*img).img, &(*img).bits_per_pixel,
+			&(*img).line_length, &(*img).endian);
 }
