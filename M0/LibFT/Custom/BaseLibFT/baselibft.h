@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "additionnal.h"
+#ifndef BASELIBFT_H
+# define BASELIBFT_H
+# include "Additional/additional.h"
+# include "Bonus/bonus.h"
+# include "Libc/libc.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (*(s + len))
-		len++;
-	return (len);
-}
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	char			*str;
-	unsigned int	i;
-
-	if (!s)
-		return (NULL);
-	str = malloc(ft_strlen(s) + 1);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (*(s + i))
-	{
-		*(str + i) = f(i, *(s + i));
-		i++;
-	}
-	*(str + i) = '\0';
-	return (str);
-}
+#endif

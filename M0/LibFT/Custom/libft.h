@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,16 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "additionnal.h"
+#ifndef LIBFT_H
+# define LIBFT_H
+# include "BaseLibFT/baselibft.h"
+# include "ft_printf/ft_printf.h"
+# include "GNL/get_next_line.h"
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (*(s + i))
-	{
-		write(fd, s + i, 1);
-		i++;
-	}
-}
+#endif

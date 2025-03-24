@@ -10,35 +10,30 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	additionnal.a
+SUBDIRS		=	Additional \
+				Bonus \
+				Libc \
 
-SRC			=	ft_itoa.c \
-				ft_putchar_fd.c \
-				ft_putendl_fd.c \
-				ft_putnbr_fd.c \
-				ft_putstr_fd.c \
-				ft_split.c \
-				ft_striteri.c \
-				ft_strjoin.c \
-				ft_strmapi.c \
-				ft_strtrim.c \
-				ft_substr.c \
+NAME		=	BaseLibFT.a
 
-AR			=	ar rcs
+all:		$(NAME) clean
 
-OBJS		=	$(SRC:.c=.o)
+$(NAME):	$(SUBDIRS:%=%.a)
+	@echo "Création de la bibliothèque globale $(NAME)"
+	@ar rcs $@ $(foreach dir,$(SUBDIRS),$(dir)/$(dir).a)
 
-$(NAME):	$(OBJS)
-	$(AR) $(NAME) $(OBJS)
-
-all:		$(NAME)
+%.a:
+	@echo "Compilation dans le sous-dossier $*"
+	@$(MAKE) -C $*
 
 clean:
-	$(RM) $(OBJS)
+	@$(foreach dir, $(SUBDIRS), $(MAKE) -C $(dir) fclean;)
+	@echo "Subfolders Residual Files Removed !"
 
 fclean:		clean
-	$(RM) $(NAME)
+	@rm -f $(NAME)
+	@echo "$(NAME) Removed !"
 
 re:			fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+.PHONY: clean fclean re all

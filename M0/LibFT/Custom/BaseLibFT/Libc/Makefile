@@ -10,30 +10,45 @@
 #                                                                              #
 # **************************************************************************** #
 
-SUBDIRS		=	BaseLibFT \
-				ft_printf \
-				GNL \
+SRCS		=	ft_atoi.c \
+				ft_bzero.c \
+				ft_calloc.c \
+				ft_isalnum.c \
+				ft_isalpha.c \
+				ft_isascii.c \
+				ft_isdigit.c \
+				ft_isprint.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_memset.c \
+				ft_strchr.c \
+				ft_strdup.c \
+				ft_strlcat.c \
+				ft_strlcpy.c \
+				ft_strlen.c \
+				ft_strncmp.c \
+				ft_strnstr.c \
+				ft_strrchr.c \
+				ft_tolower.c \
+				ft_toupper.c \
 
-NAME		=	LibFT.a
+NAME		=	Libc.a
 
-all:		$(NAME) clean
+OBJS = $(SRCS:.c=.o)
 
-$(NAME):	$(SUBDIRS:%=%.a)
-	@echo "Création de la bibliothèque globale $(NAME)"
-	@ar rcs $@ $(foreach dir,$(SUBDIRS),$(dir)/$(dir).a)
+all: $(NAME)
 
-%.a:
-	@echo "Compilation dans le sous-dossier $*"
-	@$(MAKE) -C $*
+$(NAME): $(OBJS)
+	@ar rcs $@ $^
 
 clean:
-	@$(foreach dir, $(SUBDIRS), $(MAKE) -C $(dir) fclean;)
-	@echo "Subfolders Residual Files Removed !"
+	@rm -f $(OBJS)
 
-fclean:		clean
+fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) Removed !"
 
-re:			fclean all
+re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: all clean fclean re

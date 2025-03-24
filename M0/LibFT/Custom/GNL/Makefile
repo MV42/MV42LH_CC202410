@@ -10,45 +10,24 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	GNL.a
-
-CFLAGS		=	-Wall -Wextra -Werror
-
-FILES		=	get_next_line_utils.c \
+SRCS		=	get_next_line_utils.c \
 				get_next_line.c \
 
-OBJ			=	$(FILES:.c=.o)
-BONUS_OBJ	=	$(BONUS_FILES:.c=.o)
-RM			=	rm -f
+NAME		=	GNL.a
 
-$(NAME):	$(OBJ)
-	@ar rcs $@ $(OBJ)
-	@echo "$@ created"
-	@ranlib $@
-	@echo "$@ indexed"
+OBJS		=	$(SRCS:.c=.o)
 
-$(OBJ):
-	@cc -c $(FLAG) $(FILES)
-	@echo "Mandatory files compiled into objects"
+all:		$(NAME) clean
 
-all:		$(NAME)
+$(NAME):	$(OBJS)
+	@ar rcs $@ $^
 
 clean:
-	@$(RM) $(OBJ) $(BONUS_OBJ)
-	@echo "OBJ deleted"
+	@rm -f $(OBJS)
 
 fclean:		clean
-	@$(RM) $(NAME)
-	@echo "$(NAME) deleted"
+	@rm -f $(NAME)
 
 re:			fclean all
 
-bonus:		$(BONUS_FILES)
-	@cc -c $(FLAG) $(BONUS_FILES)
-	@echo "Bonus files compiled into objects"
-	@ar rcs $(NAME) $(BONUS_OBJ)
-	@echo "$@ created"
-	@ranlib $(NAME)
-	@echo "$@ indexed"
-
-.PHONY: all, clean, fclean, re, bonus
+.PHONY:		all clean fclean re

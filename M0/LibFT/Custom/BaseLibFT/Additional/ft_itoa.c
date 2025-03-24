@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "additionnal.h"
+#include "additional.h"
 
 static size_t	count_digits(int n)
 {

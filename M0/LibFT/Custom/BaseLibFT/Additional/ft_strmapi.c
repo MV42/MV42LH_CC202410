@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,20 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "additionnal.h"
+#include "additional.h"
 
-void	ft_putnbr_fd(int n, int fd)
+size_t	ft_strlen(const char *s)
 {
-	unsigned int	nbr;
+	size_t	len;
 
-	if (n < 0)
+	len = 0;
+	while (*(s + len))
+		len++;
+	return (len);
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char			*str;
+	unsigned int	i;
+
+	if (!s)
+		return (NULL);
+	str = malloc(ft_strlen(s) + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (*(s + i))
 	{
-		ft_putchar_fd('-', fd);
-		nbr = n * -1;
+		*(str + i) = f(i, *(s + i));
+		i++;
 	}
-	else
-		nbr = n;
-	if (nbr > 9)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd(nbr % 10 + '0', fd);
+	*(str + i) = '\0';
+	return (str);
 }

@@ -10,29 +10,27 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ft_printf.a
-
 UTILS_PATH	=	./Utils/
 
-SRC			=	ft_printf.c \
+SRCS		=	ft_printf.c \
 				$(UTILS_PATH)ft_putnbr_base.c \
-				$(UTILS_PATH)ft_printf_cspct.c
+				$(UTILS_PATH)ft_printf_cspct.c \
 
-AR			=	ar rcs
+NAME		=	ft_printf.a
 
-OBJS		=	$(SRC:.c=.o)
+OBJS		=	$(SRCS:.c=.o)
+
+all:		$(NAME) clean
 
 $(NAME):	$(OBJS)
-	$(AR) $(NAME) $(OBJS)
-
-all:		$(NAME)
+	@ar rcs $@ $^
 
 clean:
-	$(RM) $(OBJS)
+	@rm -f $(OBJS)
 
 fclean:		clean
-	$(RM) $(NAME)
+	@rm -f $(NAME)
 
 re:			fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+.PHONY:		all clean fclean re
