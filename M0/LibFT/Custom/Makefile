@@ -18,9 +18,13 @@ NAME		=	LibFT.a
 
 all:		$(NAME) clean
 
-$(NAME):	$(SUBDIRS:%=%.a)
+$(NAME):	libft.h $(SUBDIRS:%=%.a)
 	@echo "Création de la bibliothèque globale $(NAME)"
 	@ar rcs $@ $(foreach dir,$(SUBDIRS),$(dir)/$(dir).a)
+
+libft.h:	generate_header.sh
+	@echo "Génération de libft.h"
+	@./generate_header.sh
 
 %.a:
 	@echo "Compilation dans le sous-dossier $*"
@@ -32,6 +36,7 @@ clean:
 
 fclean:		clean
 	@rm -f $(NAME)
+    # @rm -f libft.h
 	@echo "$(NAME) Removed !"
 
 re:			fclean all

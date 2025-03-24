@@ -12,7 +12,7 @@
 
 #ifndef LIBC_H
 # define LIBC_H
-# include "../libft.h"
+# include "../baselibft.h"
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
