@@ -28,7 +28,8 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# include "../mlx_linux/mlx.h"
+# include "mlx.h"
+# include "libft.h"
 # include "structs.h"
 # include "prototypes.h"
 #endif

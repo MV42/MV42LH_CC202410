@@ -10,36 +10,23 @@
 #                                                                              #
 # **************************************************************************** #
 
-SUBDIRS		=	BaseLibFT \
-				ft_printf \
-				GNL \
-				Utils \
+SRCS		=	ft_atoi_base.c \
 
-NAME		=	libft.a
+NAME		=	Utils.a
 
-all:		$(NAME)
+OBJS		=	$(SRCS:.c=.o)
 
-$(NAME):	libft.h $(SUBDIRS:%=%.a)
-	@echo "Création de la bibliothèque globale $(NAME)"
-	ar rcs $@ $(foreach dir,$(SUBDIRS),$(dir)/$(dir).a)
+all:		$(NAME) clean
 
-libft.h:	generate_header.sh
-	@echo "Génération de libft.h"
-	@./generate_header.sh
-
-%.a:
-	@echo "Compilation dans le sous-dossier $*"
-	@$(MAKE) -C $*
+$(NAME):	$(OBJS)
+	@ar rcs $@ $^
 
 clean:
-	@$(foreach dir, $(SUBDIRS), $(MAKE) -C $(dir) fclean;)
-	@echo "Subfolders Residual Files Removed !"
+	@rm -f $(OBJS)
 
 fclean:		clean
 	@rm -f $(NAME)
-    # @rm -f libft.h
-	@echo "$(NAME) Removed !"
 
 re:			fclean all
 
-.PHONY: clean fclean re all
+.PHONY:		all clean fclean re

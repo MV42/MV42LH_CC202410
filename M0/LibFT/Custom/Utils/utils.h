@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#ifndef UTILS_H
+# define UTILS_H
 
-void	*ft_calloc(size_t size)
-{
-	void			*ptr;
-	unsigned char	*byte_ptr;
-	size_t			i;
+int		ft_atoi_base(char *str, char *base);
 
-	ptr = malloc(size);
-	if (!ptr)
-		return (NULL);
-	byte_ptr = (unsigned char *)ptr;
-	i = 0;
-	while (i < size)
-	{
-		byte_ptr[i] = 0;
-		i++;
-	}
-	return (ptr);
-}
+#endif

@@ -43,7 +43,7 @@ void	initfaketab(t_tab *t)
 {
 	(*t).width = 500;
 	(*t).height = 500;
-	(*t).tab = allocate_tab((*t).width, (*t).height);
+	(*t).tab = allocate_map((*t).width, (*t).height);
 	tabvalues(t);
 }
 

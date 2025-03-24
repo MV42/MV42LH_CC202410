@@ -68,7 +68,6 @@ void		checktab(t_tab tab);
 int			put_pixel(t_data *data, t_point p);
 void		swap(void **ptr1, void **ptr2);
 int			c_abs(int x);
-void		*ft_calloc(size_t size);
 void		iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point));
 t_point		cartesian_to_screen(t_point point);
 void		*ft_memset(void *b, int c, size_t len);

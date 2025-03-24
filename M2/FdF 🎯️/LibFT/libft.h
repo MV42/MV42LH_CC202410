@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
+/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -38,7 +50,7 @@ int		ft_lstsize(t_list *lst);
 // BaseLibFT/Libc
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t count, size_t size);
+void	*ft_calloc(size_t size);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -65,5 +77,8 @@ int		ft_printf(const char *format, ...);
 
 // GNL
 char	*get_next_line(int fd);
+
+// Utils
+int		ft_atoi_base(char *str, char *base);
 
 #endif

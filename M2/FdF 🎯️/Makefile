@@ -13,7 +13,7 @@
 NAME		=	fdf
 CC			=	gcc
 MLX			=	mlx_linux
-CFLAGS		=	-Wall -Wextra -Iinclude/ -I$(MLX)/ -g
+CFLAGS		=	-Wall -Wextra -Werror -I$(MLX)/ -ILibFT/ -g
 LDFLAGS		=	-L$(MLX) -lmlx_Linux -lm -lXext -lX11 -lz
 
 C_P			=	C/

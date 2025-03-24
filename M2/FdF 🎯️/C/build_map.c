@@ -26,7 +26,6 @@ t_tab	build_map(const char *filename)
 		return (map);
 	}
 	fill_map(map.tab, map.lines, map.width, map.height);
-	print_map(map.tab, map.width, map.height);
 	return (map);
 }
 

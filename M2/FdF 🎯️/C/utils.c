@@ -48,25 +48,6 @@ int	c_abs(int x)
 	return (x);
 }
 
-void	*ft_calloc(size_t size)
-{
-	void			*ptr;
-	unsigned char	*byte_ptr;
-	size_t			i;
-
-	ptr = malloc(size);
-	if (!ptr)
-		return (NULL);
-	byte_ptr = (unsigned char *)ptr;
-	i = 0;
-	while (i < size)
-	{
-		byte_ptr[i] = 0;
-		i++;
-	}
-	return (ptr);
-}
-
 void	iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point))
 {
 	int	x;

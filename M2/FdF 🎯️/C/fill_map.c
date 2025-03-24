@@ -47,13 +47,13 @@ t_point	extract_point(char *value, int x, int y)
 	{
 		free(z_value);
 		free(color);
-		return ((t_point){0, 0, 0, 0});
+		return ((t_point){0, 0, 0, itorgb(0), 0, 0});
 	}
 	if (color[0] != '\0')
 		point = (t_point){x, y, ft_atoi(z_value),
-			ft_atoi_base(color, "0123456789ABCDEF")};
+			itorgb(ft_atoi_base(color, "0123456789ABCDEF")), 0, 0};
 	else
-		point = (t_point){x, y, ft_atoi(z_value), 0xFFFFFF};
+		point = (t_point){x, y, ft_atoi(z_value), itorgb(0xFFFFFF), 0, 0};
 	free(z_value);
 	free(color);
 	return (point);
@@ -88,7 +88,7 @@ char	*extract_z_value(char *value)
 	char	*z_value;
 
 	i = 0;
-	z_value = ft_calloc(strlen(value) + 1);
+	z_value = ft_calloc(ft_strlen(value) + 1);
 	if (!z_value)
 		return (NULL);
 	while (value[i] && value[i] != ',')

@@ -12,19 +12,19 @@
 
 #include "../H/fdf.h"
 
-int	main(void)
-{
-	t_data		img;
-	t_tab		t3d;
+// int	main(void)
+// {
+// 	t_data		img;
+// 	t_tab		t3d;
 
-	init(&img);
-	initfaketab(&t3d);
-	drawtabiso(&img, t3d);
-	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
-	mlx_key_hook(img.win, key_hook, &img);
-	mlx_hook(img.win, 17, 0, close_window, &img);
-	mlx_loop(img.mlx);
-}
+// 	init(&img);
+// 	initfaketab(&t3d);
+// 	drawtabiso(&img, t3d);
+// 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
+// 	mlx_key_hook(img.win, key_hook, &img);
+// 	mlx_hook(img.win, 17, 0, close_window, &img);
+// 	mlx_loop(img.mlx);
+// }
 // Main Nathan
 int	main(int argc, char **argv)
 {
