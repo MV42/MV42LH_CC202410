@@ -10,54 +10,52 @@
 #                                                                              #
 # **************************************************************************** #
 
-SUBDIRS		=	baselibft \
-				ft_printf \
-				get_next_line \
-				utils \
+SRCS		=	ft_atoi.c \
+				ft_bzero.c \
+				ft_calloc.c \
+				ft_isalnum.c \
+				ft_isalpha.c \
+				ft_isascii.c \
+				ft_isdigit.c \
+				ft_isprint.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_memset.c \
+				ft_strchr.c \
+				ft_strdup.c \
+				ft_strlcat.c \
+				ft_strlcpy.c \
+				ft_strlen.c \
+				ft_strncmp.c \
+				ft_strnstr.c \
+				ft_strrchr.c \
+				ft_tolower.c \
+				ft_toupper.c \
 
-NAME		=	libft.a
+NAME		=	libc.a
 
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
-IFLAGS		=	-I../include
-
--include sources.mk
+IFLAGS		=	-I../../include
 
 OBJS		=	$(SRCS:.c=.o)
 
-all: gen_sources $(NAME)
+all: $(NAME)
 
-gen_sources:
-	@./generate_sources.sh
-
-$(NAME): $(OBJS) submodules
+$(NAME): $(OBJS)
 	@ar rcs $@ $(OBJS)
-	@for dir in $(SUBDIRS); do \
-		if [ -f $$dir/lib$$dir.a ]; then \
-			ar rcs $(NAME) $$dir/lib$$dir.a; \
-		fi \
-	done
-
-submodules:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir; \
-	done
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir clean; \
-	done
 
 fclean: clean
 	@rm -f $(NAME)
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir fclean; \
-	done
 
 re: fclean all
 
-.PHONY: all clean fclean re submodules gen_sources
+.PHONY: all clean fclean re

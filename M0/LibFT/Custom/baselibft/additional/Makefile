@@ -10,54 +10,40 @@
 #                                                                              #
 # **************************************************************************** #
 
-SUBDIRS		=	baselibft \
-				ft_printf \
-				get_next_line \
-				utils \
+SRCS		=	ft_itoa.c \
+				ft_putchar_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c \
+				ft_split.c \
+				ft_striteri.c \
+				ft_strjoin.c \
+				ft_strmapi.c \
+				ft_strtrim.c \
+				ft_substr.c \
 
-NAME		=	libft.a
+NAME		=	additional.a
 
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
-IFLAGS		=	-I../include
-
--include sources.mk
+IFLAGS		=	-I../../include
 
 OBJS		=	$(SRCS:.c=.o)
 
-all: gen_sources $(NAME)
+all: $(NAME)
 
-gen_sources:
-	@./generate_sources.sh
-
-$(NAME): $(OBJS) submodules
+$(NAME): $(OBJS)
 	@ar rcs $@ $(OBJS)
-	@for dir in $(SUBDIRS); do \
-		if [ -f $$dir/lib$$dir.a ]; then \
-			ar rcs $(NAME) $$dir/lib$$dir.a; \
-		fi \
-	done
-
-submodules:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir; \
-	done
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir clean; \
-	done
 
 fclean: clean
 	@rm -f $(NAME)
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir fclean; \
-	done
 
 re: fclean all
 
-.PHONY: all clean fclean re submodules gen_sources
+.PHONY: all clean fclean re

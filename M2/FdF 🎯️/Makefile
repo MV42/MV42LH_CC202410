@@ -16,39 +16,40 @@ MLX			=	mlx_linux
 CFLAGS		=	-Wall -Wextra -Werror -I$(MLX)/ -ILibFT/ -g
 LDFLAGS		=	-L$(MLX) -lmlx_Linux -lm -lXext -lX11 -lz
 
-C_P			=	C/
-C			=	$(C_P)build_map_utils.c \
-				$(C_P)build_map.c \
-				$(C_P)close_window.c \
-				$(C_P)colors.c \
-				$(C_P)draw_line.c \
-				$(C_P)fdf.c \
-				$(C_P)fill_map.c \
-				$(C_P)rasterize.c \
-				$(C_P)test.c \
-				$(C_P)utils.c \
+SRC_DIR		=	src/
+OBJ_DIR		=	build/
 
-O_P			=	O/
-O			=	$(addprefix $(O_P), $(notdir $(C:.c=.o)))
+SRC			=	build_map_utils.c \
+				build_map.c \
+				close_window.c \
+				colors.c \
+				draw_line.c \
+				fdf.c \
+				fill_map.c \
+				rasterize.c \
+				test.c \
+				utils.c
 
-$(NAME): $(O)
-	@$(CC) $(O) $(LDFLAGS) -o $@
-	@echo "$(notdir $@) Created !"
+OBJ			=	$(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC))
 
 all: $(NAME)
 
-$(O_P)%.o: $(C_P)%.c
-	@mkdir -p $(O_P)
-	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo "$(notdir $@) Created !"
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) $(LDFLAGS) -o $@
+	@echo "$(NAME) created!"
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "Compiling $<..."
 
 clean:
-	@rm -rf $(O_P)
-	@echo "Object Files Removed !"
+	@rm -rf $(OBJ_DIR)
+	@echo "Object files removed!"
 
 fclean: clean
-	@rm -rf $(NAME)
-	@echo "FdF Removed !"
+	@rm -f $(NAME)
+	@echo "$(NAME) removed!"
 
 re: fclean all
 
@@ -56,4 +57,4 @@ norm:
 	@clear
 	@norminette $(shell find . -type f \( -name "*.c" -o -name "*.h" \) ! -path "./$(MLX)/*")
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re norm

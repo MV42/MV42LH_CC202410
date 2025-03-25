@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-// BaseLibFT/Additional
+// baselibft/additional
 
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
@@ -29,7 +29,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-// BaseLibFT/Bonus
+// baselibft/bonus
 
 typedef struct s_list
 {
@@ -47,7 +47,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
-// BaseLibFT/Libc
+// baselibft/libc
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t size);
@@ -75,10 +75,10 @@ int		ft_toupper(int c);
 // ft_printf
 int		ft_printf(const char *format, ...);
 
-// GNL
+// get_next_line
 char	*get_next_line(int fd);
 
-// Utils
+// utils
 int		ft_atoi_base(char *str, char *base);
 
 #endif
