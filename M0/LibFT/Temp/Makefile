@@ -17,47 +17,19 @@ SUBDIRS		=	baselibft \
 
 NAME		=	libft.a
 
-CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
-IFLAGS		=	-I../include
+OBJS		=	$(foreach dir, $(SUBDIRS), $(wildcard $(dir)/*.o))
 
--include sources.mk
+all: $(NAME)
 
-OBJS		=	$(SRCS:.c=.o)
+$(NAME): extract_objs
+	ar rcs $(NAME) $(OBJS)
 
-all: gen_sources $(NAME)
-
-gen_sources:
-	@./generate_sources.sh
-
-$(NAME): $(OBJS) submodules
-	@ar rcs $@ $(OBJS)
+extract_objs:
 	@for dir in $(SUBDIRS); do \
-		if [ -f $$dir/lib$$dir.a ]; then \
-			ar rcs $(NAME) $$dir/lib$$dir.a; \
-		fi \
+		ar x $$dir/*.a; \
 	done
-
-submodules:
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir; \
-	done
-
-%.o: %.c
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir clean; \
-	done
+	rm -f $(OBJS) $(NAME)
 
-fclean: clean
-	@rm -f $(NAME)
-	@for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir fclean; \
-	done
-
-re: fclean all
-
-.PHONY: all clean fclean re submodules gen_sources
+.PHONY: all clean

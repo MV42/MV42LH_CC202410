@@ -1,2 +1,0 @@
-# Sources générées automatiquement
-SRCS =
