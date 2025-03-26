@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fdf.h"
+#include "fdf.h"
 #define KEY_Q 12
 #define KEY_W 13
 #define KEY_E 14

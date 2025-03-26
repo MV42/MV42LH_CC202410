@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ngaudoui <ngaudoui@student.42lehavre.fr    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 15:56:44 by mavander          #+#    #+#             */
+/*   Updated: 2025/03/14 18:10:50 by ngaudoui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -6,7 +18,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-
+# include "./gnl/get_next_line.h"
+# include "./printf/ft_printf.h"
 // ORIGINAL FUNCTIONS
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -44,13 +57,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-// ft_printf
-int		ft_printf(const char *format, ...);
-
-// get_next_line
-char	*get_next_line(int fd);
-
 // BONUS FUNCTIONS
 // typedef struct s_list
 // {

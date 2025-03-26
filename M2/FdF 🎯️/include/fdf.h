@@ -29,7 +29,8 @@
 # include <unistd.h>
 
 # include "mlx.h"
-# include "libft.h"
+# include "mlx_int.h"
+# include "../libft/libft.h"
 # include "structs.h"
 # include "prototypes.h"
 #endif
