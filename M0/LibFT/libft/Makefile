@@ -1,99 +1,103 @@
-# Nom de la bibliotheque a generer
-NAME = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/21 21:42:42 by mavander          #+#    #+#              #
+#    Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# Options de compilations
-CFLAGS = -Wall -Wextra -Werror -Ignl/
+NAME		=	libft.a
 
-# Liste des fichiers sources
-SRCS = src/ft_isalpha.c \
-	src/ft_isdigit.c \
-	src/ft_isalnum.c \
-	src/ft_isascii.c \
-	src/ft_isprint.c \
-	src/ft_strlen.c \
-	src/ft_memset.c \
-	src/ft_bzero.c \
-	src/ft_memcpy.c \
-	src/ft_memmove.c \
-	src/ft_strlcpy.c \
-	src/ft_strlcat.c \
-	src/ft_toupper.c \
-	src/ft_tolower.c \
-	src/ft_strchr.c \
-	src/ft_strrchr.c \
-	src/ft_strncmp.c \
-	src/ft_memchr.c \
-	src/ft_memcmp.c \
-	src/ft_strnstr.c \
-	src/ft_atoi.c \
-	src/ft_atoi_base.c \
-	src/ft_calloc.c \
-	src/ft_strdup.c \
-	src/ft_substr.c \
-	src/ft_strjoin.c \
-	src/ft_strtrim.c \
-	src/ft_split.c \
-	src/ft_itoa.c \
-	src/ft_strmapi.c \
-	src/ft_striteri.c \
-	src/ft_putchar_fd.c \
-	src/ft_putstr_fd.c \
-	src/ft_putendl_fd.c \
-	src/ft_putnbr_fd.c \
-	gnl/get_next_line.c \
-	gnl/get_next_line_utils.c
-# Liste des fichiers sources BONUS
-# BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-# 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-# 		ft_lstmap.c
-# Liste des fichiers Objets creer a partir de 'SRCS' (Fichiers sources)
-OBJS = $(SRCS:%.c=$(OBJ_DIR)%.o)
-PRINTF_OBJS = $(shell find $(PRINTF_OBJ_DIR) -name '*.o')
+CC			=	cc
+CFLAGS		=	-Wall -Wextra -Werror -Iget_next_line/ -Ift_printf/ -I.
 
-OBJ_DIR = obj/
-PRINTF_DIR = printf/
-PRINTF_OBJ_DIR = $(OBJ_DIR)$(PRINTF_DIR)
-PRINTF_LIB = $(PRINTF_DIR)libftprintf.a
-# Liste des fichiers Objets BONUS creer a partir de 'BONUS_SRCS' (Fichiers sources)
-# BONUS_OBJ = $(BONUS_SRCS:.c=.o)
+OBJ_DIR		=	obj/
+OBJ			=	$(patsubst %.c,$(OBJ_DIR)%.o,$(SRC))
 
-# Commande pour supprimer des fichiers avec option -f (pas d'erreur)
-RM = rm -f
+SRC			=	$(LIBFT_SRC) $(GNL_SRC) $(PRINTF_SRC)
 
-all: $(PRINTF_LIB) $(NAME)
+LIBFT_DIR	=	libft/
+LIBFT_SRC	=	$(addprefix $(LIBFT_DIR)/, \
+				ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_strlen.c \
+				ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strchr.c \
+				ft_strrchr.c \
+				ft_strncmp.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_strnstr.c \
+				ft_atoi.c \
+				ft_atoi_base.c \
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c \
+				ft_striteri.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c \
+				)
 
-$(PRINTF_LIB):
-	@make -C $(PRINTF_DIR)
+GNL_DIR		=	get_next_line/
+GNL_SRC		=	$(addprefix $(GNL_DIR)/, \
+				get_next_line.c \
+				get_next_line_utils.c \
+				)
 
-# test/test.a
-$(NAME) : $(OBJS) $(PRINTF_LIB)
-	ar rcs $@ $(OBJS) $(PRINTF_OBJS)
-#	@ar x test/test.a
-#	@ar rcs $(NAME) *.o
-#	@rm -f *.o
-	@echo "$(NAME) created"
+PRINTF_DIR	=	ft_printf/
+PRINTF_SRC	=	$(addprefix $(PRINTF_DIR)/, \
+				ft_printf.c \
+				ft_printf_cspct.c \
+				ft_putnbr_base.c \
+				)
+
+all:	$(NAME)
 
 $(OBJ_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
-	@gcc -c $(CFLAGS) $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-# bonus:		$(BONUS_FILES)
-# 	@gcc -c $(FLAG) $(BONUS_FILES)
-# 	@ar rcs $(NAME) $(BONUS_OBJ)
-# 	@ranlib $(NAME)
-printf:
-	@make -C printf
+$(NAME):	$(OBJ)
+	@ar rcs $@ $(OBJ)
+	@echo "$(NAME) Created"
 
 clean:
-	@$(RM) -rf $(OBJ_DIR)
-	@make -C $(PRINTF_DIR) clean
-# $(BONUS_OBJ)
-	@echo "OBJ deleted"
+	@rm -rf $(OBJ_DIR)
+	@echo "OBJ Deleted"
 
 fclean:		clean
-	@$(RM) $(NAME)
-	@make -C $(PRINTF_DIR) fclean
-	@echo "$(NAME) deleted"
+	@rm -f $(NAME)
+	@echo "$(NAME) Deleted"
 
 re:	fclean all
 
