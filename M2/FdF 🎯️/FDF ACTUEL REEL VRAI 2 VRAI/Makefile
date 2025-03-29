@@ -12,7 +12,7 @@ OBJ_DIR		= obj/
 INC_DIR		= include/
 
 # Library paths
-MLX_DIR		= $(LIB_DIR)minilibx-linux/
+MLX_DIR		= $(LIB_DIR)minilibx_linux/
 LIBFT_DIR	= $(LIB_DIR)libft/
 
 # Source files
@@ -38,7 +38,7 @@ LFLAGS		= $(addprefix -L, $(LIBFT_DIR) $(MLX_DIR))
 LIBS		= -lmlx_Linux -lm -lXext -lX11 -lz -lft
 
 # Main target
-$(NAME): $(OBJS) $(LIBFT_DIR)/libft.a
+$(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(LFLAGS) $(LIBS) -o $(NAME)
 
 # Object file compilation rule
@@ -46,18 +46,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
-# Libft compilation
-$(LIBFT_DIR)/libft.a:
-	@$(MAKE) -C $(LIBFT_DIR) > /dev/null 2>&1
-
 # Targets
 all: $(NAME)
 
 clean:
 	@rm -rf $(OBJ_DIR)
 	@echo "$(OBJ_DIR) And Its Content Has Been Deleted !"
-	@$(MAKE) -C $(LIBFT_DIR) fclean > /dev/null 2>&1
-	@echo "$(LIBFT_DIR) Has Been fclean-ed"
 
 fclean: clean
 	@rm -f $(NAME)

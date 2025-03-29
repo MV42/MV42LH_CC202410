@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   build_map_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngaudoui <ngaudoui@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 11:16:12 by ngaudoui          #+#    #+#             */
-/*   Updated: 2025/03/25 15:09:59 by ngaudoui         ###   ########.fr       */
+/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
+/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

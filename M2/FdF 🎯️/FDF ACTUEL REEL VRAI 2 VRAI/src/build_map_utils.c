@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   build_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngaudoui <ngaudoui@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 14:59:05 by ngaudoui          #+#    #+#             */
-/*   Updated: 2025/03/24 19:00:39 by ngaudoui         ###   ########.fr       */
+/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
+/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	read_map_file(t_tab *map, const char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		return (1);
+		return (0);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -78,7 +78,7 @@ int	read_map_file(t_tab *map, const char *filename)
 	}
 	close(fd);
 	free(line);
-	return (map->lines);
+	return (1);
 }
 
 int	add_line_to_map(char ***lines, char *line, int height)

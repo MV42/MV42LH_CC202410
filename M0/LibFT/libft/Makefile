@@ -18,7 +18,7 @@ CFLAGS		=	-Wall -Wextra -Werror -Iget_next_line/ -Ift_printf/ -I.
 OBJ_DIR		=	obj/
 OBJ			=	$(patsubst %.c,$(OBJ_DIR)%.o,$(SRC))
 
-SRC			=	$(LIBFT_SRC) $(GNL_SRC) $(PRINTF_SRC)
+SRC			=	$(LIBFT_SRC) $(GNL_SRC) $(PRINTF_SRC) $(CUSTOM_SRC)
 
 LIBFT_DIR	=	libft/
 LIBFT_SRC	=	$(addprefix $(LIBFT_DIR)/, \
@@ -43,7 +43,6 @@ LIBFT_SRC	=	$(addprefix $(LIBFT_DIR)/, \
 				ft_memcmp.c \
 				ft_strnstr.c \
 				ft_atoi.c \
-				ft_atoi_base.c \
 				ft_calloc.c \
 				ft_strdup.c \
 				ft_substr.c \
@@ -68,6 +67,13 @@ LIBFT_SRC	=	$(addprefix $(LIBFT_DIR)/, \
 				ft_lstmap.c \
 				)
 
+CUSTOM_DIR	=	custom/
+CUSTOM_SRC	=	$(addprefix $(CUSTOM_DIR)/, \
+				ft_atoi_base.c \
+				ft_isspace.c \
+				)
+
+				
 GNL_DIR		=	get_next_line/
 GNL_SRC		=	$(addprefix $(GNL_DIR)/, \
 				get_next_line.c \

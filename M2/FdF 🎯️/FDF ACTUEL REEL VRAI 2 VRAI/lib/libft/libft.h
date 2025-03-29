@@ -14,8 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include "get_next_line/get_next_line.h"
-# include "ft_printf/ft_printf.h"
+// # include "get_next_line/get_next_line.h"
+// # include "ft_printf/ft_printf.h"
 
 // LIBC FUNCTIONS
 int		ft_isalpha(int c);

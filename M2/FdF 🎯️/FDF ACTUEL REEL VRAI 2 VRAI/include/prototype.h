@@ -17,7 +17,7 @@
 // build_map_utils.c
 void			**ft_realloc_tab(void **ptr, size_t old_size, size_t new_size);
 int				count_columns(char *line);
-void			read_map_file(t_tab *map, const char *filename);
+int				read_map_file(t_tab *map, const char *filename);
 int				add_line_to_map(char ***lines, char *line, int height);
 void			free_map_lines(char **lines, int height);
 
