@@ -75,14 +75,14 @@ typedef struct s_data
     int			win_height;
 }				t_data;
 
-typedef struct s_inputs
+typedef struct s_input
 {
-	int			rot_x;
-	int			rot_y;
-	int			rot_z;
+	float		rot_x;
+	float		rot_y;
+	float		rot_z;
 	int			zoom;
 	int			pos_x;
 	int			pos_y;
-}				t_inputs;
+}				t_input;
 
 #endif

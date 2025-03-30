@@ -14,8 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-// # include "get_next_line/get_next_line.h"
-// # include "ft_printf/ft_printf.h"
 
 // LIBC FUNCTIONS
 int		ft_isalpha(int c);
@@ -81,5 +79,7 @@ int		ft_printf(const char *format, ...);
 // CUSTOM
 int		ft_isspace(char c);
 int		ft_atoi_base(char *str, char *base);
+float	ft_degtorad(float deg);
+float	ft_radtodeg(float rad);
 
 #endif

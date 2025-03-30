@@ -71,6 +71,8 @@ CUSTOM_DIR	=	custom/
 CUSTOM_SRC	=	$(addprefix $(CUSTOM_DIR)/, \
 				ft_atoi_base.c \
 				ft_isspace.c \
+				ft_radtodeg.c \
+				ft_degtorad.c \
 				)
 
 				
