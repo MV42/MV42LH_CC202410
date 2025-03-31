@@ -23,9 +23,9 @@ void	bresenham(t_data *img, t_line l)
 	err = l.d.sx - l.d.sy;
 	while (1)
 	{
-		if (!put_pixel(img, l.index)
-			|| (l.index.sx == l.end.sx && l.index.sy == l.end.sy))
+		if (l.index.sx == l.end.sx && l.index.sy == l.end.sy)
 			break ;
+		put_pixel(img, l.index);
 		e2 = err;
 		if (e2 > -l.d.sx)
 		{

@@ -55,30 +55,27 @@ int	count_columns(char *line)
 	return (count);
 }
 
-int	read_map_file(t_tab *map, const char *filename)
+char	read_map_file(t_tab *tab, const char *filename)
 {
 	int		fd;
 	char	*line;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		return (0);
+		return (ft_printf("Error: Invalid FD"), 0);
 	line = get_next_line(fd);
 	while (line)
 	{
-		if (map->height == 0)
-			map->width = count_columns(line);
-		if (!add_line_to_map(&map->lines, line, map->height))
-		{
-			close(fd);
-			return (free(line), free_map_lines(map->lines, map->height), 0);
-		}
-		(map->height)++;
+		if (tab->height == 0)
+			tab->width = count_columns(line);
+		if (!add_line_to_map(&tab->lines, line, tab->height))
+			return (close(fd), free(line), free_map_lines(tab->lines, tab->height), 0);
+		tab->height++;
 		line = get_next_line(fd);
 	}
 	close(fd);
 	free(line);
-	return (1);
+	return (0b00000001);
 }
 
 int	add_line_to_map(char ***lines, char *line, int height)

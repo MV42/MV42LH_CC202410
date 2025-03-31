@@ -65,16 +65,6 @@ typedef struct s_image
 	int			endian;
 }				t_image;
 
-typedef struct s_data
-{
-	void		*mlx;
-	void		*win;
-	t_image		img;
-	t_tab		*map;
-	int			win_width;
-    int			win_height;
-}				t_data;
-
 typedef struct s_input
 {
 	float		rot_x;
@@ -84,5 +74,14 @@ typedef struct s_input
 	int			pos_x;
 	int			pos_y;
 }				t_input;
+
+typedef struct s_data
+{
+	void		*mlx;
+	void		*win;
+	t_image		img;
+	t_tab		tab;
+	t_input		in;
+}				t_data;
 
 #endif

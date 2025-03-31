@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void	fill_map(t_point **map, char **lines, int width, int height)
+void	fill_map(t_point **tab, char **lines, int width, int height)
 {
 	int		x;
 	int		y;
@@ -30,7 +30,7 @@ void	fill_map(t_point **map, char **lines, int width, int height)
 		iy++;
 		while (x < width)
 		{
-			map[x][y] = extract_point(split_line[x], ++ix, iy);
+			tab[x][y] = extract_point(split_line[x], ++ix, iy);
 			x++;
 		}
 		free_split(split_line);

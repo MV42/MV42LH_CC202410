@@ -17,11 +17,12 @@
 // build_map_utils.c
 void			**ft_realloc_tab(void **ptr, size_t old_size, size_t new_size);
 int				count_columns(char *line);
-int				read_map_file(t_tab *map, const char *filename);
+char			read_map_file(t_tab *tab, const char *filename);
 int				add_line_to_map(char ***lines, char *line, int height);
 void			free_map_lines(char **lines, int height);
 
 // build_map_utils2.c
+/* Description */
 void			iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point));
 t_point			cartesian_to_screen(t_point point);
 void			autozoom(t_tab *tab, t_tablim t);
@@ -29,9 +30,9 @@ t_tab			centermap(t_tab *tab, t_tablim t);
 void			enlargetab(t_tab *tab);
 
 // build_map.c
-t_tab			build_map(const char *filename);
+char			build_map(const char *filename, t_tab *tab);
 t_point			**allocate_map(int width, int height);
-void			free_map(t_tab *map);
+void			free_map(t_tab *tab);
 
 // color_utils.c
 t_rgb			itorgb(unsigned int color);
@@ -48,7 +49,7 @@ void			draw_line(t_data *img, t_point start, t_point end);
 void			draw_grid(t_data *img, t_tab grid);
 
 // fill_map.c
-void			fill_map(t_point **map, char **lines, int width, int height);
+void			fill_map(t_point **tab, char **lines, int width, int height);
 t_point			extract_point(char *value, int x, int y);
 char			*extract_color(char *value);
 char			*extract_z_value(char *value);
@@ -58,13 +59,14 @@ void			free_split(char **split_line);
 int				key_press(int keysym, t_data *data);
 
 // rasterize.c
-t_tab			rasterize(t_tab *tab);
+t_tab			rasterize(t_data *win);
 t_tablim		getlim(t_tab *tab);
-void			drawtabiso(t_data *img, t_tab tab);
+void			drawtabiso(t_data *data);
 int				c_abs(int x);
 
-// test_map.c
-void			init(t_data *data);
+// fdf.c
+char			init_img(t_data *data);
+char			init(t_data *data);
 
 // tests.c
 void			checktab(t_tab tab);

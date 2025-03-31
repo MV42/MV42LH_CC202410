@@ -12,71 +12,68 @@
 
 #include "fdf.h"
 
-t_tab	build_map(const char *filename)
+char	build_map(const char *filename, t_tab *tab)
 {
-	t_tab	map;
-
-	map = (t_tab){NULL, NULL, 0, 0, 0};
-	read_map_file(&map, filename);
-	if (!map.lines)
-		return (map);
-	map.tab = allocate_map(map.width, map.height);
-	if (!map.tab)
+	*tab = (t_tab){NULL, NULL, 0, 0, 0};
+	if (!read_map_file(tab, filename))
+		return (ft_printf("Error: ReadMapFile\n"), 0);
+	tab->tab = allocate_map(tab->width, tab->height);
+	if (!tab->tab)
 	{
-		free_map(&map);
-		free_map_lines(map.lines, map.height);
-		return (map);
+		free_map(tab);
+		free_map_lines(tab->lines, tab->height);
+		return (ft_printf("Error: AllocateMap\n"), 0);
 	}
-	fill_map(map.tab, map.lines, map.width, map.height);
-	free_map_lines(map.lines, map.height);
-	return (map);
+	fill_map(tab->tab, tab->lines, tab->width, tab->height);
+	free_map_lines(tab->lines, tab->height);
+	return (ft_printf("Success: BuildMap\n"), 1);
 }
 
 t_point	**allocate_map(int width, int height)
 {
-	t_point	**map;
+	t_point	**tab;
 	int			x;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 	x = 0;
-	map = malloc(sizeof(t_point *) * width);
-	if (!map)
+	tab = malloc(sizeof(t_point *) * width);
+	if (!tab)
 		return (NULL);
 	while (x < width)
 	{
-		map[x] = malloc(sizeof(t_point) * height);
-		if (!map[x])
+		tab[x] = malloc(sizeof(t_point) * height);
+		if (!tab[x])
 		{
 			while (x > 0)
 			{
-				free(map[--x]);
+				free(tab[--x]);
 			}
-			free(map);
+			free(tab);
 			return (NULL);
 		}
 		x++;
 	}
-	return (map);
+	return (tab);
 }
 
-void	free_map(t_tab *map)
+void	free_map(t_tab *tab)
 {
 	int	i;
-	if (!map)
+	if (!tab)
 		return ;
-	if (map->tab)
+	if (tab->tab)
 	{
 		i = 0;
-		while (i < map->width)
+		while (i < tab->width)
 		{
-			free(map->tab[i]);
+			free(tab->tab[i]);
 			i++;
 		}
-		free(map->tab);
+		free(tab->tab);
 	}
-	map->lines = NULL;
-	map->tab = NULL;
-	map->width = 0;
-	map->height = 0;
+	tab->lines = NULL;
+	tab->tab = NULL;
+	tab->width = 0;
+	tab->height = 0;
 }
