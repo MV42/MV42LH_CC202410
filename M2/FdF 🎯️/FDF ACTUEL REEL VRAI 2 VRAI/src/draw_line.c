@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void	bresenham(t_data *img, t_line l)
+void	bresenham(t_data *data, t_line l)
 {
 	int	err;
 	int	e2;
@@ -25,7 +25,7 @@ void	bresenham(t_data *img, t_line l)
 	{
 		if (l.index.sx == l.end.sx && l.index.sy == l.end.sy)
 			break ;
-		put_pixel(img, l.index);
+		put_pixel(data, l.index);
 		e2 = err;
 		if (e2 > -l.d.sx)
 		{
@@ -41,7 +41,7 @@ void	bresenham(t_data *img, t_line l)
 	}
 }
 
-void	draw_line(t_data *img, t_point start, t_point end)
+void	draw_line(t_data *data, t_point start, t_point end)
 {
 	t_line	l;
 	t_point	tmp;
@@ -59,24 +59,24 @@ void	draw_line(t_data *img, t_point start, t_point end)
 	l.index = l.start;
 	l.d.sx = l.end.sx - l.start.sx;
 	l.d.sy = l.end.sy - l.start.sy;
-	bresenham(img, l);
+	bresenham(data, l);
 }
 
-void	draw_grid(t_data *img, t_tab grid)
+void	draw_grid(t_data *data)
 {
 	int		x;
 	int		y;
 
 	y = 0;
-	while (y < grid.height)
+	while (y < data->tab.height)
 	{
 		x = 0;
-		while (x < grid.width)
+		while (x < data->tab.width)
 		{
-			if (x < grid.width - 1)
-				draw_line(img, grid.tab[x][y], grid.tab[x + 1][y]);
-			if (y < grid.height - 1)
-				draw_line(img, grid.tab[x][y], grid.tab[x][y + 1]);
+			if (x < data->tab.width - 1)
+				draw_line(data, data->tab.tab[x][y], data->tab.tab[x + 1][y]);
+			if (y < data->tab.height - 1)
+				draw_line(data, data->tab.tab[x][y], data->tab.tab[x][y + 1]);
 			x++;
 		}
 		y++;

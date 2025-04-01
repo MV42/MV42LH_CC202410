@@ -43,3 +43,53 @@ t_rgb	gradient(t_line l)
 	l.index.color.b += (l.end.color.b - l.start.color.b) / len;
 	return (l.index.color);
 }
+
+int	gethighlow(t_data *data, t_line *l)
+{
+	int		x;
+	int		y;
+
+	l->start.z = MIN_FLOAT;
+	l->end.z = MAX_FLOAT;
+	y = 0;
+	while (y < data->tab.height)
+	{
+		x = 0;
+		while (x < data->tab.width)
+		{
+			if (data->tab.tab[x][y].z <= l->start.z)
+				l->start = data->tab.tab[x][y];
+			if (data->tab.tab[x][y].z >= l->end.z)
+				l->end = data->tab.tab[x][y];
+			x++;
+		}
+		y++;
+	}
+	return (1);
+}
+
+int	colorheight(int key, t_data *data)
+{
+	int		x;
+	int		y;
+	t_line	l;
+
+	if (key == XK_c)
+	{
+		l = (t_line){0};
+		gethighlow(data, &l);
+		y = 0;
+		while (y < data->tab.height)
+		{
+			x = 0;
+			while (x < data->tab.width)
+			{
+				l.index = data->tab.tab[x][y];
+				data->tab.tab[x][y].color = gradient(l);
+				x++;
+			}
+			y++;
+		}
+	}
+	return (1);
+}

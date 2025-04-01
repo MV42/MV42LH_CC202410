@@ -33,3 +33,21 @@ void	checktab(t_tab tab)
 	}
 	printf("\n");
 }
+
+void	iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point))
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < (*src).height)
+	{
+		x = 0;
+		while (x < (*src).width)
+		{
+			(*dest).tab[x][y] = f((*src).tab[x][y]);
+			x++;
+		}
+		y++;
+	}
+}

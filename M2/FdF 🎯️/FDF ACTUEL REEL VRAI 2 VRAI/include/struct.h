@@ -31,13 +31,21 @@ typedef struct s_point
 	int			sy;
 }				t_point;
 
+typedef struct s_tablim
+{
+	int			xmin;
+	int			xmax;
+	int			ymin;
+	int			ymax;
+}				t_tablim;
+
 typedef struct s_tab
 {
 	t_point		**tab;
 	char		**lines;
 	int			width;
 	int			height;
-	double		scale;
+	t_tablim	lim;
 }				t_tab;
 
 typedef struct s_line
@@ -47,14 +55,6 @@ typedef struct s_line
 	t_point		end;
 	t_point		d;
 }				t_line;
-
-typedef struct s_tablim
-{
-	int			xmin;
-	int			xmax;
-	int			ymin;
-	int			ymax;
-}				t_tablim;
 
 typedef struct s_image
 {
@@ -70,7 +70,8 @@ typedef struct s_input
 	float		rot_x;
 	float		rot_y;
 	float		rot_z;
-	int			zoom;
+	float		zoom;
+	float		h_factr;
 	int			pos_x;
 	int			pos_y;
 }				t_input;

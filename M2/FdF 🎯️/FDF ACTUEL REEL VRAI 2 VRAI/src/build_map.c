@@ -14,7 +14,7 @@
 
 char	build_map(const char *filename, t_tab *tab)
 {
-	*tab = (t_tab){NULL, NULL, 0, 0, 0};
+	*tab = (t_tab){NULL, NULL, 0, 0, (t_tablim){0}};
 	if (!read_map_file(tab, filename))
 		return (ft_printf("Error: ReadMapFile\n"), 0);
 	tab->tab = allocate_map(tab->width, tab->height);
@@ -32,7 +32,7 @@ char	build_map(const char *filename, t_tab *tab)
 t_point	**allocate_map(int width, int height)
 {
 	t_point	**tab;
-	int			x;
+	int		x;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -60,6 +60,7 @@ t_point	**allocate_map(int width, int height)
 void	free_map(t_tab *tab)
 {
 	int	i;
+
 	if (!tab)
 		return ;
 	if (tab->tab)

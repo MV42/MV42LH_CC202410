@@ -26,7 +26,6 @@ SRCS		= build_map.c \
 			  hooks.c \
 			  rasterize.c \
 			  fdf.c \
-			  tests.c \
 			  window.c
 
 # Object files

@@ -69,7 +69,8 @@ char	read_map_file(t_tab *tab, const char *filename)
 		if (tab->height == 0)
 			tab->width = count_columns(line);
 		if (!add_line_to_map(&tab->lines, line, tab->height))
-			return (close(fd), free(line), free_map_lines(tab->lines, tab->height), 0);
+			return (close(fd), free(line),
+				free_map_lines(tab->lines, tab->height), 0);
 		tab->height++;
 		line = get_next_line(fd);
 	}
@@ -98,6 +99,7 @@ int	add_line_to_map(char ***lines, char *line, int height)
 void	free_map_lines(char **lines, int height)
 {
 	int	i;
+
 	if (!lines)
 		return ;
 	i = 0;

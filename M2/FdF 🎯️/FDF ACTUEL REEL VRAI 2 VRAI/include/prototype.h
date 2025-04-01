@@ -24,10 +24,10 @@ void			free_map_lines(char **lines, int height);
 // build_map_utils2.c
 /* Description */
 void			iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point));
-t_point			cartesian_to_screen(t_point point);
-void			autozoom(t_tab *tab, t_tablim t);
-t_tab			centermap(t_tab *tab, t_tablim t);
-void			enlargetab(t_tab *tab);
+int				adjust_coord(t_data *data);
+void			autozoom(t_data *data);
+t_tab			centermap(t_data *data);
+void			enlargetab(t_data *data);
 
 // build_map.c
 char			build_map(const char *filename, t_tab *tab);
@@ -46,7 +46,7 @@ int				put_pixel(t_data *data, t_point p);
 // draw_line.c
 void			bresenham(t_data *img, t_line l);
 void			draw_line(t_data *img, t_point start, t_point end);
-void			draw_grid(t_data *img, t_tab grid);
+void			draw_grid(t_data *data);
 
 // fill_map.c
 void			fill_map(t_point **tab, char **lines, int width, int height);
@@ -56,11 +56,14 @@ char			*extract_z_value(char *value);
 void			free_split(char **split_line);
 
 // hooks.c
-int				key_press(int keysym, t_data *data);
+int				key_handler(int key, t_data *data);
+int				rotate_key(int key, t_data *data);
+int				translate_key(int key, t_data *data);
+int				mouse_handler(int mousecode, int x, int y, t_data *data);
 
 // rasterize.c
 t_tab			rasterize(t_data *win);
-t_tablim		getlim(t_tab *tab);
+void			getlim(t_tab *tab);
 void			drawtabiso(t_data *data);
 int				c_abs(int x);
 

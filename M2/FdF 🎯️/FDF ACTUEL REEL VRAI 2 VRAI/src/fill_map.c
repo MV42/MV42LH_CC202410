@@ -31,6 +31,8 @@ void	fill_map(t_point **tab, char **lines, int width, int height)
 		while (x < width)
 		{
 			tab[x][y] = extract_point(split_line[x], ++ix, iy);
+			if (tab[x][y].z > 0)
+				tab[x][y].color = itorgb(0x227744);
 			x++;
 		}
 		free_split(split_line);
@@ -41,8 +43,8 @@ void	fill_map(t_point **tab, char **lines, int width, int height)
 t_point	extract_point(char *value, int x, int y)
 {
 	t_point	point;
-	char		*z_value;
-	char		*color;
+	char	*z_value;
+	char	*color;
 
 	point.color = itorgb(0xFFFFFF);
 	z_value = extract_z_value(value);
