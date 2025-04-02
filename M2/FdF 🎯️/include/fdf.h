@@ -13,24 +13,24 @@
 #ifndef FDF_H
 # define FDF_H
 
-# ifndef W_WIDTH
-#  define W_WIDTH 1800
-# endif
-
-# ifndef W_HEIGHT
-#  define W_HEIGHT 900
-# endif
-
 # include <stddef.h>
-# include <stdio.h>
-# include <stdlib.h>
 # include <math.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include <X11/Xlib.h>
 
-# include "mlx.h"
 # include "mlx_int.h"
-# include "../libft/libft.h"
-# include "structs.h"
-# include "prototypes.h"
+# include "mlx.h"
+
+# include "libft.h"
+
+# include "struct.h"
+# include "prototype.h"
+
+# define W_WIDTH 1559
+# define W_HEIGHT 900
+
+# define ERR_FILE "Error: File \"%s\" Couldn't Be Opened\n"
+# define ERR_ARGC "Error: TOO MANY ARGS ! Need 2, Got %i.\n"
+
 #endif

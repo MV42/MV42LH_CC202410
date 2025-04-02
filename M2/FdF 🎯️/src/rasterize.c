@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_map_utils.c                                  :+:      :+:    :+:   */
+/*   rasterize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,134 +13,94 @@
 #include "fdf.h"
 #define M_PI 3.14159265358979323846
 
-t_tab	rasterize(t_tab *tab)
+t_tab	rasterize(t_data *data)
 {
 	int		y;
 	int		x;
-	double	temp_x;
-	double	temp_y;
+	t_point	*tp;
 
 	y = 0;
-	while (y < tab->height)
+	while (y < data->tab.height)
 	{
 		x = 0;
-		while (x < tab->width)
+		while (x < data->tab.width)
 		{
-			temp_x = tab->tab[x][y].x;
-			temp_y = tab->tab[x][y].y;
-			tab->tab[x][y].x = (temp_x - temp_y) * cos(M_PI / 6);
-			tab->tab[x][y].y = (temp_x + temp_y) * sin(M_PI / 6)
-				- tab->tab[x][y].z;
-			tab->tab[x][y].sx = (int)tab->tab[x][y].x;
-			tab->tab[x][y].sy = (int)tab->tab[x][y].y;
+			tp = &data->tab.tab[x][y];
+			tp->sx = (tp->x * cos(ft_degtorad(data->in.rot_z)) + (tp->y * sin(ft_degtorad(data->in.rot_x)) + tp->z * cos(ft_degtorad(data->in.rot_x))) * sin(ft_degtorad(data->in.rot_z))) * cos(ft_degtorad(data->in.rot_y)) - (tp->y * cos(ft_degtorad(data->in.rot_x)) - tp->z * sin(ft_degtorad(data->in.rot_x))) * sin(ft_degtorad(data->in.rot_y));
+			tp->sy = (tp->x * cos(ft_degtorad(data->in.rot_z)) + (tp->y * sin(ft_degtorad(data->in.rot_x)) + tp->z * cos(ft_degtorad(data->in.rot_x))) * sin(ft_degtorad(data->in.rot_z))) * sin(ft_degtorad(data->in.rot_y)) + (tp->y * cos(ft_degtorad(data->in.rot_x)) - tp->z * sin(ft_degtorad(data->in.rot_x))) * cos(ft_degtorad(data->in.rot_y));
 			x++;
 		}
 		y++;
 	}
-	return (*tab);
+	return (data->tab);
 }
 
-t_tablim	getlim(t_tab *tab)
+void	getlim(t_tab *tab)
 {
-	int			y;
 	int			x;
-	t_tablim	t;
+	int			y;
 
-	ft_memset(&t, 0, sizeof(t_tablim));
+	tab->lim = (t_tablim){0};
 	y = 0;
 	while (y < tab->height)
 	{
 		x = 0;
 		while (x < tab->width)
 		{
-			if (tab->tab[x][y].sx <= t.xmin)
-				t.xmin = tab->tab[x][y].sx;
-			if (tab->tab[x][y].sx >= t.xmax)
-				t.xmax = tab->tab[x][y].sx;
-			if (tab->tab[x][y].sy <= t.ymin)
-				t.ymin = tab->tab[x][y].sy;
-			if (tab->tab[x][y].sy >= t.ymax)
-				t.ymax = tab->tab[x][y].sy;
-			x++;
-		}
-		y++;
-	}
-	return (t);
-}
-
-void	autozoom(t_tab *tab, t_tablim t)
-{
-	int		x;
-	int		y;
-
-	tab->scale = 0;
-	y = 0;
-	while (y < tab->height)
-	{
-		x = 0;
-		while (x < tab->width)
-		{
-			while (t.xmax * tab->scale < (W_WIDTH / 2) - 20 && t.ymax
-				* tab->scale < (W_HEIGHT / 2) - 20)
-				tab->scale += 0.000001;
-			tab->tab[x][y].sx *= tab->scale;
-			tab->tab[x][y].sy *= tab->scale;
+			if (tab->tab[x][y].sx <= tab->lim.xmin)
+				tab->lim.xmin = tab->tab[x][y].sx;
+			if (tab->tab[x][y].sx >= tab->lim.xmax)
+				tab->lim.xmax = tab->tab[x][y].sx;
+			if (tab->tab[x][y].sy <= tab->lim.ymin)
+				tab->lim.ymin = tab->tab[x][y].sy;
+			if (tab->tab[x][y].sy >= tab->lim.ymax)
+				tab->lim.ymax = tab->tab[x][y].sy;
 			x++;
 		}
 		y++;
 	}
 }
 
-t_tab	centermap(t_tab *tab, t_tablim t)
-{
-	int		yoffset;
-	int		xoffset;
-	int		x;
-	int		y;
-
-	yoffset = (c_abs(t.ymin) - c_abs(t.ymax)) / 2;
-	xoffset = (c_abs(t.xmin) - c_abs(t.xmax)) / 2;
-	y = 0;
-	while (y < tab->height)
-	{
-		x = 0;
-		while (x < tab->width)
-		{
-			tab->tab[x][y].sy += yoffset;
-			tab->tab[x][y].sx += xoffset;
-			x++;
-		}
-		y++;
-	}
-	return (*tab);
-}
-
-void	enlargetab(t_tab *tab)
+void	restoretab(t_data *data)
 {
 	int		x;
 	int		y;
 
 	y = 0;
-	while (y < tab->height)
+	while (y < data->tab.height)
 	{
 		x = 0;
-		while (x < tab->width)
+		while (x < data->tab.width)
 		{
-			tab->tab[x][y].x *= 100;
-			tab->tab[x][y].y *= 100;
-			tab->tab[x][y].z *= 100;
+			data->tab.tab[x][y].x *= 0.01;
+			data->tab.tab[x][y].y *= 0.01;
+			if (data->in.h_factr != 0)
+				data->tab.tab[x][y].z /= data->in.h_factr;
 			x++;
 		}
 		y++;
 	}
 }
 
-void	drawtabiso(t_data *img, t_tab tab)
+void	drawtabiso(t_data *data)
 {
-	enlargetab(&tab);
-	rasterize(&tab);
-	centermap(&tab, getlim(&tab));
-	autozoom(&tab, getlim(&tab));
-	iter2tab(&tab, &tab, cartesian_to_screen);
-	draw_grid(img, tab);
+	enlargetab(data);
+	rasterize(data);
+	getlim(&data->tab);
+	centermap(data);
+	if (data->in.zoom_bool == 1)
+		autozoom(data);
+	if (data->in.zoom_bool == 0)
+		manualzoom(data);
+	adjust_coord(data);
+	draw_grid(data);
+	restoretab(data);
+	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0);
+}
+
+int	c_abs(int x)
+{
+	if (x < 0)
+		x *= -1;
+	return (x);
 }
