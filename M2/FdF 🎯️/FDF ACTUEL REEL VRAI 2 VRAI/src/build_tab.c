@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_line_utils.c                                  :+:      :+:    :+:   */
+/*   build_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,16 +12,19 @@
 
 #include "fdf.h"
 
-int	put_pixel(t_data *data, t_point p)
+char	build_tab(const char *filename, t_tab *tab)
 {
-	char	*dst;
-
-	if (p.sx >= 0 && p.sx < W_WIDTH && p.sy >= 0 && p.sy < W_HEIGHT)
+	*tab = (t_tab){NULL, NULL, 0, 0, (t_tablim){0}};
+	if (!read_map_file(tab, filename))
+		return (ft_printf("Error: ReadMapFile\n"), 0);
+	tab->tab = allocate_map(tab->width, tab->height);
+	if (!tab->tab)
 	{
-		dst = data->img.px_ptr + (int)(p.sy * data->img.line_len + p.sx
-				* (data->img.bits_pp / 8));
-		*(unsigned int *)dst = rgbtoi(p.color);
-		return (1);
+		free_map(tab);
+		free_map_lines(tab->lines, tab->height);
+		return (ft_printf("Error: AllocateMap\n"), 0);
 	}
-	return (0);
+	fill_map(tab->tab, tab->lines, tab->width, tab->height);
+	free_map_lines(tab->lines, tab->height);
+	return (ft_printf("Success: BuildMap\n"), 1);
 }

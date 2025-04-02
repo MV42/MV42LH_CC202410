@@ -16,7 +16,7 @@ SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 BIN_DIR		=	bin/
 
-SRC			=	build_map.c \
+SRC			=	build_tab.c \
 				build_map_utils.c \
 				build_map_utils2.c \
 				color_utils.c \

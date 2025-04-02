@@ -12,6 +12,20 @@
 
 #include "fdf.h"
 
+int	put_pixel(t_data *data, t_point p)
+{
+	char	*dst;
+
+	if (p.sx >= 0 && p.sx < W_WIDTH && p.sy >= 0 && p.sy < W_HEIGHT)
+	{
+		dst = data->img.px_ptr + (int)(p.sy * data->img.line_len + p.sx
+				* (data->img.bits_pp / 8));
+		*(unsigned int *)dst = rgbtoi(p.color);
+		return (1);
+	}
+	return (0);
+}
+
 void	bresenham(t_data *data, t_line l)
 {
 	int	err;
@@ -53,8 +67,6 @@ void	draw_line(t_data *data, t_point start, t_point end)
 		tmp = l.start;
 		l.start = l.end;
 		l.end = tmp;
-		l.end.color = l.start.color;
-		l.start.color = tmp.color;
 	}
 	l.index = l.start;
 	l.d.sx = l.end.sx - l.start.sx;

@@ -11,30 +11,6 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <fcntl.h>
-#include <unistd.h>
-
-void	**ft_realloc_tab(void **ptr, size_t old_size, size_t new_size)
-{
-	void	**new_ptr;
-	size_t	i;
-
-	if (!ptr)
-		return (malloc(new_size));
-	if (new_size == 0)
-		return (free(ptr), NULL);
-	new_ptr = malloc(new_size);
-	if (!new_ptr)
-		return (NULL);
-	i = 0;
-	while (i < old_size / sizeof(void *))
-	{
-		new_ptr[i] = ptr[i];
-		i++;
-	}
-	free(ptr);
-	return (new_ptr);
-}
 
 int	count_columns(char *line)
 {
@@ -76,7 +52,7 @@ char	read_map_file(t_tab *tab, const char *filename)
 	}
 	close(fd);
 	free(line);
-	return (0b00000001);
+	return (1);
 }
 
 int	add_line_to_map(char ***lines, char *line, int height)

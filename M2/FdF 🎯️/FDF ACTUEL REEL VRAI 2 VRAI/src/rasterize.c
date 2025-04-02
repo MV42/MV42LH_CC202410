@@ -74,7 +74,8 @@ void	restoretab(t_data *data)
 		{
 			data->tab.tab[x][y].x *= 0.01;
 			data->tab.tab[x][y].y *= 0.01;
-			data->tab.tab[x][y].z /= data->in.h_factr;
+			if (data->in.h_factr != 0)
+				data->tab.tab[x][y].z /= data->in.h_factr;
 			x++;
 		}
 		y++;
@@ -83,19 +84,18 @@ void	restoretab(t_data *data)
 
 void	drawtabiso(t_data *data)
 {
-	static int	i = 0;
-
 	enlargetab(data);
 	rasterize(data);
 	getlim(&data->tab);
 	centermap(data);
-	autozoom(data);
-	printf("posx:%i|posy:%i\n", data->in.pos_x, data->in.pos_y);
+	if (data->in.zoom_bool == 1)
+		autozoom(data);
+	if (data->in.zoom_bool == 0)
+		manualzoom(data);
 	adjust_coord(data);
 	draw_grid(data);
 	restoretab(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0);
-	i++;
 }
 
 int	c_abs(int x)

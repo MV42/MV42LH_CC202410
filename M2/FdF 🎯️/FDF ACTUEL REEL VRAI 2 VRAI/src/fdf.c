@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <fcntl.h>
-#include <unistd.h>
 
 char	init_img(t_data *data)
 {
@@ -41,11 +39,11 @@ int	main(int argc, char **argv)
 	t_data		data;
 
 	if (argc != 2)
-		return (printf("Error: TOO MANY ARGS ! Need 2, Got %i.\n", argc), 1);
-	if (!build_map(argv[1], &data.tab))
-		return (printf("Error: File \"%s\" Couldn't Be Opened\n", argv[1]), 1);
+		return (ft_printf(ERR_ARGC, argc), 1);
+	if (!build_tab(argv[1], &data.tab))
+		return (ft_printf(ERR_FILE, argv[1]), 1);
 	init(&data);
-	data.in = (t_input){0, 0, 0, 0, 75, 0, 0};
+	data.in = (t_input){45, 30, -35, 0, 1, 100, 0, 0};
 	drawtabiso(&data);
 	mlx_hook(data.win, 2, 1L << 0, key_handler, &data);
 	mlx_hook(data.win, 17, 0, close_window, &data);

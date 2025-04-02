@@ -71,6 +71,7 @@ typedef struct s_input
 	float		rot_y;
 	float		rot_z;
 	float		zoom;
+	int			zoom_bool;
 	float		h_factr;
 	int			pos_x;
 	int			pos_y;

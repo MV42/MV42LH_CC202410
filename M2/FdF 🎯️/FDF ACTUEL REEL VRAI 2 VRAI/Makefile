@@ -16,17 +16,18 @@ MLX_DIR		= $(LIB_DIR)minilibx_linux/
 LIBFT_DIR	= $(LIB_DIR)libft/
 
 # Source files
-SRCS		= build_map.c \
-			  build_map_utils.c \
-			  build_map_utils2.c \
+SRCS		= alloc_tab.c \
+			  build_tab_utils.c \
+			  build_tab.c \
 			  color_utils.c \
-			  draw_line.c \
-			  draw_line_utils.c \
-			  fill_map.c \
+			  draw_map_utils.c \
+			  draw_map.c \
+			  fdf.c \
+			  fill_tab.c \
 			  hooks.c \
 			  rasterize.c \
-			  fdf.c \
-			  window.c
+			  window.c \
+			  zoom.c
 
 # Object files
 OBJS		= $(SRCS:%.c=$(OBJ_DIR)%.o)

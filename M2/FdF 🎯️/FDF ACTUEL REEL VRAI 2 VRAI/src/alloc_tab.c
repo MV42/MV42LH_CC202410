@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_map.c                                        :+:      :+:    :+:   */
+/*   build_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,23 +11,6 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-char	build_map(const char *filename, t_tab *tab)
-{
-	*tab = (t_tab){NULL, NULL, 0, 0, (t_tablim){0}};
-	if (!read_map_file(tab, filename))
-		return (ft_printf("Error: ReadMapFile\n"), 0);
-	tab->tab = allocate_map(tab->width, tab->height);
-	if (!tab->tab)
-	{
-		free_map(tab);
-		free_map_lines(tab->lines, tab->height);
-		return (ft_printf("Error: AllocateMap\n"), 0);
-	}
-	fill_map(tab->tab, tab->lines, tab->width, tab->height);
-	free_map_lines(tab->lines, tab->height);
-	return (ft_printf("Success: BuildMap\n"), 1);
-}
 
 t_point	**allocate_map(int width, int height)
 {
@@ -77,4 +60,26 @@ void	free_map(t_tab *tab)
 	tab->tab = NULL;
 	tab->width = 0;
 	tab->height = 0;
+}
+
+void	**ft_realloc_tab(void **ptr, size_t old_size, size_t new_size)
+{
+	void	**new_ptr;
+	size_t	i;
+
+	if (!ptr)
+		return (malloc(new_size));
+	if (new_size == 0)
+		return (free(ptr), NULL);
+	new_ptr = malloc(new_size);
+	if (!new_ptr)
+		return (NULL);
+	i = 0;
+	while (i < old_size / sizeof(void *))
+	{
+		new_ptr[i] = ptr[i];
+		i++;
+	}
+	free(ptr);
+	return (new_ptr);
 }

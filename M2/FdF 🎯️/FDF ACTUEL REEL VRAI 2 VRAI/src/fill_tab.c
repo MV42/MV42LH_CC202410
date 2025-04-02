@@ -31,8 +31,6 @@ void	fill_map(t_point **tab, char **lines, int width, int height)
 		while (x < width)
 		{
 			tab[x][y] = extract_point(split_line[x], ++ix, iy);
-			if (tab[x][y].z > 0)
-				tab[x][y].color = itorgb(0x227744);
 			x++;
 		}
 		free_split(split_line);
@@ -78,6 +76,8 @@ char	*extract_color(char *value)
 		i += 3;
 	while (value[i])
 	{
+		if (value[i] == '\n')
+			break ;
 		color[j++] = value[i++];
 	}
 	color[j] = '\0';
@@ -95,6 +95,9 @@ char	*extract_z_value(char *value)
 		return (NULL);
 	while (value[i] && value[i] != ',')
 	{
+		if ((value[i] >= 'a' && value[i] <= 'z')
+			|| (value[i] >= 'A' && value[i] <= 'Z'))
+			return (ft_printf(ERR_FILE), exit(1), z_value);
 		z_value[i] = value[i];
 		i++;
 	}
