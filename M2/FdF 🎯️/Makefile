@@ -1,41 +1,53 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/21 21:42:42 by mavander          #+#    #+#              #
+#    Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Project name
-NAME		= fdf
+NAME			=	fdf
 
 # Compiler settings
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g3
+CC				=	cc
+CFLAGS			=	-Wall -Wextra -Werror -g3
 
 # Directories
-LIB_DIR		= lib/
-SRC_DIR		= src/
-OBJ_DIR		= obj/
-INC_DIR		= include/
+LIB_DIR			=	lib/
+SRC_DIR			=	src/
+OBJ_DIR			=	obj/
+INC_DIR			=	include/
 
 # Library paths
-MLX_DIR		= $(LIB_DIR)minilibx_linux/
-LIBFT_DIR	= $(LIB_DIR)libft/
+MLX_DIR			=	$(LIB_DIR)minilibx_linux/
+LIBFT_DIR		=	$(LIB_DIR)libft/
 
 # Source files
-SRCS		= alloc_tab.c \
-			  build_tab_utils.c \
-			  build_tab.c \
-			  color_utils.c \
-			  draw_map_utils.c \
-			  draw_map.c \
-			  fdf.c \
-			  fill_tab.c \
-			  hooks.c \
-			  rasterize.c \
-			  window.c \
-			  zoom.c
+SRC				=	alloc_tab.c \
+					build_tab_utils.c \
+					build_tab.c \
+					color_utils.c \
+					draw_map_utils.c \
+					draw_map.c \
+					fdf.c \
+					fill_tab.c \
+					hooks.c \
+					rasterize.c \
+					window.c \
+					zoom.c
 
 # Object files
-OBJS		= $(SRCS:%.c=$(OBJ_DIR)%.o)
+OBJS			=	$(SRC:%.c=$(OBJ_DIR)%.o)
 
 # Include and library flags
-IFLAGS		= $(addprefix -I, $(INC_DIR) $(MLX_DIR) $(LIBFT_DIR))
-LFLAGS		= $(addprefix -L, $(LIBFT_DIR) $(MLX_DIR))
-LIBS		= -lmlx_Linux -lm -lXext -lX11 -lz -lft
+IFLAGS			=	$(addprefix -I, $(INC_DIR) $(MLX_DIR) $(LIBFT_DIR))
+LFLAGS			=	$(addprefix -L, $(LIBFT_DIR) $(MLX_DIR))
+LIBS			=	-lmlx_Linux -lm -lXext -lX11 -lz -lft
 
 # Main target
 $(NAME): $(OBJS)

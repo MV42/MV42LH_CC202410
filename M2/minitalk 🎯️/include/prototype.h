@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   prototype.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#ifndef PROTOTYPES_H
+# define PROTOTYPES_H
 
-# include <stddef.h>
-# include <math.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <X11/Xlib.h>
+# include "minitalk.h"
 
-# include "mlx_int.h"
-# include "mlx.h"
+enum
+{
+	READY,
+	BUSY,
+};
 
-# include "libft.h"
+// client.c
+void	end_handler(int signal);
+void	active_handler(int signal);
+void	send_char(char c, pid_t srv);
+int		main(int argc, char **argv);
 
-# include "struct.h"
-# include "prototype.h"
+// server.c
+void	sig_handler(int signal, siginfo_t *info, void *more_info);
+int		main(int argc, char **argv);
 
-# define W_WIDTH 1800
-# define W_HEIGHT 900
 
-# define ERR_FILE "Error: File \"%s\" Couldn't Be Opened\n"
-# define ERR_ARGC "Error: TOO MANY ARGS ! Need 2, Got %i.\n"
+// utils.c
+void	my_kill(pid_t pid, int signal);
+void	my_signal(int signal, void *handler, bool use_siginfo);
 
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,44 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "minitalk.h"
 
-void	checktab(t_tab tab)
+void	my_kill(pid_t pid, int signal)
 {
-	int	x;
-	int	y;
-
-	y = 0;
-	while (y < tab.height)
+	if (kill(pid, signal) < 0)
 	{
-		x = 0;
-		while (x < tab.width)
-		{
-			printf("Point at (%d, %d):\tx=%f,\ty=%f,\tz=%f,\tcolor=%X,\tsx=%i,\tsy=%i\n",
-				x, y, tab.tab[x][y].x, tab.tab[x][y].y,
-				tab.tab[x][y].z, rgbtoi(tab.tab[x][y].color),
-				tab.tab[x][y].sx, tab.tab[x][y].sy);
-			x++;
-		}
-		y++;
+		ft_printf("Kill failed");
+		exit(EXIT_FAILURE);
 	}
-	printf("\n");
 }
 
-void	iter2tab(t_tab *src, t_tab *dest, t_point (*f)(t_point))
+void	my_signal(int signal, void *handler, bool use_siginfo)
 {
-	int	x;
-	int	y;
+	struct sigaction	sa;
 
-	y = 0;
-	while (y < (*src).height)
+	sa.sa_handler = NULL;
+	sa.sa_mask = (__sigset_t){0};
+	sa.sa_flags = 0;
+	sa.sa_restorer = NULL;
+	if (use_siginfo)
 	{
-		x = 0;
-		while (x < (*src).width)
-		{
-			(*dest).tab[x][y] = f((*src).tab[x][y]);
-			x++;
-		}
-		y++;
+		sa.sa_flags = SA_SIGINFO;
+		sa.sa_sigaction = handler;
+	}
+	else
+		sa.sa_handler = handler;
+	sigemptyset(&sa.sa_mask);
+	sigaddset(&sa.sa_mask, SIGUSR1);
+	sigaddset(&sa.sa_mask, SIGUSR2);
+	if (sigaction(signal, &sa, NULL) < 0)
+	{
+		ft_printf("sigaction failed");
+		exit(EXIT_FAILURE);
 	}
 }

@@ -13,6 +13,15 @@
 #include "fdf.h"
 #define M_PI 3.14159265358979323846
 
+#define COS_ROTZ cos(ft_degtorad(data->in.rot_z))
+#define SIN_ROTX sin(ft_degtorad(data->in.rot_x))
+
+#define COS_ROTX cos(ft_degtorad(data->in.rot_x))
+#define SIN_ROTZ sin(ft_degtorad(data->in.rot_z))
+
+#define COS_ROTY cos(ft_degtorad(data->in.rot_y))
+#define SIN_ROTY sin(ft_degtorad(data->in.rot_y))
+
 t_tab	rasterize(t_data *data)
 {
 	int		y;
@@ -26,8 +35,12 @@ t_tab	rasterize(t_data *data)
 		while (x < data->tab.width)
 		{
 			tp = &data->tab.tab[x][y];
-			tp->sx = (tp->x * cos(ft_degtorad(data->in.rot_z)) + (tp->y * sin(ft_degtorad(data->in.rot_x)) + tp->z * cos(ft_degtorad(data->in.rot_x))) * sin(ft_degtorad(data->in.rot_z))) * cos(ft_degtorad(data->in.rot_y)) - (tp->y * cos(ft_degtorad(data->in.rot_x)) - tp->z * sin(ft_degtorad(data->in.rot_x))) * sin(ft_degtorad(data->in.rot_y));
-			tp->sy = (tp->x * cos(ft_degtorad(data->in.rot_z)) + (tp->y * sin(ft_degtorad(data->in.rot_x)) + tp->z * cos(ft_degtorad(data->in.rot_x))) * sin(ft_degtorad(data->in.rot_z))) * sin(ft_degtorad(data->in.rot_y)) + (tp->y * cos(ft_degtorad(data->in.rot_x)) - tp->z * sin(ft_degtorad(data->in.rot_x))) * cos(ft_degtorad(data->in.rot_y));
+			tp->sx = (tp->x * COS_ROTZ + (tp->y * SIN_ROTX + tp->z * COS_ROTX)
+					* SIN_ROTZ) * COS_ROTY
+				- (tp->y * COS_ROTX - tp->z * SIN_ROTX) * SIN_ROTY;
+			tp->sy = (tp->x * COS_ROTZ + (tp->y * SIN_ROTX + tp->z * COS_ROTX)
+					* SIN_ROTZ) * SIN_ROTY
+				+ (tp->y * COS_ROTX - tp->z * SIN_ROTX) * COS_ROTY;
 			x++;
 		}
 		y++;

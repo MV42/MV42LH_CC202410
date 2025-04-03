@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "minitalk.h"
 
-# include <stddef.h>
-# include <math.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <X11/Xlib.h>
+void	my_kill(pid_t pid, int signal)
+{
+	if (kill(pid, signal) < 0)
+	{
+		ft_printf("Kill failed");
+		exit(EXIT_FAILURE);
+	}
+}
 
-# include "mlx_int.h"
-# include "mlx.h"
+void	my_signal(int signal, void *handler, bool use_siginfo)
+{
+	struct sigaction	sa;
 
-# include "libft.h"
-
-# include "struct.h"
-# include "prototype.h"
-
-# define W_WIDTH 1800
-# define W_HEIGHT 900
-
-# define ERR_FILE "Error: File \"%s\" Couldn't Be Opened\n"
-# define ERR_ARGC "Error: TOO MANY ARGS ! Need 2, Got %i.\n"
-
-#endif
+	sa.sa_handler = NULL;
+	sa.sa_mask = (__sigset_t){0};
+	sa.sa_flags = 0;
+	sa.sa_restorer = NULL;
+	if (use_siginfo)
+	{
+		sa.sa_flags = SA_SIGINFO;
+		sa.sa_sigaction = handler;
+	}
+	else
+		sa.sa_handler = handler;
+	sigemptyset(&sa.sa_mask);
+	sigaddset(&sa.sa_mask, SIGUSR1);
+	sigaddset(&sa.sa_mask, SIGUSR2);
+	if (sigaction(signal, &sa, NULL) < 0)
+	{
+		ft_printf("sigaction failed");
+		exit(EXIT_FAILURE);
+	}
+}
