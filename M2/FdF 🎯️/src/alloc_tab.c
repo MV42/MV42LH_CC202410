@@ -29,9 +29,7 @@ t_point	**allocate_map(int width, int height)
 		if (!tab[x])
 		{
 			while (x > 0)
-			{
 				free(tab[--x]);
-			}
 			free(tab);
 			return (NULL);
 		}
@@ -50,10 +48,7 @@ void	free_map(t_tab *tab)
 	{
 		i = 0;
 		while (i < tab->width)
-		{
-			free(tab->tab[i]);
-			i++;
-		}
+			free(tab->tab[i++]);
 		free(tab->tab);
 	}
 	tab->lines = NULL;

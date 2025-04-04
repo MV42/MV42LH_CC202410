@@ -20,6 +20,9 @@ void	init_pmath(t_pmath *m, t_data *data)
 	m->sin_ry = sin(ft_degtorad(data->in.rot_y));
 	m->cos_rz = cos(ft_degtorad(data->in.rot_z));
 	m->sin_rz = sin(ft_degtorad(data->in.rot_z));
+	// printf("cos_rx:%f | sin_rx:%f\n", m->cos_rx, m->sin_rx);
+	// printf("cos_ry:%f | sin_ry:%f\n", m->cos_ry, m->sin_ry);
+	// printf("cos_rz:%f | sin_rz:%f\n", m->cos_rz, m->sin_rz);
 }
 
 t_tab	rasterize(t_data *data)
