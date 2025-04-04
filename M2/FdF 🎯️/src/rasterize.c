@@ -11,23 +11,25 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
-#define M_PI 3.14159265358979323846
 
-#define COS_ROTZ cos(ft_degtorad(data->in.rot_z))
-#define SIN_ROTX sin(ft_degtorad(data->in.rot_x))
-
-#define COS_ROTX cos(ft_degtorad(data->in.rot_x))
-#define SIN_ROTZ sin(ft_degtorad(data->in.rot_z))
-
-#define COS_ROTY cos(ft_degtorad(data->in.rot_y))
-#define SIN_ROTY sin(ft_degtorad(data->in.rot_y))
+void	init_pmath(t_pmath *m, t_data *data)
+{
+	m->cos_rx = cos(ft_degtorad(data->in.rot_x));
+	m->sin_rx = sin(ft_degtorad(data->in.rot_x));
+	m->cos_ry = cos(ft_degtorad(data->in.rot_y));
+	m->sin_ry = sin(ft_degtorad(data->in.rot_y));
+	m->cos_rz = cos(ft_degtorad(data->in.rot_z));
+	m->sin_rz = sin(ft_degtorad(data->in.rot_z));
+}
 
 t_tab	rasterize(t_data *data)
 {
 	int		y;
 	int		x;
 	t_point	*tp;
+	t_pmath	m;
 
+	init_pmath(&m, data);
 	y = 0;
 	while (y < data->tab.height)
 	{
@@ -35,12 +37,12 @@ t_tab	rasterize(t_data *data)
 		while (x < data->tab.width)
 		{
 			tp = &data->tab.tab[x][y];
-			tp->sx = (tp->x * COS_ROTZ + (tp->y * SIN_ROTX + tp->z * COS_ROTX)
-					* SIN_ROTZ) * COS_ROTY
-				- (tp->y * COS_ROTX - tp->z * SIN_ROTX) * SIN_ROTY;
-			tp->sy = (tp->x * COS_ROTZ + (tp->y * SIN_ROTX + tp->z * COS_ROTX)
-					* SIN_ROTZ) * SIN_ROTY
-				+ (tp->y * COS_ROTX - tp->z * SIN_ROTX) * COS_ROTY;
+			tp->sx = (tp->x * m.cos_rz + (tp->y * m.sin_rx + tp->z * m.cos_rx)
+					* m.sin_rz) * m.cos_ry
+				- (tp->y * m.cos_rx - tp->z * m.sin_rx) * m.sin_ry;
+			tp->sy = (tp->x * m.cos_rz + (tp->y * m.sin_rx + tp->z * m.cos_rx)
+					* m.sin_rz) * m.sin_ry
+				+ (tp->y * m.cos_rx - tp->z * m.sin_rx) * m.cos_ry;
 			x++;
 		}
 		y++;
@@ -109,11 +111,4 @@ void	drawtabiso(t_data *data)
 	draw_grid(data);
 	restoretab(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0);
-}
-
-int	c_abs(int x)
-{
-	if (x < 0)
-		x *= -1;
-	return (x);
 }

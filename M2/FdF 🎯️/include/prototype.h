@@ -70,7 +70,7 @@ t_tab			rasterize(t_data *data);
 void			getlim(t_tab *tab);
 void			restoretab(t_data *data);
 void			drawtabiso(t_data *data);
-int				c_abs(int x);
+int				ft_abs(int x);
 
 // window.c
 int				close_window(t_data *data);

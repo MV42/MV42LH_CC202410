@@ -41,8 +41,8 @@ t_tab	centermap(t_data *data)
 	int		x;
 	int		y;
 
-	yoffset = (c_abs(data->tab.lim.ymin) - c_abs(data->tab.lim.ymax)) / 2;
-	xoffset = (c_abs(data->tab.lim.xmin) - c_abs(data->tab.lim.xmax)) / 2;
+	yoffset = (ft_abs(data->tab.lim.ymin) - ft_abs(data->tab.lim.ymax)) / 2;
+	xoffset = (ft_abs(data->tab.lim.xmin) - ft_abs(data->tab.lim.xmax)) / 2;
 	y = 0;
 	while (y < data->tab.height)
 	{

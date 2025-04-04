@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_utils.c                                      :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,36 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-t_rgb	itorgb(unsigned int color)
+int	ft_abs(int x)
 {
-	t_rgb	rgb;
-
-	rgb.r = (color >> 16) & 0xFF;
-	rgb.g = (color >> 8) & 0xFF;
-	rgb.b = color & 0xFF;
-	return (rgb);
-}
-
-int	rgbtoi(t_rgb rgb)
-{
-	int	color;
-
-	color = ((int)rgb.r << 16) | ((int)rgb.g << 8) | (int)rgb.b;
-	return (color);
-}
-
-t_rgb	gradient(t_line l)
-{
-	int		len;
-
-	if (l.d.sx > l.d.sy)
-		len = l.d.sx;
-	else
-		len = ft_abs(l.d.sy);
-	l.index.color.r += (l.end.color.r - l.start.color.r) / len;
-	l.index.color.g += (l.end.color.g - l.start.color.g) / len;
-	l.index.color.b += (l.end.color.b - l.start.color.b) / len;
-	return (l.index.color);
+	if (x < 0)
+		x *= -1;
+	return (x);
 }

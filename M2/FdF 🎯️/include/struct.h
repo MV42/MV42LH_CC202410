@@ -86,4 +86,14 @@ typedef struct s_data
 	t_input		in;
 }				t_data;
 
+typedef struct s_pmath
+{
+	float		cos_rx;
+	float		sin_rx;
+	float		cos_ry;
+	float		sin_ry;
+	float		cos_rz;
+	float		sin_rz;
+}				t_pmath;
+
 #endif

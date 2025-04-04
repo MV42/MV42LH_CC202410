@@ -73,6 +73,7 @@ CUSTOM_SRC	=	$(addprefix $(CUSTOM_DIR)/, \
 				ft_isspace.c \
 				ft_radtodeg.c \
 				ft_degtorad.c \
+				ft_abs.c \
 				)
 
 				

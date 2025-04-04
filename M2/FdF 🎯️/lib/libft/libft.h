@@ -81,9 +81,6 @@ int		ft_isspace(char c);
 int		ft_atoi_base(char *str, char *base);
 float	ft_degtorad(float deg);
 float	ft_radtodeg(float rad);
-
-// USEFUL VALUES
-# define MAX_FLOAT 3.402823466e+38F
-# define MIN_FLOAT -3.402823466e+38F
+int		ft_abs(int x);
 
 #endif
