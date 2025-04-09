@@ -39,6 +39,11 @@ typedef struct s_tablim
 	int			ymax;
 }				t_tablim;
 
+typedef struct s_mat4
+{
+	float		m[4][4];
+}				t_mat4;
+
 typedef struct s_tab
 {
 	t_point		**tab;
@@ -46,6 +51,7 @@ typedef struct s_tab
 	int			width;
 	int			height;
 	t_tablim	lim;
+	t_mat4		mtrx;
 }				t_tab;
 
 typedef struct s_line
@@ -71,11 +77,12 @@ typedef struct s_input
 	float		rot_y;
 	float		rot_z;
 	float		zoom;
-	int			zoom_bool;
+	char		zoom_bool;
 	float		h_factr;
 	int			pos_x;
 	int			pos_y;
 }				t_input;
+
 
 typedef struct s_data
 {

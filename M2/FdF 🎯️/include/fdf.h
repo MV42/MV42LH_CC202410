@@ -31,6 +31,6 @@
 # define W_HEIGHT 900
 
 # define ERR_FILE "Error: File \"%s\" Couldn't Be Opened\n"
-# define ERR_ARGC "Error: TOO MANY ARGS ! Need 2, Got %i.\n"
+# define ERR_ARGC "Error: Wrong Argument Count ! Need 2, Got %i.\n"
 
 #endif

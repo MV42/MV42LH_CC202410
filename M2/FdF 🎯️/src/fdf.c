@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	if (!build_tab(argv[1], &data.tab))
 		return (ft_printf(ERR_FILE, argv[1]), 1);
 	init(&data);
-	data.in = (t_input){45, 30, -35, 0, 1, 100, 0, 0};
+	data.in = (t_input){54.7356, 0, 45, 0, 1, 100, 0, 0};
 	drawtabiso(&data);
 	mlx_hook(data.win, 2, 1L << 0, key_handler, &data);
 	mlx_hook(data.win, 17, 0, close_window, &data);

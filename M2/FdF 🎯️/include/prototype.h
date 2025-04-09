@@ -79,5 +79,6 @@ int				close_window(t_data *data);
 void			getscale(t_data *data);
 void			autozoom(t_data *data);
 void			manualzoom(t_data *data);
+void			mapzoom(t_data *data);
 
 #endif

@@ -70,12 +70,12 @@ int	zoom_hook(int key, t_data *data)
 	if (key == XK_t)
 	{
 		data->in.zoom_bool = 0;
-		data->in.zoom += 0.01;
+		data->in.zoom += 0.00000001 * (data->tab.lim.xmax * data->tab.lim.ymax);
 	}
 	if (key == XK_g)
 	{
 		data->in.zoom_bool = 0;
-		data->in.zoom -= 0.01;
+		data->in.zoom -= 0.00000001 * (data->tab.lim.xmax * data->tab.lim.ymax);
 	}
 	if (key == XK_z)
 	{

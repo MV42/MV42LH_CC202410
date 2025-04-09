@@ -12,42 +12,49 @@
 
 #include "fdf.h"
 
-void	init_pmath(t_pmath *m, t_data *data)
+void	init_matrix(t_data *data, t_mat4 *m)
 {
-	m->cos_rx = cos(ft_degtorad(data->in.rot_x));
-	m->sin_rx = sin(ft_degtorad(data->in.rot_x));
-	m->cos_ry = cos(ft_degtorad(data->in.rot_y));
-	m->sin_ry = sin(ft_degtorad(data->in.rot_y));
-	m->cos_rz = cos(ft_degtorad(data->in.rot_z));
-	m->sin_rz = sin(ft_degtorad(data->in.rot_z));
-	// printf("cos_rx:%f | sin_rx:%f\n", m->cos_rx, m->sin_rx);
-	// printf("cos_ry:%f | sin_ry:%f\n", m->cos_ry, m->sin_ry);
-	// printf("cos_rz:%f | sin_rz:%f\n", m->cos_rz, m->sin_rz);
+	t_pmath	c;
+
+	c.cos_rx = cos(ft_degtorad(data->in.rot_x));
+	c.sin_rx = sin(ft_degtorad(data->in.rot_x));
+	c.cos_ry = cos(ft_degtorad(data->in.rot_y));
+	c.sin_ry = sin(ft_degtorad(data->in.rot_y));
+	c.cos_rz = cos(ft_degtorad(data->in.rot_z));
+	c.sin_rz = sin(ft_degtorad(data->in.rot_z));
+	m->m[0][0] = c.cos_ry * c.cos_rz;
+	m->m[0][1] = -c.cos_ry * c.sin_rz;
+	m->m[0][2] = c.sin_ry;
+	m->m[1][0] = c.sin_rx * c.sin_ry * c.cos_rz + c.cos_rx * c.sin_rz;
+	m->m[1][1] = -c.sin_rx * c.sin_ry * c.sin_rz + c.cos_rx * c.cos_rz;
+	m->m[1][2] = -c.sin_rx * c.cos_ry;
+	m->m[2][0] = -c.cos_rx * c.sin_ry * c.cos_rz + c.sin_rx * c.sin_rz;
+	m->m[2][1] = c.cos_rx * c.sin_ry * c.sin_rz + c.sin_rx * c.cos_rz;
+	m->m[2][2] = c.cos_rx * c.cos_ry;
+	m->m[0][3] = 0;
+	m->m[1][3] = 0;
+	m->m[2][3] = 0;
+	m->m[3][3] = 1.0f;
+}
+
+void	apply_mat4(t_point *p, t_mat4 *m)
+{
+	p->sx = p->x * m->m[0][0] + p->y * m->m[0][1] + p->z * m->m[0][2];
+	p->sy = p->x * m->m[1][0] + p->y * m->m[1][1] + p->z * m->m[1][2];
 }
 
 t_tab	rasterize(t_data *data)
 {
 	int		y;
 	int		x;
-	t_point	*tp;
-	t_pmath	m;
 
-	init_pmath(&m, data);
+	init_matrix(data, &data->tab.mtrx);
 	y = 0;
 	while (y < data->tab.height)
 	{
 		x = 0;
 		while (x < data->tab.width)
-		{
-			tp = &data->tab.tab[x][y];
-			tp->sx = (tp->x * m.cos_rz + (tp->y * m.sin_rx + tp->z * m.cos_rx)
-					* m.sin_rz) * m.cos_ry
-				- (tp->y * m.cos_rx - tp->z * m.sin_rx) * m.sin_ry;
-			tp->sy = (tp->x * m.cos_rz + (tp->y * m.sin_rx + tp->z * m.cos_rx)
-					* m.sin_rz) * m.sin_ry
-				+ (tp->y * m.cos_rx - tp->z * m.sin_rx) * m.cos_ry;
-			x++;
-		}
+			apply_mat4(&data->tab.tab[x++][y], &data->tab.mtrx);
 		y++;
 	}
 	return (data->tab);
@@ -106,10 +113,11 @@ void	drawtabiso(t_data *data)
 	rasterize(data);
 	getlim(&data->tab);
 	centermap(data);
-	if (data->in.zoom_bool == 1)
-		autozoom(data);
-	if (data->in.zoom_bool == 0)
-		manualzoom(data);
+	// if (data->in.zoom_bool == 1)
+	// 	autozoom(data);
+	// if (data->in.zoom_bool == 0)
+	// 	manualzoom(data);
+	mapzoom(data);
 	adjust_coord(data);
 	draw_grid(data);
 	restoretab(data);
