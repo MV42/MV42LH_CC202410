@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: ngaudoui <ngaudoui@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/21 21:42:42 by mavander          #+#    #+#             */
-/*   Updated: 2024/12/21 21:42:42 by mavander         ###   ########.fr       */
+/*   Created: 2025/03/20 14:03:13 by ngaudoui          #+#    #+#             */
+/*   Updated: 2025/04/09 19:21:47 by ngaudoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-# define _DEFAULT_SOURCE
-# include <signal.h>
 # include <stdbool.h>
+# include <limits.h>
 # include <stdlib.h>
-# include <unistd.h>
-
 # include "libft.h"
 # include "prototype.h"
+# include "struct.h"
+
 #endif

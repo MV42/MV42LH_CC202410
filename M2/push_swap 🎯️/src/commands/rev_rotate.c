@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavander <mavander@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../../include/push_swap.h"
 
-# define _DEFAULT_SOURCE
-# include <signal.h>
-# include <stdbool.h>
-# include <stdlib.h>
-# include <unistd.h>
+static void	rev_rotate(t_stack_node **stack)
+{
+	t_stack_node	*last;
 
-# include "libft.h"
-# include "prototype.h"
-#endif
+	if (!*stack || !(*stack)->next)
+		return ;
+	last = find_last(*stack);
+	last->prev->next = NULL;
+	last->next = *stack;
+	last->prev = NULL;
+	*stack = last;
+	last->next->prev = last;
+}
+
+void	rra(t_stack_node **a, bool print)
+{
+	rev_rotate(a);
+	if (!print)
+		ft_printf("rra\n");
+}
+
+void	rrb(t_stack_node **b, bool print)
+{
+	rev_rotate(b);
+	if (!print)
+		ft_printf("rrb\n");
+}
+
+void	rrr(t_stack_node **a, t_stack_node **b, bool print)
+{
+	rev_rotate(a);
+	rev_rotate(b);
+	if (!print)
+		ft_printf("rrr\n");
+}

@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <cstddef>
 
 // LIBC FUNCTIONS
 int		ft_isalpha(int c);
