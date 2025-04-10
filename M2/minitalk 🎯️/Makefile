@@ -11,19 +11,14 @@
 # **************************************************************************** #
 
 # Project name
+NAME								=	$(CLIENT) $(SERVER)
 CLIENT								=	client
 SERVER								=	server
-NAME								=	$(CLIENT) $(SERVER)
-
-CLIENT_BONUS						=	client_bonus
-SERVER_BONUS						=	server_bonus
-NAME_BONUS							=	$(CLIENT_BONUS) $(SERVER_BONUS)
 
 # Compiler settings
 CC									=	cc
 CFLAGS								=	-Wall -Wextra -Werror \
 										-g3 \
-										# -MMD
 
 # Directories
 SRC_DIR								=	src/
@@ -35,30 +30,36 @@ OBJ_DIR								=	obj/
 LIBFT_DIR							=	$(LIB_DIR)libft/
 
 # Source files
-SRC_CLIENT							=	client.c
-SRC_SERVER							=	server.c
-SRC_UTILS							=	utils.c
+SRC_CLIENT							=	utils.c client.c
+SRC_SERVER							=	utils.c server.c
 
-SRC_CLIENT_BONUS					=	client_bonus.c
-SRC_SERVER_BONUS					=	server_bonus.c
-SRC_UTILS_BONUS						=	utils_bonus.c
+SRC_CLIENT_BONUS					=	utils_bonus.c client_bonus.c
+SRC_SERVER_BONUS					=	utils_bonus.c server_bonus.c
 
 # Object files
-OBJ_CLIENT							=	$(OBJ_DIR)utils.o $(OBJ_DIR)client.o
-OBJ_SERVER							=	$(OBJ_DIR)utils.o $(OBJ_DIR)server.o
-
-OBJ_CLIENT_BONUS					=	$(OBJ_DIR)utils_bonus.o $(OBJ_DIR)client_bonus.o
-OBJ_SERVER_BONUS					=	$(OBJ_DIR)utils_bonus.o $(OBJ_DIR)server_bonus.o
+OBJ_CLIENT							=	$(patsubst %.c, $(OBJ_DIR)%.o, $(SRC_CLIENT_USED))
+OBJ_SERVER							=	$(patsubst %.c, $(OBJ_DIR)%.o, $(SRC_SERVER_USED))
 
 # Include and library flags
 IFLAGS								=	$(addprefix -I, $(INC_DIR) $(LIBFT_DIR))
 LFLAGS								=	$(addprefix -L, $(LIBFT_DIR))
 LIBS								=	-lft
 
+# Compilation Mode (Mandatory / Bonus)
+ifneq (,$(filter bonus client_bonus server_bonus,$(MAKECMDGOALS)))
+	SRC_CLIENT_USED = $(SRC_CLIENT_BONUS)
+	SRC_SERVER_USED = $(SRC_SERVER_BONUS)
+else
+	SRC_CLIENT_USED = $(SRC_CLIENT)
+	SRC_SERVER_USED = $(SRC_SERVER)
+endif
+
 # Main target
 all: $(NAME)
 
-bonus: $(NAME_BONUS)
+bonus: $(NAME)
+client_bonus: $(CLIENT)
+server_bonus: $(SERVER)
 
 # Compilation Rules
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
@@ -73,14 +74,6 @@ $(SERVER): $(OBJ_SERVER)
 	@$(CC) $(CFLAGS) $(OBJ_SERVER) $(LFLAGS) $(LIBS) -o $(SERVER)
 	@echo "Compiled $(SERVER)"
 
-$(CLIENT_BONUS): $(OBJ_CLIENT_BONUS)
-	@$(CC) $(CFLAGS) $(OBJ_CLIENT_BONUS) $(LFLAGS) $(LIBS) -o $(CLIENT_BONUS)
-	@echo "Compiled $(CLIENT_BONUS)"
-
-$(SERVER_BONUS): $(OBJ_SERVER_BONUS)
-	@$(CC) $(CFLAGS) $(OBJ_SERVER_BONUS) $(LFLAGS) $(LIBS) -o $(SERVER_BONUS)
-	@echo "Compiled $(SERVER_BONUS)"
-
 # Clean Rules
 clean:
 	@rm -rf $(OBJ_DIR)
@@ -92,10 +85,6 @@ fclean: clean
 
 re: fclean all
 	@echo "Project rebuilt!"
-
-# # Include dependency files
-# -include $(OBJ:.o=.d)
-# -include $(OBJ_BONUS:.o=.d)
 
 # Phony targets
 .PHONY: all bonus clean fclean re

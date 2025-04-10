@@ -17,7 +17,7 @@ volatile sig_atomic_t	g_srv = BUSY;
 void	end_handler(int signal)
 {
 	(void)signal;
-	ft_printf("Message received!\n");
+	ft_printf("Success: Message received!\n");
 	exit(EXIT_SUCCESS);
 }
 
@@ -32,7 +32,7 @@ void	send_char(char c, pid_t srv)
 	int	bit;
 
 	bit = 0;
-	while (bit < CHAR_BIT)
+	while (bit < 8)
 	{
 		if (c & (0x80 >> bit))
 			my_kill(srv, SIGUSR1);
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_printf("Usage: ./client <PID> \"Message\"\n");
+		ft_printf("Error: Usage\n./client <PID> \"Message\"\n");
 		return (EXIT_FAILURE);
 	}
 	srv = ft_atoi(argv[1]);

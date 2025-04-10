@@ -28,11 +28,11 @@ int	key_handler(int key, t_data *data)
 
 int	rotate_hook(int key, t_data *data)
 {
-	if (key == XK_w && data->in.rot_x < 90)
+	if (key == XK_w)
 		data->in.rot_x += 1;
 	if (key == XK_a)
 		data->in.rot_z -= 1;
-	if (key == XK_s && data->in.rot_x > -90)
+	if (key == XK_s)
 		data->in.rot_x -= 1;
 	if (key == XK_d)
 		data->in.rot_z += 1;

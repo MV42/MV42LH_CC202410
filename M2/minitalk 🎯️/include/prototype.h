@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PROTOTYPES_H
-# define PROTOTYPES_H
+#ifndef PROTOTYPE_H
+# define PROTOTYPE_H
 
 # include "minitalk.h"
 
@@ -30,7 +30,6 @@ int		main(int argc, char **argv);
 // server.c
 void	sig_handler(int signal, siginfo_t *info, void *more_info);
 int		main(int argc, char **argv);
-
 
 // utils.c
 void	my_kill(pid_t pid, int signal);

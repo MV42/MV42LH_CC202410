@@ -38,7 +38,7 @@ char	read_map_file(t_tab *tab, const char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		return (ft_printf("Error: Invalid FD"), 0);
+		return (ft_printf("Error: Invalid FD\n"), 0);
 	line = get_next_line(fd);
 	while (line)
 	{

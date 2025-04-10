@@ -13,13 +13,10 @@
 #ifndef MINITALK_H
 # define MINITALK_H
 
-# include <unistd.h>
+# define _DEFAULT_SOURCE
 # include <signal.h>
 # include <stdbool.h>
-# include <limits.h>
-
-# include "prototype.h"
 
 # include "libft.h"
-
+# include "prototype.h"
 #endif

@@ -17,13 +17,14 @@ void	getscale(t_data *data)
 	data->in.zoom = 0;
 	while (data->tab.lim.xmax * data->in.zoom < (W_WIDTH / 2) - 20
 		&& data->tab.lim.ymax * data->in.zoom < (W_HEIGHT / 2) - 20
-		&& data->tab.lim.xmin * data->in.zoom < (W_WIDTH / 2) - 20
-		&& data->tab.lim.ymin * data->in.zoom < (W_HEIGHT / 2) - 20
-		&& data->tab.lim.xmax * data->in.zoom > (-W_WIDTH / 2) + 20
-		&& data->tab.lim.ymax * data->in.zoom > (-W_HEIGHT / 2) + 20
 		&& data->tab.lim.xmin * data->in.zoom > (-W_WIDTH / 2) + 20
 		&& data->tab.lim.ymin * data->in.zoom > (-W_HEIGHT / 2) + 20)
 		data->in.zoom += 1.0 / (data->tab.lim.xmax * data->tab.lim.ymax);
+	// printf("ZoomFactor:%f\n", data->in.zoom);
+	// printf("NextZoomFactor:%f\n", data->in.zoom + (1.0 / (data->tab.lim.xmax * data->tab.lim.ymax)));
+	// printf("NextXGAP:%f\n", data->in.zoom + (1.0 / (data->tab.lim.xmax * data->tab.lim.ymax)));
+	// printf("XGAP:%f\n", ((W_WIDTH / 2) - 20) - (data->tab.lim.xmax * data->in.zoom));
+	// printf("YGAP:%f\n", ((W_HEIGHT / 2) - 20) - (data->tab.lim.ymax * data->in.zoom));
 }
 
 void	mapzoom(t_data *data)

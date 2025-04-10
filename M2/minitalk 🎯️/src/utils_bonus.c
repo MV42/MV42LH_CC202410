@@ -16,7 +16,7 @@ void	my_kill(pid_t pid, int signal)
 {
 	if (kill(pid, signal) < 0)
 	{
-		ft_printf("Kill failed");
+		ft_printf("Error: Kill Failed\n");
 		exit(EXIT_FAILURE);
 	}
 }
@@ -41,7 +41,7 @@ void	my_signal(int signal, void *handler, bool use_siginfo)
 	sigaddset(&sa.sa_mask, SIGUSR2);
 	if (sigaction(signal, &sa, NULL) < 0)
 	{
-		ft_printf("sigaction failed");
+		ft_printf("Error: Sigaction Failed\n");
 		exit(EXIT_FAILURE);
 	}
 }

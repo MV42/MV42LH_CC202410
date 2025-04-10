@@ -26,7 +26,7 @@ void	sig_handler(int signal, siginfo_t *info, void *more_info)
 	else if (SIGUSR2 == signal)
 		c &= ~(0x80 >> bit);
 	bit++;
-	if (CHAR_BIT == bit)
+	if (bit == 8)
 	{
 		bit = 0;
 		if ('\0' == c)
@@ -46,10 +46,10 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc != 1)
 	{
-		ft_printf("Usage: ./bin/server\n");
+		ft_printf("Error: Usage\n./server\n");
 		return (EXIT_FAILURE);
 	}
-	ft_printf("Server PID = %d\n", getpid());
+	ft_printf("Server PID: %d\n", getpid());
 	my_signal(SIGUSR1, sig_handler, true);
 	my_signal(SIGUSR2, sig_handler, true);
 	while (1)

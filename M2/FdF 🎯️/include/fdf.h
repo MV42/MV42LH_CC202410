@@ -19,6 +19,8 @@
 # include <unistd.h>
 # include <X11/Xlib.h>
 
+# include <stdio.h>
+
 # include "mlx_int.h"
 # include "mlx.h"
 
