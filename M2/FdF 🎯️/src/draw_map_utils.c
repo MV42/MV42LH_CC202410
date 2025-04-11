@@ -78,3 +78,24 @@ void	enlargetab(t_data *data)
 		y++;
 	}
 }
+
+void	restoretab(t_data *data)
+{
+	int		x;
+	int		y;
+
+	y = 0;
+	while (y < data->tab.height)
+	{
+		x = 0;
+		while (x < data->tab.width)
+		{
+			data->tab.tab[x][y].x *= 0.01;
+			data->tab.tab[x][y].y *= 0.01;
+			if (data->in.h_factr != 0)
+				data->tab.tab[x][y].z /= data->in.h_factr;
+			x++;
+		}
+		y++;
+	}
+}

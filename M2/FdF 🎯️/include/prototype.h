@@ -32,13 +32,12 @@ char			build_tab(const char *filename, t_tab *tab);
 t_rgb			itorgb(unsigned int color);
 int				rgbtoi(t_rgb rgb);
 t_rgb			gradient(t_line l);
-// int			gethighlow(t_data *data, t_line *l)
-// int			colorheight(int key, t_data *data)
 
 // draw_map_utils.c
 int				adjust_coord(t_data *data);
 t_tab			centermap(t_data *data);
 void			enlargetab(t_data *data);
+void			restoretab(t_data *data);
 
 // draw_map.c
 int				put_pixel(t_data *data, t_point p);
@@ -66,19 +65,17 @@ int				height_hook(int key, t_data *data);
 int				zoom_hook(int key, t_data *data);
 
 // rasterize.c
+void			init_matrix(t_data *data, t_mat4 *m);
+void			apply_mat4(t_point *p, t_mat4 *m);
 t_tab			rasterize(t_data *data);
 void			getlim(t_tab *tab);
-void			restoretab(t_data *data);
 void			drawtabiso(t_data *data);
-int				ft_abs(int x);
 
 // window.c
 int				close_window(t_data *data);
 
 // zoom.c
 void			getscale(t_data *data);
-void			autozoom(t_data *data);
-void			manualzoom(t_data *data);
 void			mapzoom(t_data *data);
 
 #endif

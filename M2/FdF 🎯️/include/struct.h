@@ -83,7 +83,6 @@ typedef struct s_input
 	int			pos_y;
 }				t_input;
 
-
 typedef struct s_data
 {
 	void		*mlx;
