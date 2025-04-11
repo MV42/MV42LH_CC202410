@@ -12,7 +12,7 @@
 
 NAME		=	libft.a
 
-CC			=	cc
+CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror -Iget_next_line/ -Ift_printf/ -I.
 
 OBJ_DIR		=	obj/
