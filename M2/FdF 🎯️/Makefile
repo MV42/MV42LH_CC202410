@@ -52,25 +52,26 @@ LIBS			=	-lmlx_Linux -lm -lXext -lX11 -lz -lft
 # Main target
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(LFLAGS) $(LIBS) -o $(NAME)
+	@echo "Welcome $@ ! 🤩🤙"
 
 # Object file compilation rule
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	@echo "Good Morning $(notdir $@) ! 👋😇"
 
 # Targets
 all: $(NAME)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(OBJ_DIR) And Its Content Has Been Deleted !"
+	@echo "See You Soon $(OBJ_DIR) And Your Content... 🤧💔"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) Removed !"
+	@echo "Bye-Bye $(NAME) ! 🥺💋"
 
 re: fclean all
-	@echo "FdF Has Been Remade !"
 
 # Phony targets
 .PHONY: all clean fclean re libft mlx
