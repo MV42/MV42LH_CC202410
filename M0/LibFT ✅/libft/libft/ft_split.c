@@ -54,7 +54,7 @@ char	**ft_split(const char *s, char c)
 	int		i;
 	char	*start;
 
-	result = ft_calloc((words = count_words(s, c)) + 1, sizeof(char *));
+	result = ft_calloc(((words = count_words(s, c)) + 1) * sizeof(char *));
 	if (!s || !result)
 		return (NULL);
 	i = 0;

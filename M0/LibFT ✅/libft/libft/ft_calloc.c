@@ -15,13 +15,13 @@
 // Allocates and zero-initializes memory.
 // Allocates space for 'count' objects of size 'size'.
 // Returns pointer to allocated memory or NULL if allocation fails.
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t size)
 {
 	void	*res;
 
-	res = malloc(count * size);
+	res = malloc(size);
 	if (!res)
 		return (NULL);
-	ft_bzero(res, count * size);
+	ft_bzero(res, size);
 	return (res);
 }
