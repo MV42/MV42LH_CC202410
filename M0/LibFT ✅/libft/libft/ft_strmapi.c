@@ -12,22 +12,25 @@
 
 #include "libft.h"
 
+// Applies a function to each character of a string.
+// Creates a new string by applying 'f' to each char of 's' with its index.
+// Returns the new string or NULL if allocation fails.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*str;
+	char			*result;
 	unsigned int	i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	str = malloc(ft_strlen(s) + 1);
-	if (!str)
+	result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!result)
 		return (NULL);
 	i = 0;
-	while (*(s + i))
+	while (s[i])
 	{
-		*(str + i) = f(i, *(s + i));
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	*(str + i) = '\0';
-	return (str);
+	result[i] = '\0';
+	return (result);
 }

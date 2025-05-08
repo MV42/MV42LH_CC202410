@@ -12,16 +12,23 @@
 
 #include "libft.h"
 
+// Trims specified characters from the beginning and end of a string.
+// Creates a new string with chars in 'set' removed from both ends of 's1'.
+// Returns the trimmed string or NULL if allocation fails.
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	size_t	start;
+	size_t	end;
+	char	*trim;
 
-	if (s1 == NULL || set == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	i = ft_strlen(s1);
-	while (i && ft_strchr(set, *(s1 + i)))
-		i--;
-	return (ft_substr(s1, 0, i + 1));
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	trim = ft_substr(s1, start, end - start);
+	return (trim);
 }

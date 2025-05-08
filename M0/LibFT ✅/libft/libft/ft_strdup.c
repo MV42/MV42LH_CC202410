@@ -12,15 +12,25 @@
 
 #include "libft.h"
 
+// Duplicates a string.
+// Allocates memory for a copy of string 's1'.
+// Returns pointer to the new string or NULL if allocation fails.
 char	*ft_strdup(const char *s1)
 {
-	size_t	len;
-	char	*s_alloc;
+	char	*res;
+	size_t	size;
+	size_t	i;
 
-	len = ft_strlen(s1) + 1;
-	s_alloc = (char *)malloc(len * sizeof(char));
-	if (s_alloc == NULL)
+	size = ft_strlen(s1);
+	res = (char *)malloc(sizeof(char) * (size + 1));
+	if (!res)
 		return (NULL);
-	ft_memcpy(s_alloc, s1, len);
-	return (s_alloc);
+	i = 0;
+	while (i < size)
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }

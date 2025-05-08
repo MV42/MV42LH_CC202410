@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+// Safely copies a string to a destination buffer.
+// Copies up to dstsize-1 chars from src to dst, null-terminating result.
+// Returns the total length of the string tried to create (strlen(src)).
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

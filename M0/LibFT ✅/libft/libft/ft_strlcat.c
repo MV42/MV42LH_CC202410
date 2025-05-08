@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+// Safely concatenates two strings.
+// Appends src to the end of dst, ensuring the result is null-terminated.
+// Returns the total length (dst_len + src_len).
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dst_len;

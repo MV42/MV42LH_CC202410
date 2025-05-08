@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+// Validates a base string for conversion.
+// Checks for proper length and valid characters (no duplicates or special chars).
+// Returns 1 if valid, 0 if invalid.
 int	base_verif(char *base)
 {
 	int	i;
@@ -38,6 +41,9 @@ int	base_verif(char *base)
 	return (1);
 }
 
+// Finds a character's position in a base string.
+// Searches for character 'c' in the base and returns its position.
+// Returns -1 if the character is not in the base.
 int	char_is_base(char c, char *base)
 {
 	int	i;
@@ -52,6 +58,9 @@ int	char_is_base(char c, char *base)
 	return (-1);
 }
 
+// Converts a string to an integer using a specified base.
+// Handles whitespace, signs, and converts digits according to custom base.
+// Returns the converted integer or 0 if the base is invalid.
 int	ft_atoi_base(char *str, char *base)
 {
 	int	i;

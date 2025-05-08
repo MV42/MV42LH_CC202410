@@ -12,15 +12,13 @@
 
 #include "libft.h"
 
+// Outputs a string followed by a newline to a file descriptor.
+// Writes string 's' followed by '\n' to file descriptor 'fd'.
+// Does nothing if 's' is NULL.
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (*(s + i))
-	{
-		write(fd, s + i, 1);
-		i++;
-	}
-	write(fd, "\n", 1);
+	if (!s)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

@@ -12,6 +12,9 @@
 
 #include "ft_printf.h"
 
+// Processes format specifiers and routes to appropriate printing functions.
+// Handles c,s,p,d,i,u,x,X,% specifiers using corresponding functions.
+// Returns number of characters printed.
 int	ft_formats(va_list args, const char format)
 {
 	int	len;
@@ -36,6 +39,9 @@ int	ft_formats(va_list args, const char format)
 	return (len);
 }
 
+// Printf implementation with variadic arguments support.
+// Parses format string, processes specifiers with ft_formats.
+// Returns total number of characters printed.
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;

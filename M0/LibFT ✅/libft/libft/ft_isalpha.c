@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+// Checks if character is alphabetic (A-Z or a-z).
+// Returns 1 if true, 0 if false.
+// Standard libc character classification function.
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

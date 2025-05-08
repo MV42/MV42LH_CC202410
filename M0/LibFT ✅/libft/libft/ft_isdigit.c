@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+// Checks if character is digit (0-9).
+// Returns 1 if true, 0 if false.
+// Standard libc character classification function.
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

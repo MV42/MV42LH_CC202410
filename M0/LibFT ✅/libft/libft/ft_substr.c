@@ -12,26 +12,31 @@
 
 #include "libft.h"
 
+// Extracts a substring from a string.
+// Creates new string from 's' starting at 'start' of length 'len'.
+// Returns the new string or NULL if allocation fails.
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	char	*new_str;
-	size_t	s_len;
 	size_t	i;
+	size_t	s_len;
 
-	s_len = ft_strlen(s);
-	if (s == NULL || s_len < start)
-		return (ft_strdup(""));
-	if (start + len < s_len)
-		substr = (char *)malloc((len + 1) * sizeof(char));
-	else
-		substr = (char *)malloc((s_len - start + 1) * sizeof(char));
-	if (substr == NULL)
+	if (!s)
 		return (NULL);
-	i = start;
-	new_str = substr;
-	while (i < (start + len) && *(s + i))
-		*new_str++ = *(s + i++);
-	*new_str = '\0';
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (s_len - start < len)
+		len = s_len - start;
+	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+	i = 0;
+	while (i < len && s[start + i])
+	{
+		substr[i] = s[start + i];
+		i++;
+	}
+	substr[i] = '\0';
 	return (substr);
 }

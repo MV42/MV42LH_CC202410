@@ -12,22 +12,28 @@
 
 #include "libft.h"
 
+// Converts a string to an integer.
+// Skips whitespace, handles '+'/'-' signs, then parses digits.
+// Returns the converted integer value.
 int	ft_atoi(const char *str)
 {
-	int	num;
+	int	result;
 	int	sign;
-	int	i;
 
-	num = 0;
+	result = 0;
 	sign = 1;
-	i = 0;
-	while (*(str + i) == 32 || (*(str + i) >= 9 && *(str + i) <= 13))
-		i++;
-	if (*(str + i) == '-')
-		sign = -1;
-	if (*(str + i) == '+' || *(str + i) == '-')
-		i++;
-	while (*(str + i) >= '0' && *(str + i) <= '9')
-		num = num * 10 + (*(str + i++) - 48);
-	return (num * sign);
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+	return (result * sign);
 }

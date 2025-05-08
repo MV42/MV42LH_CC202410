@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+// Counts the number of words in a string separated by a delimiter.
+// Returns the count of words in the string 's' using char 'c' as delimiter.
 static int	count_words(const char *s, char c)
 {
 	int	count;
@@ -33,6 +35,8 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
+// Frees allocated memory for the split result.
+// Releases memory for 'result' array up to 'words' elements.
 static void	free_split(char **result, int words)
 {
 	while (words >= 0)
@@ -40,6 +44,9 @@ static void	free_split(char **result, int words)
 	free(result);
 }
 
+// Splits a string into an array of substrings using a delimiter.
+// Creates array of strings by splitting 's' using char 'c' as delimiter.
+// Returns array of strings or NULL if allocation fails.
 char	**ft_split(const char *s, char c)
 {
 	char	**result;

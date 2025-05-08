@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+// Checks if character is printable (32-126).
+// Returns 1 if true, 0 if false.
+// Standard libc character classification function.
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)

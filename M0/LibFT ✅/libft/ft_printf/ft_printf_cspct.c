@@ -12,12 +12,18 @@
 
 #include "ft_printf.h"
 
+// Prints a single character to standard output.
+// Writes character 'c' using the write system call.
+// Returns 1 (number of characters printed).
 int	ft_printchar(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
+// Outputs a string to standard output.
+// Writes each character in 'str' to stdout in sequence.
+// Helper function with no return value.
 void	ft_putstr(char *str)
 {
 	int	i;
@@ -30,6 +36,9 @@ void	ft_putstr(char *str)
 	}
 }
 
+// Prints a string to standard output.
+// Handles NULL strings by printing "(null)".
+// Returns the number of characters printed.
 int	ft_printstr(char *str)
 {
 	int	i;
@@ -48,6 +57,9 @@ int	ft_printstr(char *str)
 	return (i);
 }
 
+// Prints a percent sign to standard output.
+// Handles the %% format specifier in ft_printf.
+// Returns 1 (number of characters printed).
 int	ft_printpct(void)
 {
 	write(1, "%", 1);

@@ -13,16 +13,9 @@
 #include "ft_printf.h"
 #include "../libft.h"
 
-// size_t	ft_stlen(const char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
-
+// Prints a number in a specified base.
+// Recursively converts and writes 'n' using the characters in 'base'.
+// Returns number of characters printed.
 int	ft_pn_b(long long n, char *base)
 {
 	uintmax_t	nbr;
@@ -44,6 +37,9 @@ int	ft_pn_b(long long n, char *base)
 	return (len);
 }
 
+// Prints a pointer address in hexadecimal format.
+// Handles NULL pointers by printing "(nil)" instead of an address.
+// Returns number of characters printed.
 int	ft_print_ptr(unsigned long long ptr)
 {
 	int			len;

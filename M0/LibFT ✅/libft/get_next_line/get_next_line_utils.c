@@ -12,6 +12,9 @@
 
 #include "get_next_line.h"
 
+// Allocates and zero-initializes a character array.
+// Allocates 'size' bytes of memory and fills them with null bytes.
+// Returns a pointer to the allocated memory or NULL if allocation fails.
 char	*ft_calloc_char(size_t size)
 {
 	char	*new;
@@ -26,6 +29,9 @@ char	*ft_calloc_char(size_t size)
 	return (new);
 }
 
+// Reallocates a string to a new size.
+// Copies content from 's1' to a new string of 'size' bytes.
+// Returns a pointer to the new string or NULL if allocation fails.
 char	*ft_realloc(char *s1, size_t size)
 {
 	char	*s2;
@@ -46,6 +52,9 @@ char	*ft_realloc(char *s1, size_t size)
 	return (s2);
 }
 
+// Calculates length of a line and checks for newline character.
+// Stores position of newline in nl[0] and sets nl[1] if newline was found.
+// Returns the number of characters to read until newline or end of string.
 int	linelen(char *str, int *nl)
 {
 	nl[0] = 0;
@@ -59,6 +68,9 @@ int	linelen(char *str, int *nl)
 	return (nl[0]);
 }
 
+// Copies characters from buffer to line and shifts remaining buffer content.
+// Copies until newline or end of buffer, then shifts remaining characters.
+// Updates line index and zeroes out used buffer positions.
 void	cpybuf(char *line, char *buf, size_t *li)
 {
 	int	bj;

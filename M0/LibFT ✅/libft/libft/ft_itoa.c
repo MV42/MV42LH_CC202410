@@ -12,42 +12,36 @@
 
 #include "libft.h"
 
-static size_t	count_digits(int n)
-{
-	size_t	i;
-
-	i = 1;
-	while (n / 10)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
-
+// Converts an integer to a string.
+// Allocates and returns a string representing the integer 'n'.
+// Handles negative numbers and returns NULL if allocation fails.
 char	*ft_itoa(int n)
 {
-	char		*str_num;
-	size_t		digits;
-	long int	num;
+	char	*str;
+	long	nbr;
+	size_t	size;
 
-	num = n;
-	digits = count_digits(n);
-	if (n < 0)
+	nbr = n;
+	size = (nbr <= 0) ? 1 : 0;
+	if (nbr < 0)
+		nbr = -nbr;
+	while (n)
 	{
-		num *= -1;
-		digits++;
+		n /= 10;
+		size++;
 	}
-	str_num = (char *)malloc(sizeof(char) * (digits + 1));
-	if (!str_num)
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
 		return (NULL);
-	*(str_num + digits) = 0;
-	while (digits--)
+	str[size--] = '\0';
+	if (nbr == 0)
+		str[0] = '0';
+	while (nbr)
 	{
-		*(str_num + digits) = num % 10 + '0';
-		num /= 10;
+		str[size--] = (nbr % 10) + '0';
+		nbr /= 10;
 	}
-	if (n < 0)
-		*str_num = '-';
-	return (str_num);
+	if (size == 0 && str[1] != '\0')
+		str[0] = '-';
+	return (str);
 }

@@ -12,14 +12,17 @@
 
 #include "libft.h"
 
+// Creates a new list node.
+// Allocates and initializes a node with 'content' and NULL next pointer.
+// Returns the new node or NULL if allocation fails.
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	*node;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

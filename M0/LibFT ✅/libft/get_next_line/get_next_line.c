@@ -12,6 +12,9 @@
 
 #include "get_next_line.h"
 
+// Builds a line from a buffer until newline or EOF.
+// Reads from fd, reallocates memory as needed, copies characters.
+// Returns the complete line or NULL on error/EOF.
 char	*make_line(char *buf, int fd, char **buff)
 {
 	t_gnl_vars	x;
@@ -39,6 +42,9 @@ char	*make_line(char *buf, int fd, char **buff)
 	}
 }
 
+// Reads the next line from a file descriptor.
+// Maintains static buffers for multiple file descriptors.
+// Returns one line at a time or NULL on error/EOF.
 char	*get_next_line(int fd)
 {
 	static char	*bufs[OPEN_MAX] = {NULL};
