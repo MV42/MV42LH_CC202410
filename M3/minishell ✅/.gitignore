@@ -1,0 +1,25 @@
+# Object files
+*.o
+*.obj
+
+# Libraries
+*.a
+*.lib
+
+# Executables
+*.out
+*.exe
+
+# Binaire compilé
+skibidi_shell
+minishell
+
+# Test file
+test.c
+outfile*
+infile*
+
+# Folder not needed
+.vscode/
+
+minishell_tester/
